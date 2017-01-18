@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<!-- saved from url=(0034)http://imajineweb.com/cssanimation -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+  <link rel="javascript" type="text/javascript" href="http://www.imajineweb.com/js/jquery-1.4.2.min.js">
+  
+<link rel="shortlink" href="http://imajineweb.com/node/60">
+<link rel="shortcut icon" href="http://imajineweb.com/misc/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" href="http://imajineweb.com/sites/default/files/mobile-icon.png" type="image/png">
+<link rel="apple-touch-icon-precomposed" href="http://imajineweb.com/sites/default/files/mobile-icon_0.png" type="image/png">
+<link rel="canonical" href="./Animation in CSS3   Imajine_files/Animation in CSS3   Imajine.html">
+<meta name="description" content="In CSS, we can try out simple animation like moving an object on either x-axis, y-axis or both by using the property &#39; -webkit-transition&#39;.You can hover over the car in the following output, to view the animation in Google chrome browsers.   ">
+<meta content="Animation in CSS3" about="/cssanimation" property="dc:title">
+<meta about="/cssanimation" property="sioc:num_replies" content="0" datatype="xsd:integer">
+<meta name="robots" content="follow, index">
+<link rel="author" href="https://plus.google.com/u/0/100944870215629299984/posts">
+<meta name="generator" content="Imajine">
+  <title>Animation in CSS3 | Imajine</title>
+  <style type="text/css" media="all">@import url("http://imajineweb.com/modules/system/system.base.css?n2zir5");
+@import url("http://imajineweb.com/modules/system/system.menus.css?n2zir5");
+@import url("http://imajineweb.com/modules/system/system.messages.css?n2zir5");
+@import url("http://imajineweb.com/modules/system/system.theme.css?n2zir5");</style>
+<style type="text/css" media="all">@import url("http://imajineweb.com/modules/aggregator/aggregator.css?n2zir5");
+@import url("http://imajineweb.com/modules/comment/comment.css?n2zir5");
+@import url("http://imajineweb.com/modules/field/theme/field.css?n2zir5");
+@import url("http://imajineweb.com/modules/node/node.css?n2zir5");
+@import url("http://imajineweb.com/modules/search/search.css?n2zir5");
+@import url("http://imajineweb.com/modules/user/user.css?n2zir5");
+@import url("http://imajineweb.com/modules/forum/forum.css?n2zir5");
+@import url("http://imajineweb.com/sites/all/modules/views/css/views.css?n2zir5");</style>
+<style type="text/css" media="all">@import url("http://imajineweb.com/sites/all/modules/ctools/css/ctools.css?n2zir5");
+@import url("http://imajineweb.com/sites/all/modules/panels/css/panels.css?n2zir5");
+@import url("http://imajineweb.com/modules/extlink/extlink.css?n2zir5");</style>
+<style type="text/css" media="all">@import url("http://imajineweb.com/themes/bartik/css/layout.css?n2zir5");
+@import url("http://imajineweb.com/themes/bartik/css/style.css?n2zir5");
+@import url("http://imajineweb.com/themes/bartik/css/colors.css?n2zir5");</style>
+<style type="text/css" media="print">@import url("http://imajineweb.com/themes/bartik/css/print.css?n2zir5");</style>
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://imajineweb.com/themes/bartik/css/ie.css?n2zir5" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://imajineweb.com/themes/bartik/css/ie6.css?n2zir5" media="all" />
+<![endif]-->
+  <script async="" src="./Animation in CSS3   Imajine_files/analytics.js"></script><script type="text/javascript" src="./Animation in CSS3   Imajine_files/jquery.js"></script>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/jquery.once.js"></script>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/drupal.js"></script>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/cufon-yui.js"></script><style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/Oswald_400-Oswald_700-Oswald_300.font.js"></script>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/bebasneue_400.font.js"></script>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/cufon-drupal.js"></script>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/panels.js"></script>
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/extlink.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bartik","theme_token":"wnLjtG0GPMMk9MfbHdaOepLZw16MDZ4GMOmM-ZleiDE","js":{"0":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/cufon\/cufon-yui.js":1,"sites\/all\/libraries\/cufon-fonts\/Oswald_400-Oswald_700-Oswald_300.font.js":1,"sites\/all\/libraries\/cufon-fonts\/bebasneue_400.font.js":1,"modules\/cufon\/js\/cufon-drupal.js":1,"sites\/all\/modules\/panels\/js\/panels.js":1,"modules\/extlink\/extlink.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"modules\/extlink\/extlink.css":1,"themes\/bartik\/css\/layout.css":1,"themes\/bartik\/css\/style.css":1,"themes\/bartik\/css\/colors.css":1,"themes\/bartik\/css\/print.css":1,"themes\/bartik\/css\/ie.css":1,"themes\/bartik\/css\/ie6.css":1}},"cufonSelectors":{"2":{"selector":".a_oswald","options":{"enabled":1,"fontFamily":"Oswald","hover":1}},"4":{"selector":".link1","options":{"enabled":1,"fontFamily":"Oswald","hover":1}},"7":{"selector":".bebas-30","options":{"enabled":1,"fontFamily":"bebasneue","hover":1}},"9":{"selector":"#filter a","options":{"enabled":1,"fontFamily":"bebasneue","hover":1}}},"extlink":{"extTarget":0,"extClass":"ext","extSubdomains":1,"extExclude":"","extInclude":"","extAlert":0,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto"}});
+//--><!]]>
+</script>
+<script src="./Animation in CSS3   Imajine_files/secureAnonymousFramework"></script><script type="text/javascript" src="./Animation in CSS3   Imajine_files/getAllAppDefault.esi"></script><script type="text/javascript" src="./Animation in CSS3   Imajine_files/checkOAuth.esi"></script><link rel="stylesheet" type="text/css" href="./Animation in CSS3   Imajine_files/buttons.3e9d8da4f20b5842426ebd434fbd1b1b.css"><script type="text/javascript" charset="UTF-8" src="./Animation in CSS3   Imajine_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./Animation in CSS3   Imajine_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./Animation in CSS3   Imajine_files/stats.js"></script></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-60 node-type-article footer-columns" onclick="if(stWidget.buttonClicked==false){stWidget.stopClosing=false;stWidget.openDuration=0;stWidget.stClose(100);}">
+  <div id="skip-link">
+    <a href="http://imajineweb.com/cssanimation#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40368793-1', 'imajineweb.com');
+  ga('send', 'pageview');
+
+</script>
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<link href="./Animation in CSS3   Imajine_files/css" rel="stylesheet" type="text/css">
+<link href="./Animation in CSS3   Imajine_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./Animation in CSS3   Imajine_files/css(2)" rel="stylesheet" type="text/css">
+<link href="./Animation in CSS3   Imajine_files/css(3)" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="./Animation in CSS3   Imajine_files/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "7f54b957-a9ab-46f3-9ca5-bba6bd7e318e", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<style>
+      #map_canvas {
+        width: 100%;
+        height: 300px;
+      }
+	  
+	  body.html.not-front.logged-in.no-sidebars.page-node.page-node-.page-node-106.node-type-article.toolbar.toolbar-drawer.footer-columns, body.html.not-front.not-logged-in.no-sidebars.page-node.page-node-.page-node-106.node-type-article.footer-columns, body.html.not-front.not-logged-in.no-sidebars.page-node.page-node-.page-node-8.node-type-article.footer-columns, body.html.not-front.not-logged-in.one-sidebar.sidebar-second.page-node.page-node-.page-node-5.node-type-article.footer-columns, body.html.not-front.not-logged-in.no-sidebars.page-node.page-node-.page-node-119.node-type-article.footer-columns, body.html.not-front.not-logged-in.one-sidebar.sidebar-second.page-blogs.footer-columns, body.html.not-front.not-logged-in.no-sidebars.page-node.page-node-.page-node-111.node-type-webform.footer-columns, body.html.not-front.not-logged-in.no-sidebars.page-node.page-node-.page-node-136.node-type-article.footer-columns{margin:0; padding:0;}
+    </style>
+    <script src="./Animation in CSS3   Imajine_files/js"></script><script src="./Animation in CSS3   Imajine_files/main.js"></script>
+    <script>
+	
+	var imajine = new google.maps.LatLng(1.2844948, 103.85115730000007);
+	var marker;
+	var map;
+	
+   function initialize() {
+		  
+	var styles = [
+    {
+      stylers: [ { hue: "#F7D344" }, { saturation: 50 } ]
+    },{
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ lightness: 100 }, { visibility: "simplified" }]
+    },{
+      featureType: "road",
+      elementType: "labels",
+      stylers: [
+        { visibility: "off" }
+      ]
+    }
+  ];
+  
+  // Create a new StyledMapType object, passing it the array of styles,
+  // as well as the name to be displayed on the map type control.
+  var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+  
+		  
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: imajine,
+          zoom: 16,
+		  mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']}
+         // mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		
+        var map = new google.maps.Map(map_canvas, map_options);
+		
+		marker = new google.maps.Marker({map:map, draggable:true, animation: google.maps.Animation.DROP, position: imajine});
+  		google.maps.event.addListener(marker, 'click', toggleBounce);
+		
+		//Associate the styled map with the MapTypeId and set it to display.
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
+  
+      }
+	  
+	  function toggleBounce() {
+
+  if (marker.getAnimation() != null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+      google.maps.event.addDomListener(window, 'load', initialize);
+	  
+	  
+	  
+    </script>
+<div id="page-wrapper"><div id="page">
+
+  <div itemprop="brand" itemscope="" itemtype="http://schema.org/Brand" id="header" class="without-secondary-menu">
+  <div class="section clearfix">
+
+    	<div itemprop="logo" id="logo">
+      <a href="http://imajineweb.com/" title="Home" rel="home" id="logo">
+        <img src="./Animation in CSS3   Imajine_files/imajine.png" alt="Web design Singapore | Imajine">
+      </a>
+	  </div>
+              <div id="main-navigation">
+     
+      <div id="main-menu" class="navigation">
+      <div id="divinline" style="margin-left:10px; float:right;">
+      <script src="./Animation in CSS3   Imajine_files/in.js" type="text/javascript">
+ lang: en_US
+</script>
+<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><iframe name="easyXDM_IN_Lib_li_gen_1417863798084_0_provider" id="easyXDM_IN_Lib_li_gen_1417863798084_0_provider" src="./Animation in CSS3   Imajine_files/xdrpc.html" frameborder="0" style="width: 66px; height: 20px; display: inline-block;"></iframe></span></span><script type="IN/FollowCompany+init" data-id="2537313" data-counter="none"></script></div>
+	  <h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links"><li class="menu-422 first"><a href="http://imajineweb.com/contact" title="Price request / Quote">Contact Us</a></li>
+<li class="menu-312"><a href="http://imajineweb.com/tutorial" title="CSS3, HTML5, Illustrator, Adobe Fireworks, Photoshop, Adobe Flash">Tutorials</a></li>
+<li class="menu-651"><a href="http://imajineweb.com/plans">PRICING</a></li>
+<li class="menu-917"><a href="http://imajineweb.com/blogs" title="Marketing tips for Start-ups and small business">Blog</a></li>
+<li class="menu-650"><a href="http://imajineweb.com/graphic-website-branding-company-portfolio">PORTFOLIO</a></li>
+<li class="menu-218 last"><a href="http://imajineweb.com/">Home</a></li>
+</ul>      </div> <!-- /#main-menu -->
+      </div>
+        
+	
+
+        
+	
+    
+
+	
+    
+
+ 
+ 
+ </div>
+  <meta itemprop="name" content="Imajine">
+  </div> <!-- /.section, /#header -->
+  <div id="mindmap">  <div class="region region-mindmap">
+    <div id="block-block-53" class="block block-block">
+
+    
+  <div class="content">
+    <div id="empty" class="paper-bg" style="height:40px; padding-top:40px;">
+<div id="empty" class="clearfix" style="background:#F4B617; height:40px; color:#fff;">
+<div id="div-940">
+<a href="http://imajineweb.com/csstutorials" class="link-white">CSS</a>   |   <a href="http://imajineweb.com/html5tutorials" class="link-white">HTML 5</a>   |  <a href="http://imajineweb.com/adobeillustrator" class="link-white">ADOBE ILLUSTRATOR</a>   |   <a href="http://imajineweb.com/adobeflashtutorials" class="link-white">ADOBE FLASH</a>   |   <a href="http://imajineweb.com/fireworkstutorials" class="link-white">ADOBE FIREWORKS</a>   |   <a href="http://imajineweb.com/phtoshoptutorials" class="link-white">ADOBE PHOTOSHOP</a>   |   <a href="http://imajineweb.com/jstutorials" class="link-white">JAVASCRIPT</a>
+</div>
+</div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+  
+  
+  <div id="main-wrapper" class="clearfix">  <!-- <div id="main" class="clearfix"> -->
+
+   <!--       <div id="breadcrumb"><h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div>
+    -->
+
+    
+    <div id="content" class="column"><div class="section">
+            <a id="main-content"></a>
+                    <h1 class="title" id="page-title">
+          Animation in CSS3        </h1>
+                          <div class="tabs">
+                  </div>
+                          <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-60" class="node node-article node-full clearfix" about="/cssanimation" typeof="sioc:Item foaf:Document">
+
+      
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div id="empty">
+<p>In CSS, we can try out simple animation like moving an object on either x-axis, y-axis or both by using the property ' -webkit-transition'.You can hover over the car in the following output, to view the animation in Google chrome browsers. </p>
+<div id="empty">
+<div id="css_animation_road" style="background: url(./images/tutorials/animation_road.jpg);">
+<div id="css_animation_car"><a href="http://imajineweb.com/cssanimation#" target="_blank"><img src="./Animation in CSS3   Imajine_files/animation_car.png" border="0" class="css_animation_car_img" alt="animation using css3"></a> </div>
+</div>
+</div>
+<p>&nbsp; </p>
+<p>Steps followed for the above animation are given below.</p>
+<h2>  1. Give a background div for the image. Here it was taken as the road.</h2>
+<p>The code for which is given :</p>
+<div id="empty" style="border:1px solid #dbdbdb; padding: 10px; background-color: #fafafa;" width="80%">
+<p>
+ #road<br>
+  {<br>
+  position: relative;<br>
+  height:180px; </p>
+<p>  background: url(images/tutorials/road.jpg);<br>
+  width:600px;<br>
+ }
+                </p>
+</div>
+<p>The height and width parameters of the above div would depend on the image size. </p>
+<p></p><h2>2. Assign a div for the placement of image</h2>
+<div id="empty" style="border:1px solid #dbdbdb; padding: 10px; background-color: #fafafa;" width="80%">
+<p>#car {<br>
+position: absolute;<br>
+bottom:30px;<br>
+left: 20px;<br>
+}</p>
+</div>
+
+<p>The position values are assigned as absolute. We can vary the left and bottom margins in accordance to the background. </p>
+<p></p><h2>   3. Assign a style to the image</h2>
+<div id="empty" style="border:1px solid #dbdbdb; padding: 10px; background-color: #fafafa;" width="80%">
+<p>.car_img<br>
+{<br>
+ -webkit-transition: 2s ease-in-out;<br>
+}</p>
+</div>
+
+<p>The above code will cause the animation to last for 2 seconds</p>
+<p><strong> 4 Give hover effect to the image</strong> </p>
+<div id="empty" style="border:1px solid #dbdbdb; padding: 10px; background-color: #fafafa;" width="80%">
+.car_img:hover<br>
+  {<br>
+-webkit-transform:  translate(400px,0px);<br>
+  }
+</div>
+<p>In the above code we have animated the car using '-webkit-transform:  translate(x,y)' property. Here we assigned only the x-value as we wanted our car to move horizontally. For any object to move on both axes we can assign value to y-axis too.</p>
+<h2>HTML code for the above style was given as: </h2>
+<div id="empty" style="border:1px solid #dbdbdb; padding: 10px; background-color: #fafafa;" width="80%">
+<p>&lt;div id="road"&gt;<br>
+  &lt;div id="car"&gt;<br>
+                    &lt;a href="#" target="_blank"&gt;&lt;img src="images/car.png" border="0" class="car_img" /&gt;&lt;/a&gt;<br>
+                    &lt;/div&gt;<br>
+&lt;/div&gt;</p>
+</div>
+
+<p>Hope you enjoyed the tutorial and will try out different animations using CSS. </p>
+<div id="yellow-rounded-corner" style="display:block; margin-bottom:20px;">
+<p style="font-family: &#39;Merriweather&#39;,serif; font-size:1.5em;">Do you wish to contribute a tutorial?</p>
+<p>Contribute an unique and quality CSS3 / HTML5 tutorial. </p>
+<p>Send in your tutorial in word doc, along with your short bio and profile picture to <a href="mailto:reachout@imajineweb.com" class="mailto">reachout@imajineweb.com</a><span class="mailto"></span>. If your tutorial qualifies, we shall publish on Imajine and provide a link to your page.
+</p></div>
+</div></div></div></div><div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above clearfix"><h3 class="field-label">Tags: </h3><ul class="links"><li class="taxonomy-term-reference-0" rel="dc:subject"><a href="http://imajineweb.com/taxonomy/term/227" typeof="skos:Concept" property="rdfs:label skos:prefLabel">CSS transition</a></li></ul></div>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+  </div>
+      
+    </div></div> <!-- /.section, /#content -->
+
+          <div id="sidebar-second" class="column sidebar"><div class="section">
+          <div class="region region-sidebar-second">
+    <div id="block-block-7" class="block block-block">
+
+    
+  <div class="content">
+    <div id="yellow-rounded-corner" style="width:100%; margin-top:30; border:1px solid #FEE252;">
+<h2 style="margin-top:0; padding-top:0; font-size:1.5em;">JOIN THE IMAJINE COMMUNITY</h2>
+<div id="divinline" style="margin:8px 3px 0 0;"><a href="http://www.linkedin.com/company/imajine" target="_blank"><img src="./Animation in CSS3   Imajine_files/linkedin-icon.png" alt="Connect with us on Linkedin"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="http://www.facebook.com/imajineweb" target="_blank"><img src="./Animation in CSS3   Imajine_files/fb-icon.png" alt="Friend us on Facebook"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="https://twitter.com/imajineweb" target="_blank"><img src="./Animation in CSS3   Imajine_files/twitter-icon.png" alt="Follow us on Twitter"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="http://www.google.com/+Imajineweb" target="_blank"><img src="./Animation in CSS3   Imajine_files/googleplus-icon.png" alt="join our circle in g+"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="http://www.pinterest.com/imajineweb/" target="_blank"><img src="./Animation in CSS3   Imajine_files/pinterest-icon.png" alt="Be friend on Pinterest"></a></div>
+</div>
+<div id="yellow-rounded-corner" style="width:100%; margin-top:30; border:1px solid #FEE252;">
+<h3><a href="http://imajineweb.com/csstutorials">CSS</a></h3>
+<ul><li style="font-family: &#39;Merriweather&#39;,serif; font-size:1.3em;">Font / Text styles</li>
+<li><a href="http://imajineweb.com/cssembedfonts">Custom Fonts</a></li>
+<li><a href="http://imajineweb.com/csstextshadow">Text Shadow</a></li>
+<li><a href="http://imajineweb.com/csstextglow">Text Glow</a></li>
+<li><a href="http://imajineweb.com/csstexthover">Text hover transition</a></li>
+<li><a href="http://imajineweb.com/csstextbg">Text background</a></li>
+<li><a href="http://imajineweb.com/csstextbgtransition">Text background transition</a></li>
+<li><a href="http://imajineweb.com/csstextemboss">Text Emboss</a></li>
+<li><a href="http://imajineweb.com/cssgooglefonts">Google Fonts</a></li>
+<li>&nbsp;</li>
+<li style="font-family: &#39;Merriweather&#39;,serif; font-size:1.3em;">Background styles</li>
+<li><a href="http://imajineweb.com/cssmultiplebg">Multiple Background</a></li>
+<li><a href="http://imajineweb.com/cssgradiantbg">Gradient Background</a></li>
+<li><a href="http://imajineweb.com/cssroundedcorner">Rounded Corners</a></li>
+<li><a href="http://imajineweb.com/cssshadow">Shadow effect</a></li>
+<li>&nbsp;</li>
+<li style="font-family: &#39;Merriweather&#39;,serif; font-size:1.3em;">Photo gallery</li>
+<li><a href="http://imajineweb.com/cssphotogallery">Photo Gallery with Description</a></li>
+<li><a href="http://imajineweb.com/cssproductdescription">Product &amp; description display</a></li>
+<li><a href="http://imajineweb.com/cssthumbnail">Thumbnail Photo Gallery</a></li>
+<li><a href="http://imajineweb.com/css3photogallery">Photo Gallery 1</a></li>
+<li><a href="http://imajineweb.com/csszoom">Image display and rollover effect</a></li>
+<li><a href="http://imajineweb.com/cssimagehovereffects">Different rollover effect</a></li>
+<li><a href="http://imajineweb.com/cssaccordion">Accordion Photo Gallery</a></li>
+<li>&nbsp;</li>
+<li style="font-family: &#39;Merriweather&#39;,serif; font-size:1.3em;">Animations</li>
+<li><a href="./Animation in CSS3   Imajine_files/Animation in CSS3   Imajine.html">Animation</a></li>
+<li><a href="http://imajineweb.com/csstransitioneffect">Cross fade / Transition</a></li>
+<li>&nbsp;</li>
+<li style="font-family: &#39;Merriweather&#39;,serif; font-size:1.3em;">Interactivity</li>
+<li><a href="http://imajineweb.com/cssoverlay">Interactive overlays</a></li>
+</ul></div>
+<div id="yellow-rounded-corner" style="width:100%; margin-top:0; border:1px solid #FEE252;">
+<h3><a href="http://imajineweb.com/html5tutorials">HTML 5</a></h3>
+<ul><li><a href="http://imajineweb.com/htmlform">Form fieldset</a></li>
+<li><a href="http://imajineweb.com/htmlcanvaselement">Canvas element</a></li>
+</ul></div>
+<div id="yellow-rounded-corner" style="width:100%; margin-top:0; border:1px solid #FEE252;">
+<h3><a href="http://imajineweb.com/adobeillustrator">Adobe Illustrator</a></h3>
+<ul><li><a href="http://imajineweb.com/illustratorsymbols">Symbols</a></li>
+<li><a href="http://imajineweb.com/illustratorcs5tools">Design Tools</a></li>
+<li><a href="http://imajineweb.com/illustratortemplate">Illustrator template</a></li></ul></div>
+<div id="yellow-rounded-corner" style="width:100%; margin-top:0; border:1px solid #FEE252;">
+<h3><a href="http://imajineweb.com/adobeflashtutorials">Adobe Flash</a></h3>
+<ul><li><a href="http://imajineweb.com/FlashCarousel3D">Horizontal 3D Carousel</a></li>
+<li><a href="http://imajineweb.com/flashmp3player">MP3 Player</a></li>
+<li><a href="http://imajineweb.com/flashscrapbook">Scrapbook Photo Gallery</a></li>
+<li><a href="http://imajineweb.com/FlashTextEnhancement">Text Enhancement</a></li>
+<li><a href="http://imajineweb.com/flashcolorobject">Color object</a></li>
+<li><a href="http://imajineweb.com/FlashGlowEffect">Glow effect using actionscript</a></li>
+<li><a href="http://imajineweb.com/flashactionscriptdrawing">Drawing with actionscript</a></li>
+<li><a href="http://imajineweb.com/Flashblureffect">Blur Effect</a></li>
+<li><a href="http://imajineweb.com/flashexternalmp3load">Load external .mp3 file</a></li>
+<li><a href="http://imajineweb.com/flashpreloadmp3files">Preload external .mp3 file</a></li>
+<li><a href="http://imajineweb.com/flashsoundcontroller">Sound Controller</a></li>
+<li><a href="http://imajineweb.com/flashsetvolumeforloadedmp3">Set volume of externally .mp3 file</a></li>
+<li><a href="http://imajineweb.com/flashviewmp3filedetails">View MP3 song details</a></li>
+<li><a href="http://imajineweb.com/flashblureffectatruntime">Actionscript blur effect</a></li>
+<li><a href="http://imajineweb.com/flashfadingobjects">Actionscript fade in / out effect</a></li>
+</ul></div>
+<div id="yellow-rounded-corner" style="width:100%; margin-top:0; border:1px solid #FEE252;">
+<h3><a href="http://imajineweb.com/fireworkstutorials">Adobe Fireworks</a></h3>
+<ul><li><a href="http://imajineweb.com/fireworksretrophotos">Retro photos</a></li>
+<li><a href="http://imajineweb.com/fireworkcustomstroke">Custom Stroke</a></li>
+<li><a href="http://imajineweb.com/fireworkstypography">Typography / Ink blot effect</a></li>
+<li><a href="http://imajineweb.com/fireworksphotographfocus">Photograph focus effect</a></li>
+<li><a href="http://imajineweb.com/fireworksrainbowpattern">Rainbow Pattern</a></li>
+<li><a href="http://imajineweb.com/fireworksinsettext">Inset Text Effect</a></li>
+<li><a href="http://imajineweb.com/fireworksfuzzylight">Fuzzy Light Blending Mode</a></li>
+<li><a href="http://imajineweb.com/fireworksbulbeffect">Little bulb effect</a></li>
+<li><a href="http://imajineweb.com/fireworksoldpaper">Old paper effect</a></li>
+<li><a href="http://imajineweb.com/fireworkspostit">'Post it' effect</a></li>
+<li><a href="http://imajineweb.com/fireworkshanddrawn">Hand drawn designs</a></li>
+<li><a href="http://imajineweb.com/fireworkssepiatone">Black/White and Sepia tone</a></li>
+<li><a href="http://imajineweb.com/fireworkswatercolor">Water color painting effect</a></li>
+<li><a href="http://imajineweb.com/fireworksvintageeffect">Vintage effect on vector graphics</a></li>
+<li><a href="http://imajineweb.com/fireworkssolidcolor">Solid color, black/white</a></li>
+</ul></div>
+<div id="yellow-rounded-corner" style="width:100%; margin-top:0; border:1px solid #FEE252;">
+<h3><a href="http://imajineweb.com/phtoshoptutorials">Adobe Photoshop</a></h3>
+<ul style="border-bottom:none;"><li><a href="http://imajineweb.com/psphotoedit">Photo editing</a></li>
+<li><a href="http://imajineweb.com/photoshophaze"> Haze</a></li>
+<li><a href="http://imajineweb.com/photoshopgradienteffect">Gradient fill in photos</a></li>
+</ul></div>
+<div id="yellow-rounded-corner" style="width:100%; margin-top:0; border:1px solid #FEE252;">
+<h3><a href="http://imajineweb.com/jstutorials">JavaScript</a></h3>
+<ul><li><a href="http://imajineweb.com/javascriptaudioplayer">Audio Player</a></li>
+<li><a href="http://imajineweb.com/jsmouseposition">Change background color on mouse roll over</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-second -->
+    
+  </div> <!-- </div>  /#main, /#main-wrapper -->
+
+  <div id="contact-us-row">
+<div id="div-940">
+  <div class="cell">
+   <div id="divinline" style="top:-5px;"><img src="./Animation in CSS3   Imajine_files/phone-icon.png" alt="call us"></div><span class="call-us">CALL US<br><span style="color:#FEE252;">+65 6639 7662</span></span></div>
+   <div class="cell2"><div id="divinline" style="padding-left:0px; padding-right:5px; top:-5px;"><img src="./Animation in CSS3   Imajine_files/mail-icon.png" alt="write to us"></div><span class="call-us">WRITE TO US<br><span><a href="mailto:reachout@imajineweb.com" style="color:#FEE252; text-transform: uppercase;" class="mailto">reachout@imajineweb.com</a><span class="mailto"></span></span></span></div>
+   <div class="cell-last"><a href="http://imajineweb.com/plans"><img src="./Animation in CSS3   Imajine_files/plans-btn.png" alt="plans and pricing - website | logo | print | stationery design "></a></div>
+  </div>
+  </div>
+  <div id="footer-wrapper">
+  
+<div class="section">
+
+
+          <div id="footer-columns" class="clearfix">
+          <div class="region region-footer-firstcolumn">
+    <div id="block-block-4" class="block block-block">
+
+    <h2>ABOUT IMAJINE</h2>
+  
+  <div class="content">
+    <p>Team Imajine is a good mix of design and code – with an eye for detail and strong belief in accessibility and usability. <span itemprop="description">We are a <a href="http://imajineweb.com/websitedesign" class="linkoffwhite">web design</a> and <a href="http://imajineweb.com/websitedevelopment">development</a> company based in Singapore focusing on generating a strong online presence and visibility for our customers.</span></p>
+<div id="empty">
+<h2 style="margin-top:0; padding-top:0;">IMAJINE ACROSS WEB</h2>
+<div id="divinline" style="margin:8px 3px 0 0;"><a href="http://www.linkedin.com/company/imajine" target="_blank"><img src="./Animation in CSS3   Imajine_files/linkedin-icon.png" alt="Connect with us on Linkedin"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="http://www.facebook.com/imajineweb" target="_blank"><img src="./Animation in CSS3   Imajine_files/fb-icon.png" alt="Friend us on Facebook"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="http://www.flickr.com/photos/37606260@N07/" target="_blank"><img src="./Animation in CSS3   Imajine_files/flickr-icon.png"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="https://twitter.com/imajineweb" target="_blank"><img src="./Animation in CSS3   Imajine_files/twitter-icon.png" alt="Follow us on Twitter"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="http://www.google.com/+Imajineweb" target="_blank"><img src="./Animation in CSS3   Imajine_files/googleplus-icon.png" alt="join our circle in g+"></a></div>
+<div id="divinline" style="margin:8px 3px;"><a href="http://www.pinterest.com/imajineweb/" target="_blank"><img src="./Animation in CSS3   Imajine_files/pinterest-icon.png" alt="Be friend on Pinterest"></a></div>
+</div>
+  </div>
+</div>
+  </div>
+          <div class="region region-footer-secondcolumn">
+    <div id="block-block-5" class="block block-block">
+
+    <h2>FREE RESOURCES</h2>
+  
+  <div class="content">
+    <ul style="border-bottom:0; margin-top:15px;"><li><a href="http://imajineweb.com/content-management-system">What is a CMS?</a></li>
+<li><a href="http://imajineweb.com/blogs">Blogs</a>
+</li><li><a href="http://imajineweb.com/wallpaper">Wallpaper</a></li>
+<li><a href="http://imajineweb.com/ecards">E-cards</a></li>
+<li><a href="http://imajineweb.com/cards">Corporate cards</a></li>
+<li><a href="http://imajineweb.com/background">Background</a></li>
+<li><a href="http://imajineweb.com/textures">Textures</a></li>
+<li><a href="http://imajineweb.com/patterns">Patterns</a></li>
+<li><a href="http://imajineweb.com/photogallery">Photo gallery</a></li>
+</ul>  </div>
+</div>
+  </div>
+          <div class="region region-footer-thirdcolumn">
+    <div id="block-block-6" class="block block-block">
+
+    <h2>TUTORIALS</h2>
+  
+  <div class="content">
+    <ul style="margin-top:15px;"><li><a href="http://imajineweb.com/adobeflashtutorials" class="linkbrown">Adobe Flash</a></li>
+<li><a href="http://imajineweb.com/fireworkstutorials" class="linkbrown">Adobe Fireworks</a></li>
+<li><a href="http://imajineweb.com/csstutorials" class="linkbrown">CSS3</a></li>
+<li><a href="http://imajineweb.com/html5tutorials" class="linkbrown">HTML5</a></li>
+<li><a href="http://imajineweb.com/phtoshoptutorials" class="linkbrown">Adobe Photoshop</a></li>
+<li><a href="http://imajineweb.com/adobeillustrator" class="linkbrown">Adobe Illustrator</a></li>
+</ul><h2 style="margin-top:40px;">Contact Us</h2>
+<p>1 Raffles Place, Tower One #44-02<br>
+One Raffles Place, Singapore 048616</p>
+  </div>
+</div>
+  </div>
+       
+      </div> <!-- /#footer-columns -->
+    
+          <div id="footer" class="clearfix"> 
+	  <div id="empty" style="color:#BD9E66;">
+	
+	  </div>
+	
+	  
+	  
+          <div class="region region-footer">
+    <div id="block-block-8" class="block block-block">
+
+    
+  <div class="content">
+    <p>© 2008 - 2014 <a href="http://www.imajineweb.com/">Imajine Pte Ltd</a>. All rights reserved. </p>
+  </div>
+</div>
+  </div>
+      </div> <!-- /#footer -->
+    
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div> <!-- /#page, /#page-wrapper -->
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Cufon.now();
+//--><!]]>
+</script>
+
+
+<div id="stcpDiv" style="position: absolute; top: -1999px; left: -1988px;">ShareThis Copy and Paste</div><iframe id="stSegmentFrame" name="stSegmentFrame" src="./Animation in CSS3   Imajine_files/getSegment.html" frameborder="0" scrolling="no" width="0px" height="0px" style="display:none;"></iframe><script id="detIDScript" uid="ST500LT012-9WS142_W0V1AG53XXXXW0V1AG53" ptid="wpm11263" os="windows7" guid="ST500LT012-9WS142_W0V1AG53XXXXW0V1AG53" src="./Animation in CSS3   Imajine_files/det.js"></script><spots-wrapper></spots-wrapper><div id="stwrapper" class="stwrapper" style="display: none;"><div class="stclose"></div><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" frameborder="0" scrolling="no" width="353px" height="350px" src="./Animation in CSS3   Imajine_files/index.b8526bf93cdc9508fab400c056192111.html" style="top: 0px; left: 0px;"></iframe></div></body></html>

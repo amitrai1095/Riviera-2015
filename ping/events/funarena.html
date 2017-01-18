@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Fun Arena</title>
+
+  <link rel="shortcut icon" href="images/fun.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:auto;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#ee4ecf;
+    }
+    .red {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/fun arena.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:70px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+        .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      .card {
+      	position:relative;top:30%;
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      
+      .close{position:fixed;top:12%;left:15%;z-index:10;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      .eve1{width:200px;height:200px;  font-size: 15px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;font-size: 15px;}
+
+ .reg{position:absolute;top:6%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:6%;left:69%;
+
+ }
+
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section> 
+
+      <section id="details" style="padding:{{selectedAlbum.pad}};">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+ 
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r5}}</div>
+                <!-- <h3 style="text-decoration:underline;">Prize Money</h3>
+               <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div>-->
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3  style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div> 
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+
+{ artist: 'Informal',pad:'50px 10% 0', album: '9 Squares in the air', 
+color: '#972ff8',cover:'images/square.jpg',covers:'images/square1.jpg',cost: 'Rs. 100 Per Person',  describe: 'How To Play: 1. The king serves the ball from the center square to any other square they choose by hitting the ball up and out of the center game square. 2. Players must return the ball to another player\'s square. 3. If a player fails to return the ball to another player\'s square, that player is out.',r1:'1. A double hit results in elimination.',r2:'2. During the game play, players are not allowed to touch the game structure. Touching the game structure results in elimination. ',r3:'3. When a player is out, other players advance to fill the square of the player who just got out. ',r4:'4. Participants should maintain the decorum of the event',r5:'5. Judges decision will be final',c1:'',c2:' ',c3:' ', club: '5th Pillar VIT',   name1: 'Garima Agrawal',
+ mob1: '8220822848',name2:' Monika Jha',mob2:'9597420253',p1:'First Prize:Rs 3000',p2:'Second Prize:Rs 2000',p3:'Third Prize: Rs 1000'},
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Amazing Race VIT', color: '#972ff8',cover: 'images/race.jpg',covers:'images/race1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Event Description: The Amazing Race is an event based on the famous American Television show with the same name. The race includes different rounds, where participants usually in a team of two have to guess the area in the campus (excluding the hostels) where the clue for the next round could be. The clues for the places could be as pictures, rhyming sentences etc. ',r1:'The event begins with the teams being given a band and a team number which they compulsorily must wear so as to identify participants when they complete the rounds',r2:' If the event band is misplaced, the teams are liable to be disqualified.Skipping of rounds is not allowed and will lead to disqualification. ',r3:'To ensure participants don’t skip rounds, at the end of each task the event coordinators will put a stamp mark (from a bottle cap or anything else) on their forearms, indicating that they have qualified that round ',r5:'In case of any rowdy or unruly behavior with the event coordinators, the team is liable to be disqualified.In case of any arguments the decision of the event coordinator will be final and binding, which will be made in an unbiased way. ',r4:'Any modes used to find locations asked in the rounds, or decode number of objects etc. are legal and can be used by teams. ',c1:'Teams that arrive in the stipulated number of teams to qualify that round, will go forward to the next round.',c2:'In the final round teams which arrive to the final destination as 1st, 2nd and 3rd will be the winners of the event. ',c3:'Teams skipping rounds will be disqualified. For this purpose we have different colored stamps for different rounds. ', club: 'ISTE',   name1: 'Shubhankar Menon', mob1: '09677351134',name2:'Srijoni Biswas ',mob2:'',p1:'First Prize:Rs 3000',p2:'Second Prize:Rs 2000',p3:'Third Prize: Rs 1000'},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Balloon Fight', color: '#972ff8',cover: 'images/balloon.jpg',covers:'images/balloon1.jpg',cost: 'Rs. 100 for Team of 4',  describe: 'In this event two teams (each consisting 4 members) will be playing against each other. Both the teams will be given some balloons along with a piston to fill water in it. They have to hit each other with those balloons. The team hitting the most number of times wins the game. This is a fun event and no prize money is involved.',r1:'Not Available',r2:'',r3:' ',r4:'',r5:'',c1:'',c2:' ',c3:' ',
+          club: '5th Pillar',   name1: 'Abir', mob1: '08608595683',name2:'Sima Biswas ',mob2:'',p1:'First Prize:',p2:'Second Prize:',p3:'Third Prize: '},
+
+
+{ artist: 'Informal', pad:'50px 10% 0',album: 'Beg Borrow Steal', color: '#972ff8',cover: 'images/beg.jpg',covers:'images/beg1.jpg',cost: 'Rs.150 for team of 3',  describe: 'In the quest of glory, you have to become the ULTIMATE BESHARAM. You have to complete the " TO GET LIST". In any case even if you have to beg things from your worst contemporaries or borrow them from your good friends or even steal it from the professors you always feared because at the end of this adventure, the ultimate award waits for you.',club: 'E-Cell',   name1: 'Rachita Garg ', mob1: '9444220804',name2:'Prabhjit Thind',mob2:'7639111630',r1:'\'To get list\' will be given, i.e. a list of things that you have to get by any means(excluding purchasing the same from any store within or outside the campus) in a certain given amount of time. The team who gets the maximum number of things in the minimum amount of time wins.',c1:'Every item and task carries points. The points for tasks are given on the basis of how well it is done.',p1:'First Prize:Rs 3000',p2:'Second Prize:Rs 2000',p3:'Third Prize: Rs 1000'},  
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Binocular Soccer 2.0', color: '#972ff8',cover: 'images/binocular.jpg',covers:'images/binocular1.jpg',cost: 'Rs. 50 Per Person',  describe: 'The teams will consist of 6 players-one goalkeeper and 4 outfield players and one substitute player on a rectangular field. The game is similar to normal football game with the difference that the players will be wearing binoculars on their eyes while playing. This would distort their vision and will make it difficult for them to play.Each match will be 10 minutes long (two halves 5 minutes each) and the team with most number of goals at full time will be declared as the winner.',club: 'IETE',  name1: 'Muhammad Raneez ', mob1: '9994250530',name2:'Geeniya Kaushal',mob2:'9629765101',p1:'First Prize:Rs 3000',p2:'Second Prize:Rs 2000',p3:'Third Prize: Rs 1000',c1:'Not Mentioned',r1:'Committing a foul will result to the player not allowed to play for 90 second. The player will be substituted with the 6th player.',r2:' Handling of ball even by the goalkeeper Kicking the ball above knee length & Taking off the binocular while playing is considered a foul.',r3:'  A foul will result to free kick or a penalty kick depending on the area where the foul is committed.3 fouls by any player will result to a Red Card & 3 Red Carded Players will lead to disqualification.',r4:'  Any misbehaviour by participants will lead to the disqualification of the team from the event.Teams arriving late than the allotted time will be disqualified.',r5:'The decision of the judges will be final.Any rules or information are subject to change and nothing can be held liable against the event co coordinators and the staff. In such case the decision of the management and organizing committee will be final.'},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Human Foosball', color: '#972ff8',cover: 'images/foosball.jpg',covers:'images/foosball1.jpg',cost: 'Rs. 50 Per Person',  describe: 'The classic game of foosball in a fun and interesting life-size avatar.Human Foosball is easily the most exciting and fun informal event that ever took place in VIT and still happens to be so.',      club: 'ISTE',   name1: 'Mohammad Saad Rashid', mob1: '09629772236',name2:'Tejal Ashlesh',mob2:' 9787109452',r1:'Participants play in teams of 5 for duration of 5 minutes with two rounds.',r2:'Players must keep both hands on their assigned section of the foosball pole at all times.',r3:'Players may not move along the length of the foosball pole.',r4:'Ball should be kept below the knees. ',r5:'In case of any arguments the decision of the event coordinator will be final and binding, which will be made in an unbiased way. ',p1:'First Prize:Rs 5000',p2:'Second Prize:Rs 2000',p3:'Third Prize:Rs 1000',c1:'Free play teams with maximum goal difference will be selected for knockout round ',c2:' Knockout Stage to decide the winner'},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Lakshya Mission 8.0', color:'#972ff8',cover:'images/mission.jpg',covers:'images/mission1.jpg',cost: 'Not Available',  describe: 'An army obstacle course, a series of challenging physical obstacles an individual must navigate usually while being timed. Obstacle courses can includerunning,climbing,jumping, crawling and balancing elements with the aim of testing endurance. The event Lakshya Mission 8.0 sits at the apex of amateur obstacle courses. All you have to do is register for a nominal fee, turn up at the day of the event in attire that allows extensive physical labour, navigate the obstacle course as fast as you can and well; you\'ll be going back with a heavier pocket. This edition will be our 8th and for the past four years Lakshya Mission has been one of the biggest crowd pullers. As gravitas gets bigger and better, so does Lakshya Mission .If you can imagine it, you can achieve it, if you dream it, and you can become it. HICCUPS, BUTTER WALK,CYCOLO, BARREL ROLLING, SACK SOCCER, BACK CRAWL, CHEST CRAWL, MONKEY CLIMB, are just some of the drills conducted in the past and you can bet on this edition being harder, more gruelling, faster, slippery-err and dirtier.So get off your lazy bum, put on your shoes and show everyone…..your tough side!!',r1:'1. It is a track race with various obstacles in between.',r2:'2. Participants have to clear it competing with time and co-participants.',r3:' 3. Separate for boys and girls.',r4:'4. Each day 2 rounds will be conducted to finalize the result.',r5:'5. Participants have to qualify to reach the next level.',c1:'',c2:' ',c3:' ',
+          club: 'Individual',   name1: 'Shumbham Agrawal', mob1: '9629769045',name2: 'Rahul Verma', mob2: '7667129973'},
+
+/*
+{ artist: 'Informal', album: 'Live CS', color: '#972ff8',cover: 'images/livecs.jpg',covers:'images/livecs1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Not Available',
+          club: 'Individual',   name1: 'Pranjal Katara', mob1: '07708531705',e1:'prankat@gmail.com'},*/
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Mauj Masti', color: '#972ff8',cover: 'images/mauj.jpg',covers:'images/mauj1.jpg',cost: 'Rs. 50 Per Person',  describe: 'This is a fully entertaining and fun event. A team (us) will carry a microphone and roam around the campus, seeking people with a knack for taking up silly yet challenging tasks, and performing them flawlessly. There will be unprecedented and unconventional fun tasks for you to perform. It could be tongue twisters, singing backwards, typing messages at breakneck speed, doing push-ups, etc. We promise to bring loads of masti, fun, frolic, and laughter your way. ‘We will look for you, we will find you, and we will kill you (you will be laughing so hard, who knows you might just fall dead)’. This event is about performing some out-of-the-box little tasks, that might come your way when you are busy exploiting your food coupons or when you are feeling a bit coy. We will find you when you least expect yourself to be found, and leave a trail of humour behind us. We are all set to bring a fragrance to Riviera, with a promise that your spirits will be revived; your batteries will be recharged; and your smiles shall linger on your lips a bit longer than usual. Do wait for us; we are watching you!',club: 'Hindi Literary Association',name1: 'Gunjan Chaudhary', mob1: '9894534799',name2:'Ayushi Agarwal',mob2:'9629464451',c1:'It\'s a completely free events conducted within the campus streets in the evening on all four days. ',c2:'There will be a number of games that will be conducted .',c3:'The judging will be on the basis of the anchor . '},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Pillow Fight', color: '#972ff8',cover: 'images/pillow.jpg',covers:'images/pillow1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Is a fun event where 2 participant climb on pole with the help of leaders . They are provided with a pillow each .They have 2 make the opponent fall down twice to win this game. Participants can chose there own opponents.',club: 'Individual',   name1: 'Uddhav Modi', mob1: '9685432104',name2: 'Shubham Sarawagi', mob2: '9865294828',r1:'1. Time limit max 2 min',r2:'2. Best of 3 round',r3:'3. Pillow should be held from both hands',r4:'4. Pillow fight championship will be only for those who register before, not onspot.',r5:'5. Pillow fight championship will be between 10 am to 2 pm only , after that only normal pillow fight.',p1:'First Prize:Rs 4000',p2:'',p3:'',c1:' ',c2:' '},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Pirates Of Riviera', color: '#972ff8',cover: 'images/pirate.jpg',covers:'images/pirate1.jpg',cost: 'Rs.  Per Person',  describe: 'Not Available',club: 'E-Cell',   name1: 'Neetal Nema', mob1: '09629776505',name2: '', mob2:'',r1:'',r2:'',r3:'',r4:'',r5:' ',p1:'First Prize:Rs 4000',p2:'',p3:'',c1:' ',c2:' '},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Prison Break Returns', color: '#972ff8',cover: 'images/prison.jpg',covers:'images/prison1.jpg',cost: 'Rs. 50 Per Person',  describe: 'This event is based on the show prison break. It is a fun outdoor event which will require a full arena setup in Woodstock. Life size maze using black cloth sheets, bamboo sticks,  Thermocol sheets will be constructed.  It is a team event.  Both the participants will act like prisoners. One of them will be chained to a chair. The aim of the partner is to traverse through the maze and free his partner.',club: 'Creativity Club',   name1: 'Suman Shekhar', mob1: '09843969809',name2:'sumanshekharjana@gmail.com',mob2:'',r1:' Participants will have to abide by the rules and instructions given by the volunteers and the co-ordinators. Their decision will be final and abiding.',r2:'  Map of the maze will be shown strictly for 5 seconds and not more than that. Participant should stay still in the danger zone till any further instructions are given by the volunteers.',r3:'  Participant will have to find the right key from the maze to free his partner. Bringing out maximum no. Of keys will only be beneficial in case of a tie (same timing).',r4:'No damage should be made to the maze. Inside structure of the maze should not be harmed/ altered.',r5:'Participant can only crouch and move inside the maze. Peeking through the loops will result in adding +10 sec to the final count.',c1:'The winners will be decided according to the least time taken by the team to free their partner from the chair.',c2:' Bringing out all the keys from the maze is not a compulsion however,  it will be an added advantage in case of a tie.',c3:'Least number of danger zones crossed will be considered as a plus point.',c4:'4.  No team can enter a maze twice. It will lead to disqualification',c5:'Repeated peeking, not crouching will lead to disqualification.',p1:'First Prize:Rs 5000',p2:'Second Prize:Rs 2000',p3:'Third Prize:Rs 1000'},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Quidditch', color: '#972ff8',cover: 'images/quid.jpg',covers:'images/quid1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Quidditch is an ode to J.K.Rowling’s wildly popular fictional sport. Two teams! Six players each! Three Chasers race through the field and attempt to shoot the quaffle past the opposition keeper into the ring as many times as you can. Sounds easy right? Oh wait! Did we mention that the two Beaters will be bombarding you with bludgers (dodge ball) the whole time in an attempt to stop you? And to make it more interesting, at any arbitrary point, a snitch will be released into play for a massive points increase.',        club: 'E-Cell',   name1: 'Sanyam Arora', mob1: '8110019796',name2:'M. Sachitanand',mob2:'9943121528',r1:'Only the Chasers are allowed to handle and score points using the quaffle. A goal is scored when the whole quaffle passes through the ring',r2:'Only the designated Beaters will be given control of the team Bludger',r3:'The Keeper of the team must, at all times, hold a broomstick between his legs while saving shots',c1:'Scoring system:-10 points - When the quaffle passes through the ring from either side',c2:'Card System:More than 2 fouls and a player is given a 3-minute time-out',c3:'End of game:When the 15-minute time-limit has been reached',p1:'Prize Money:Rs 6000'},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Slow And Steady Wins The Race 2.0', color: '#972ff8',cover: 'images/cycle.jpg',covers:'images/cycle1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Not Available',
+          club: 'VIT Spartans',   name1: 'Vidha Nigam', mob1: '09629769230',e1:'nigam.vidha.23@gmail.com'},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Takeshi Castle', color: '#972ff8',cover: 'images/takeshi.jpg',covers:'images/takeshi1.jpg',cost: 'Rs. 50 Per Person',  describe: 'There will be a two teams of 4 members each which will compete against each other. Each player will be given a water pistol and there will be a piece of paper ring hung on the forehead. Both the teams will be provided with the ball which they have to put in the Takeshi\'s mouth on the opposite side. Each player has to fire water pistol aiming at the paper ring.  This will be a knockout round. All the winners will compete among themselves for one more time and the time taken by the 1 team to eliminate other will be noted down.',
+          club: 'Individual',   name1: 'Yashveer', mob1: '8608563652', name2: 'Saurabh bhagat', mob2: '9629783122',r1:'1. Judges decision will be final.',r2:'2. Wearing the watch and other digital equipment\'s are not allowed.',r3:'3.	 This is a group event. Each team can have maximum 4 members.',r4:'4. The organizing team reserves the right to change or modify any of the rules.',
+r5:'5. Physical contact is not allowed between any of the players. ',p1:'First Prize:Rs 4000',p2:'',p3:'',c1:' ',c2:' '},
+
+
+{ artist: 'Informal',pad:'50px 10% 0', album: 'The Diagon Alley', color: '#972ff8',cover: 'images/alley.jpg',covers:'images/alley1.jpg',cost: 'Rs. 50 Per Person',  describe: 'POTTERHEADS! This one’s for you!!The event is all about the world of Harry Potter – world with witchcraft and wizardry.It consists of two rounds:1] The first one is a buzzer round consisting of trivia related Harry Potter, which will be held after sorting them into the four houses. The teams qualifying will be getting their proceeding ahead with a few Galleons! This round involves : (a)Trivia Questions( b)Guess the Character where one of the team members will be given a character which the other team mate has to guess without revealing the name directly. (c)Movie clippings will be shown to each team and questions will be asked based on that event.2] A treasure hunt boxed in the world of Harry PotterThe second round is a quest for Horcruxes. A Marauders map will be provided to them which will guide them to the locations of the horcruxes and in the process they have to destroy the horcruxes and repel the dementors, stay away from the death eaters, avoid the snatchers and escape through the hands of Goblins.  The team consists of three members as in Harry, Hermione and Ronald. So grab your broomsticks and set out in the magical adventure.',club: 'IETE',   name1: 'Anushree Gupta', mob1: '9629770405',name2:'Purushottam Chandra',mob2:'9629770310',p1:'First Prize:Rs 3000',p2:'Second Prize:Rs 2000',p3:'Third Prize: Rs 1000',c1:'Trivia Round: +5 for every correct answer and no negative points.',c2:'Guess the Character: +5 for every correct answer and -1 for wrong ones.',c3:'Movie clipping: Guessing the movie will earn +2 and for every correct answer +5 and -3 points will be given.',c4:'The fastest three teams will win the round and hence the event.',r1:'• The decision of the judges/event coordinators will be final.',r2:'Any rules or information are subject to change and nothing can be held liable against the event coordinators and the staff. In such case the decision of the management and organizing committee will be final.',r3:'No team is allowed to use any external help for finding the clues.',r4:'  Malpractice shall not be tolerated.'},
+
+/*
+{ artist: 'Informal',pad:'50px 10% 0', album: 'Weirdo 4x', color: '#972ff8',cover: 'images/weirdo.jpg',covers:'images/weirdo1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Not Available',
+          club: 'Creativity Club',   n1: 'Harshita Jaiswal', m1: '09894586027',e1:'hrsj26@gmail.com'},*/
+
+/*
+  { artist: 'Informal',pad:'50px 10% 0', album: 'Legends Of The Hidden Temple 3.0', color: '#972ff8',cover: 'images/temple.jpg',covers:'images/temple1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Not Available',club: 'IETE',   n1: 'Shivangee Sabharwal', m1: '09629784795',e1:'shivi.sabharwal@gmail.com'}*/
+     
+
+        
+        ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="red"><h1 class="category">Fun Arena</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:0px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.ping.vitriviera.com/events/categories.html"><button class="amit"></button></a>
+</body>
+</html>

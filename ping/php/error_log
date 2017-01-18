@@ -1,0 +1,3 @@
+[19-Dec-2014 19:54:33 UTC] PHP Warning:  include_once(helper.validation.php): failed to open stream: No such file or directory in /home/riviera/public_html/ping/php/form.submit.php on line 10
+[19-Dec-2014 19:54:33 UTC] PHP Warning:  include_once(): Failed opening 'helper.validation.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/riviera/public_html/ping/php/form.submit.php on line 10
+[19-Dec-2014 19:54:33 UTC] PHP Fatal error:  Class 'Validation' not found in /home/riviera/public_html/ping/php/form.submit.php on line 12

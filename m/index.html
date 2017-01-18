@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" 		content="Epsilon, mobile, framework, css3, html5, javascript, retina" />
+<meta name="Description" 	content="Epsilon based mobile retina webpp template!" />
+<!--Favicon shortcut link-->
+<link type="image/x-icon"  rel="shortcut icon" href="images/splash/favicon.ico" />
+<link type="image/x-icon"  rel="icon"		   href="images/splash/favicon.ico" />
+<!--Declare page as mobile friendly --> 
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<!-- Declare page as iDevice WebApp friendly -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<!-- iDevice WebApp Splash Screen, Regular Icon, iPhone, iPad, iPod Retina Icons -->
+<link rel="apple-touch-icon" sizes="114x114" href="images/splash/splash-icon.png"> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" media="screen and (max-device-width: 320px)" /> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen@3x.png" sizes="640x1096">
+
+<!-- Page Title -->
+<title>Riviera'15 Celebrating colors of india</title>
+
+<!-- Stylesheet Load -->
+<link href="styles/style.css"				rel="stylesheet" 	type="text/css">
+<link href="styles/framework-style.css" 	rel="stylesheet" 	type="text/css">
+<link href="styles/framework.css" 			rel="stylesheet" 	type="text/css">
+<link href="styles/coach.css"				rel="stylesheet" 	type="text/css">
+<link href="styles/icons.css"				rel="stylesheet" 	type="text/css">
+<link href="styles/retina.css" 				rel="stylesheet" 	type="text/css" 	media="only screen and (-webkit-min-device-pixel-ratio: 2)" />
+
+<!--Page Scripts Load -->
+<script src="scripts/jquery.min.js"		type="text/javascript"></script>	
+<script src="scripts/jquery-ui-min.js"  type="text/javascript"></script>
+<script src="scripts/colorbox.js"		type="text/javascript"></script>
+<script src="scripts/hammer.js"			type="text/javascript"></script>	
+<script src="scripts/subscribe.js"		type="text/javascript"></script>
+<script src="scripts/contact.js"		type="text/javascript"></script>
+<script src="scripts/swipe.js"			type="text/javascript"></script>
+<script src="scripts/klass.min.js"		type="text/javascript"></script>
+<script src="scripts/photoswipe.js"		type="text/javascript"></script>
+<script src="scripts/retina.js"			type="text/javascript"></script>
+<script src="scripts/custom.js"			type="text/javascript"></script>
+<script src="scripts/framework.js"		type="text/javascript"></script>
+</head>
+
+<body>
+
+<div id="preloader" style="background-color:#FBFBFB">
+	<div id="status">
+    	<p class="center-text">
+		RIVIERA'15
+        </p>
+    </div>
+</div>
+
+
+<div class="page-coach">
+	<div class="portrait-coach">
+        <span  style="top:-10px; left:50px;" class="coach-arrow arrow9">
+            <p class="center-text" style="padding-top:20px; padding-left:75px;">Tap to deploy <br> sidebar menu!</p>
+        </span>
+        
+        <span style="top:40px; right:10px;" class="coach-arrow arrow2">
+            <p style="padding-top:85px; padding-left:105px;">Contact and subscribe from sidebar!</p>
+        </span>
+        
+        <span style="top:180px; left:50px;" class="coach-arrow arrow1">
+            <p class="center-text" style="padding-top:35px; padding-left:70px;">Touch enabled <br> image slider!</p>
+        </span>
+        
+        <span style="top:280px; left:35%;" class="coach-arrow arrow16">
+            <p class="center-text" style="padding-top:125px; margin-left:-100px;">Touch anywhere <br> to dismiss!</p>
+        </span>
+
+    </div>    
+    <div class="landscape-coach">        
+        <span style="left:47%; top:15%;" class="coach-arrow arrow12">
+            <p style="text-align:center; padding-top:100px; margin-left:-160px;">
+            	This page has a lot of responsive features!<br>
+                That means they expand when the device is in landscape!<br>
+				Flip your device back in portrait mode to continue the tutorial!<br>      
+            </p>
+        </span>
+    </div>
+</div>
+
+<div class="header">
+	<a href="#" class="deploy-left-sidebar"></a>
+	
+    <a href="#" class="top-logo"><img src="images/misc/logo.png" class="replace-2x"  width="120" alt="img"></a>
+</div>
+
+<div class="content-box shadow">
+    <div class="content">
+
+        <div class="container no-bottom">
+            <div id="slider" class="swipe">
+                <div class="swipe-wrap">
+                    <div  class="wrap">
+                      <img class="swipe-image responsive-image" src="images/slider/1.png" alt="img">
+                      <p class="swipe-text" style="background-color:#5CCAC4; opacity:0.9">Riviera</p>
+                    </div>
+                    <div class="wrap">
+                      <img class="swipe-image responsive-image" src="images/slider/2.png" alt="img">
+                      <p class="swipe-text" style="background-color:#F7EC2B; opacity:0.9">Proshows</p>
+                    </div>
+                    <div class="wrap">
+                      <img class="swipe-image responsive-image" src="images/slider/3.png" alt="img">
+                      <p class="swipe-text">Culturals</p>
+                    </div>
+                    <div class="wrap">
+                      <img class="swipe-image responsive-image" src="images/slider/space.png" alt="img">
+                      <p class="swipe-text" style="background-color:#5B5BFF; opacity:0.8">International Fest</p>
+                    </div>
+          
+                </div> 
+                <ul id="position">
+                    <li id="one"		class="on"></li>
+                    <li id="two"		class=""></li>
+                    <li id="three" 		class=" "></li>
+                    <li id="four"		class=" "></li>
+                </ul>   
+                
+                <a href="#" class="prev-but-swipe">NEXT</a>
+                <a href="#" class="next-but-swipe">PREV</a>      
+            </div>  
+        </div>
+
+        <div class="decoration"></div>
+            
+        <div class="container no-bottom">
+           <h5 class="uppercase">About Riviera</h5>
+           <p>Riviera is VIT University’s ISO certified Annual International Sports and Cultural Carnival. This festival is an endeavour to provide a platform to all individuals to showcase their skills and develop their potential via arts, sports, music, dance, drama, debate or fashion. The four day extravaganza sees participation of students from diverse backgrounds, nationalities and cultures. </p> 
+        </div>
+        
+        <div class="decoration"></div>
+        
+       <a href="http://www.ping.vitriviera.com/events/categories.html"> <div class="container">
+            <img class="column-icon" src="images/icons-large/icon1@2x.png" width="85" alt="img">
+            <h6 class="uppercase">Events</h6>
+            <p class="no-bottom">We've got something for all your skills. Coding, literary, multilingual, film making, photography, dramatics, dance,gaming. Oh we could go on and on! Packed with fun, vigour, vibrancy and enthusiasm, it's the events which make Riviera what it is! </p> 
+        </div> </a>
+       <a href="https://vitriviera.com/proshow.html"> 
+        <div class="container">
+            <img class="column-icon" src="images/icons-large/icon2.png" width="85" alt="img">
+            <h6 class="uppercase">Proshows</h6>
+            <p class="no-bottom">Making your evening worth all the efforts you put in all day. Isn't that what you always want to do? 
+Well, at least during Riviera you won't have to worry about that! </p> 
+        </div> 
+        </a>
+        
+        <a href="http://vitriviera.com/sports.html"><div class="container">
+            <img class="column-icon" src="images/icons-large/icon4@2x.png" width="85" alt="img">
+            <h6 class="uppercase">Sports</h6>
+            <p class="no-bottom">Put your sports shoes on, ready, set,go!
+Show off your sporty side and beat all your opponents! Cricket, squash, football, basketball and what not. With some of the most prestigious personalities coming to judge, there's plenty of opportunity for that sportsman spirit to be put to use! </p> 
+        </div></a>
+        <a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp">
+         <div class="container">
+            <img class="column-icon" src="images/icons-large/register_now_button.png" width="85" alt="img">
+            <h6 class="uppercase">Register</h6>
+            <p class="no-bottom">We made sure you'll get everything in here by making easy documentations that cover every feature! </p> 
+        </div>
+        </a>
+        <a href="https://vitriviera.com/sponsors/sponsor.html">
+         <div class="container">
+            <img class="column-icon" src="images/icons-large/sponsor.png" width="85" alt="img">
+            <h6 class="uppercase">Sponsors</h6>
+            <p class="no-bottom"> </p> 
+        </div>
+        </a>
+        <a href="http://team.vitriviera.com">
+            <div class="container">
+            <img class="column-icon" src="images/icons-large/Team.png" width="85" alt="img">
+            <h6 class="uppercase">Team</h6>
+            <p class="no-bottom">Coming together is the beginning. Staying together is progress. Working together is success </p> 
+        </div>
+        </a>
+        <a href="http://www.vit.ac.in/">
+         <div class="container">
+            <img class="column-icon" src="images/icons-large/about.png" width="85" alt="img">
+            <h6 class="uppercase">About</h6>
+            <p class="no-bottom">VIT University was established with the aim of providing quality higher education on par with international standards. It persistently seeks and adopts innovative methods to improve the quality of higher education on a consistent basis. </p> 
+        </div>
+        </a>
+         <div class="container">
+            <img class="column-icon" src="images/icons-large/mechandise.png" width="85" alt="img">
+            <h6 class="uppercase">Merchandise</h6>
+            <p class="no-bottom"></p> 
+        </div>
+        <div class="decoration"></div>  
+        <div style="float:left; margin:1%; text-align:center"><p>Registration</p>
+        <p>Akshat Rajvanshi<br>
+(+91)81487 48747</p>
+        </div>
+    
+        
+         <div style="float:left; margin:1%; text-align:center"><p>Hospitality</p>
+        <p>Amrit Kumar Pandey <br>
+         (+91)95667 54738 
+        </p>
+        </div>
+        <div style="float:left; margin:1%; text-align:center"><p>Sales</p>
+        <p>Vicki Anand<br>
+          +(91)96007 52502
+       </p>
+        </div>
+        <div style="float:left; margin:1%; text-align:center"><p>Sponsorship</p>
+        <p>Sajed Ahmed<br>
+          (+91) 95661 26401 
+       </p>
+       </div>
+       <div style="float:left; margin:2%; text-align:center"><p>Events and Culturals</p>
+        <p>Akshay Choudhary<br>
+         (+91) 72001 84665  
+       </p>
+        </div>
+        <div style="float:left; margin:2%; text-align:center"><p>Sports</p>
+        <p>Ishan Dhar<br>
+          (+91) 96260 71410   
+       </p>
+        </div>
+        <div style="float:left; margin:1%; text-align:center"><p>Designers</p>
+        <p>Sarthak Saxena<br>
+          Anurag Tiwari<br>
+          Amit Rai<br>
+          Shamvil Raza<br>
+          Sauraj Babu   
+       </p>
+        </div>
+        
+    
+        <br> 
+         
+    </div>
+    <div style="margin:30px; text-align:center"> 
+        <p class="center-text uppercase footer-text">
+           Copyrights @ VIT Riviera'15
+        </p>
+           </div>
+</div>
+
+
+
+<div class="sidebar-left">
+	<div class="sidebar-scroll-left">
+    	<div class="sidebar-header-left">
+			<img src="images/misc/logo-sidebar.png" class="sidebar-left-logo replace-2x" width="125" alt="img">
+        	<a href="#" class="close-sidebar-left"></a>
+    	</div>
+    
+        <p class="sidebar-divider-text">CONTACT</p>
+          <a href="#" class="nav-item mail-nav deploy-contact-form">CONTACT FORM<em class="icon-drop"></em></a>
+        <div class="sidebar-form contact-form"> 
+            <div class="formSuccessMessageWrap" id="formSuccessMessageWrap">
+                <div class="notification-box blue-box">
+                    <h4>EMAIL MESSAGE SENT!</h4>
+                    <!--<a href="#" class="close-notification">x</a>-->
+                    <div class="clear"></div>
+                    <p>
+                        You're message has been successfully sent. Please allow up to 48 hours for us to reply!  
+                    </p>  
+                </div> 
+            </div>
+            <form action="php/contact.php" method="post" class="contactForm" id="contactForm">
+                <div class="formSubmitButtonErrorsWrap">                       
+                    <div class="formValidationError" id="contactNameFieldError">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>NAME IS REQUIRED</p>
+                        </div>
+                    </div>             
+                    <div class="formValidationError" id="contactEmailFieldError">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>EMAIL IS REQUIRED</p>
+                        </div>
+                    </div> 
+                    <div class="formValidationError" id="contactEmailFieldError2">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>ADDRESS MUST BE VALID</p>
+                        </div>
+                    </div> 
+                    <div class="formValidationError" id="contactMessageTextareaError">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>MESSAGE FIELD IS EMPTY</p>
+                        </div>
+                    </div>   
+                </div>
+                <fieldset>
+                    <div class="formFieldWrap">
+                        <label class="contactNameField" for="contactNameField">Name:<span>required</span></label>
+                        <input type="text" name="contactNameField" value="" class="contactField requiredField" id="contactNameField"/>
+                    </div>
+                    <div class="formFieldWrap">
+                        <label class="contactEmailField" for="contactEmailField">Email: <span>required</span></label>
+                        <input type="text" name="contactEmailField" value="" class="contactField requiredField requiredEmailField" id="contactEmailField"/>
+                    </div>
+                    <div class="formTextareaWrap">
+                        <label class="contactMessageTextarea" for="contactMessageTextarea">Message: <span>required</span></label>
+                        <textarea name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea"></textarea>
+                    </div>
+                        <div class="formSubmitButtonErrorsWrap">                       
+                            <input type="submit" class="buttonWrap sidebar-send-button contactSubmitButton" id="contactSubmitButton" value="Submit" data-formId="contactForm"/>
+                        </div>
+                </fieldset>
+            </form>       
+        </div>  
+        
+        
+        
+        <p class="sidebar-divider-text">SOCIAL NETWORKS</p>
+        
+        <a href="https://www.facebook.com/rivieraVITUniversity?ref=br_tf" class="nav-item facebook-nav">FACEBOOK<em class="icon-page"></em></a>
+        <a href="https://twitter.com/VITriviera" class="nav-item twitter-nav">TWITTER<em class="icon-page"></em></a>
+        <a href="https://www.google.com/+VITRiviera15" class="nav-item google-nav">GOOGLE PLUS<em class="icon-page"></em></a>
+        <a href=""  class="nav-item link-nav">LINKEDIN<em class="icon-page"></em></a>
+        
+        <p class="copyright-sidebar right-sidebar-copyright">COPYRIGHTS @ VIT RIVIERA'15</p>
+        
+       
+        
+        
+         
+        
+     
+        
+        
+    
+    </div>
+</div>
+
+<div class="sidebar-right">
+	<div class="sidebar-scroll-right">
+    	<div class="sidebar-header-right">
+        	<a href="#" class="close-sidebar-right"></a>
+			<img src="images/misc/logo-sidebar.png" class="sidebar-right-logo replace-2x" width="125" alt="img">
+    	</div>
+        
+        <p class="sidebar-divider-text">CONTACT</p>
+        
+        
+
+        
+        <a href="#" class="nav-item mail-nav deploy-contact-form">CONTACT FORM<em class="icon-drop"></em></a>
+        <div class="sidebar-form contact-form"> 
+            <div class="formSuccessMessageWrap" id="formSuccessMessageWrap">
+                <div class="notification-box blue-box">
+                    <h4>EMAIL MESSAGE SENT!</h4>
+                    <!--<a href="#" class="close-notification">x</a>-->
+                    <div class="clear"></div>
+                    <p>
+                        You're message has been successfully sent. Please allow up to 48 hours for us to reply!  
+                    </p>  
+                </div> 
+            </div>
+            <form action="php/contact.php" method="post" class="contactForm" id="contactForm">
+                <div class="formSubmitButtonErrorsWrap">                       
+                    <div class="formValidationError" id="contactNameFieldError">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>NAME IS REQUIRED</p>
+                        </div>
+                    </div>             
+                    <div class="formValidationError" id="contactEmailFieldError">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>EMAIL IS REQUIRED</p>
+                        </div>
+                    </div> 
+                    <div class="formValidationError" id="contactEmailFieldError2">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>ADDRESS MUST BE VALID</p>
+                        </div>
+                    </div> 
+                    <div class="formValidationError" id="contactMessageTextareaError">
+                        <div class="small-notification red-notification no-bottom">
+                            <p>MESSAGE FIELD IS EMPTY</p>
+                        </div>
+                    </div>   
+                </div>
+                <fieldset>
+                    <div class="formFieldWrap">
+                        <label class="contactNameField" for="contactNameField">Name:<span>required</span></label>
+                        <input type="text" name="contactNameField" value="" class="contactField requiredField" id="contactNameField"/>
+                    </div>
+                    <div class="formFieldWrap">
+                        <label class="contactEmailField" for="contactEmailField">Email: <span>required</span></label>
+                        <input type="text" name="contactEmailField" value="" class="contactField requiredField requiredEmailField" id="contactEmailField"/>
+                    </div>
+                    <div class="formTextareaWrap">
+                        <label class="contactMessageTextarea" for="contactMessageTextarea">Message: <span>required</span></label>
+                        <textarea name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea"></textarea>
+                    </div>
+                        <div class="formSubmitButtonErrorsWrap">                       
+                            <input type="submit" class="buttonWrap sidebar-send-button contactSubmitButton" id="contactSubmitButton" value="Submit" data-formId="contactForm"/>
+                        </div>
+                </fieldset>
+            </form>       
+        </div>        
+        
+ 
+        
+       
+    </div>
+</div>
+
+
+
+</body>
+</html>

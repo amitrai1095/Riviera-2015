@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Pre-Riviera Events</title>
+
+ <!-------hover--->
+  
+  <link rel="stylesheet" type="text/css" href="css/hover.css" />
+
+  <link rel="shortcut icon" href="images/star.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:auto;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#f2872f;
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/hall of fame.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+ 
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+      .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+      
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      
+      .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+.reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+     <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+       
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+      <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div><br>
+                <h3 style="text-decoration:underline;">Dates:</h3>
+                <div class="card-album-artist">{{selectedAlbum.date}}</div>
+                <!--<h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r5}}</div>
+                <h3 style="text-decoration:underline;">Prize Money</h3>
+                <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div>
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        { artist: 'Pre-Riviera', album: 'Spell Bee', color: '#972ff8',cover: 'images/spell.jpg',covers:'images/spellb1.jpg',cost: 'Not Available',  describe: 'Spell bee will be an event in which contestants will be asked to spell a broad selection of words, usually with a varying degree of difficulty.  This event will be open for all school students and college students. Students will be segregated into 7 categories:- School Students: - Category 1- 1st. Category 2- 2nd. Category 3- 3rd, 4th and 5th. Category 4- 6th, 7th and 8th. Category 5- 9th and 10th. Category 6 11th and 12th. Category 7- College Students',date:'31st Jan. & 1st Feb.',name1: 'Anshul Aggarwal', mob1: '9629771198', name2: 'Rishabh',mob2:'9787434573',club:'',p1:'',p2:'',p3:'',r1:'',r2:'',r3:'',r4:'',r5:'',c1:'',c2:'',c3:'',c4:''},
+      
+ { artist: 'Pre-Riviera', album: 'VIT DT', color: '#972ff8',cover: 'images/vitdt.jpg',covers:'images/vitdt1.jpg',cost: 'Not Available',  describe: 'A premium event and curtain raiser at Riviera, VIT\'s cultural extravaganza VITDT keeps the streak of debating alive, making it a wonderful platform for both internal as well as external participants for practising debating and learning to express our views after rationalizing, analyzing and coherently expressing what we have in mind.The event follows the British Parliamentary Debating Format and brought together over 40 different institutes in a 4-day Debating Marathon in its previous editions.Adj Core : Tim Sonnreich, Kiran Iyer, Anil Sebastian Pulickel, Partha Sarathi Sharma',date:'30th, 31st Jan. & 1st Feb.',name1: '', mob1: '', name2: '',mob2:'', club:'',p1:'',p2:'',p3:'',r1:'',r2:'',r3:'',r4:'',r5:'',c1:'',c2:'',c3:'',c4:''},
+
+ /*{ artist: 'Pre-Riviera', album: 'Comic Buzz', color: '#972ff8',cover: 'images/comic.jpg',covers:'',cost: 'Not Available',  describe: 'ComicBuzz is a multi-genre entertainment and comic convention which will happen as a pre - Riviera event in VIT University, Vellore. This event is inspired by San Diego Comic-Con International. Comic-Con originally showcasing primarily comic books and science fiction/fantasy related film, television, and similar popular arts, the convention now includes a larger range of pop culture and entertainment elements across virtually all genres, including horror, animation, anime, manga, toys, collectible card games, video games, and fantasy novels. According to Forbes, the convention is the \'\'largest convention of its kind in the worl\'\'.ComicBuzz will be implemented on the same grounds with an Indian touch too. It will be an entirely new concept added to the Riviera phenomenon and an exciting surprise for the Riviera crowd especially the comic/anime lovers. It has the potential to attract and engage a very large crowd both internal and external and make pre-Riviera as exciting as Riviera.',date:'31st Jan. & 1st Feb.',name1: '', mob1: '', name2: '',mob2:'', club:'',p1:'',p2:'',p3:'',r1:'',r2:'',r3:'',r4:'',r5:'',c1:'',c2:'',c3:'',c4:''}*/
+
+        
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="green"><h1 class="category">Pre-Riviera Events</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.ping.vitriviera.com/events/categories.html"><button class="amit"></button></a>
+</body>
+</html>

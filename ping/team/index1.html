@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Team Riviera</title>
+<script typr="text/javscript" src="jquery-2.1.1.min.js"></script>
+
+<style type="text/css">
+body{padding:0px;margin:0px;background-image:url('background.png');overflow-x:hidden;}
+.navbar{position:absolute;top:5%;left:6%;}
+.cloud1{background-image:url('cloud.png');width:280px;height:16%;position:absolute;top:200px;left:120px;background-repeat:no-repeat;}
+.cloud2{background-image:url('cloud.png');width:280px;height:16%;position:absolute;top:200px;left:550px;background-repeat:no-repeat;}
+.cloud3{background-image:url('cloud.png');width:280px;height:16%;position:absolute;top:200px;left:980px;background-repeat:no-repeat;}
+
+.patron{position:absolute;left:-3000px;}
+.patrons{position:absolute;top:350px;left:30px;width:1300px;height:100px;-webkit-animation: moveinpat 1s;}
+.patron1{position:absolute;top:100px;left:43%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron2{position:absolute;top:500px;left:15%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron3{position:absolute;top:500px;left:42%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron4{position:absolute;top:500px;left:68%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron5{position:absolute;top:900px;left:3%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron6{position:absolute;top:900px;left:28%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron7{position:absolute;top:900px;left:53%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron8{position:absolute;top:900px;left:78%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+
+
+.faculty{position:absolute;left:-3000px;}
+.faculties{position:absolute;top:350px;left:278px;width:800px;height:100px;-webkit-animation: movein 1s;}
+.design1{position:absolute;top:100px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/23.jpg');border:solid white 10px;}
+.design2{position:absolute;top:100px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/9.jpg');border:solid white 10px;}
+.design3{position:absolute;top:100px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('team/7.jpg');border:solid white 10px;}
+.design4{position:absolute;top:400px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/11.jpg');border:solid white 10px;}
+.design5{position:absolute;top:400px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/18.jpg');border:solid white 10px;}
+.design6{position:absolute;top:400px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('team/1.jpg');border:solid white 10px;}
+.design7{position:absolute;top:700px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/2.jpg');border:solid white 10px;}
+.design8{position:absolute;top:700px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/12.jpg');border:solid white 10px;}
+.design9{position:absolute;top:700px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('team/3.jpg');border:solid white 10px;}
+.design10{position:absolute;top:1000px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/22.jpg');border:solid white 10px;}
+.design11{position:absolute;top:1000px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/20.jpg');border:solid white 10px;}
+.design12{position:absolute;top:1000px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('team/16.jpg');border:solid white 10px;}
+.design13{position:absolute;top:1300px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/24.jpg');border:solid white 10px;}
+.design14{position:absolute;top:1300px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/17.jpg');border:solid white 10px;}
+.design15{position:absolute;top:1300px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.design16{position:absolute;top:1600px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/14.jpg');border:solid white 10px;}
+.design17{position:absolute;top:1600px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/13.jpg');border:solid white 10px;}
+.design18{position:absolute;top:1600px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('team/19.jpg');border:solid white 10px;}
+.design19{position:absolute;top:1900px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/4.jpg');border:solid white 10px;}
+.design20{position:absolute;top:1900px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/8.jpg');border:solid white 10px;}
+.design21{position:absolute;top:1900px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('team/15.jpg');border:solid white 10px;}
+.design22{position:absolute;top:2200px;left:100px;width:200px;height:200px;border-radius:150px;background-image:url('team/6.jpg');border:solid white 10px;}
+.design23{position:absolute;top:2200px;left:500px;width:200px;height:200px;border-radius:150px;background-image:url('team/5.jpg');border:solid white 10px;}
+.design24{position:absolute;top:2200px;left:900px;width:200px;height:200px;border-radius:150px;background-image:url('team/21.jpg');border:solid white 10px;}
+
+.reg1{position:absolute;top:850px;left:100px;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.reg2{position:absolute;top:850px;left:500px;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+
+
+
+.student{position:absolute;left:-3000px;}
+.students{position:absolute;top:350px;left:100px;width:1200px;height:1800px;-webkit-animation: moveinstu 1s;}
+
+
+@-webkit-keyframes movein{
+	from{left:0px;}
+	to{left:280px;}
+}
+@-webkit-keyframes moveinstu{
+	from{left:0px;}
+	to{left:100px;}
+}
+@-webkit-keyframes moveinpat{
+	from{left:-500px;}
+	to{left:30px;}
+}
+.nav{top:25px;}
+
+</style>
+<link rel="stylesheet" type="text/css" href="hover.css" />
+<link rel="stylesheet" type="text/css" href="menucss.css" />
+<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+<div id="rivmenu">
+<div id="logo" style="">
+  
+  <a  href="" class="current button grow" ><img src="logonav.png" / height="46px"></a>
+
+</div>
+<style>
+#logo
+{
+	position:absolute;
+	 z-index:99999;
+	  top:28px; 
+	  left:598px;
+	 
+	  
+}
+</style>
+
+<div class"container">
+	<ul class="nav">
+		
+                
+		<li>
+			<a>Events</a>
+			<ul>
+			        <li><a href="#tajmahal" >Pre Riviera Events</a></li>
+				<li><a href="http://ping.vitriviera.com/events/Moves-Like-Jagger.html" target="_blank">Moves Like Jagger (Dance)</a></li>
+				<li><a href="http://ping.vitriviera.com/events/rock-on.html" target="_blank">Rock On (Music)</a></li>
+				<li><a href="http://ping.vitriviera.com/events/hall-of-fame.html" target="_blank">Hall of Fame </a></li>
+				<li>
+					<a >Words worth</a>
+					<ul>
+						<li><a href="http://ping.vitriviera.com/events/wordsworth-english.html" target="_blank">English</a></li>
+						<li><a href="http://ping.vitriviera.com/events/wordshindi.html" target="_blank">Hindi</a></li>
+						
+						<li><a href="http://ping.vitriviera.com/events/wordstelugu.html" target="_blank">Telugu</a></li>
+                        <li><a href="http://ping.vitriviera.com/events/wordstamil.html" target="_blank">Tamil</a></li>
+                        <li><a href="http://ping.vitriviera.com/events/wordskannada.html" target="_blank">Kannada</a></li>
+					</ul>
+				</li>
+				<li><a href="http://ping.vitriviera.com/events/drama.html" target="_blank">The World is a Stage(Dramatics)</a></li>
+                <li><a href="http://ping.vitriviera.com/events/gaming.html" target="_blank">Cyber Engage</a></li>
+                <li><a href="http://ping.vitriviera.com/events/funarena.html" target="_blank">Fun Arena</a></li>
+                <li><a href="http://ping.vitriviera.com/events/mixedbag.html" target="_blank">Mixed bag</a></li>
+                <li><a href="http://ping.vitriviera.com/events/inquizitive.html" target="_blank">Inquizitive</a></li>
+			</ul>
+		</li>
+        
+        <li><a href="https://vitriviera.com/proshows.html" class="current" target="_blank">proshows</a></li>
+        <li><a href="https://vitriviera.com/sports.html" class="current" target="_blank">Sports </a></li>
+                 <li><a href="#"><div id="sar" style="width:160px;">
+                 
+                 </div>
+                     </a></li>		
+                <li><a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">Register</a></li>
+                 
+		<li><a href="#city" target="_blank">Sponsors</a></li>
+                <li><a>Others</a>
+                <ul>
+				<li><a href="#" class="current">Team</a></li>
+				<li><a href="http://vit.ac.in" class="current">About</a></li>
+				<li><a href="merchandise.html" target="_blank" >Merchandise </a></li>
+                </ul>
+                </li>
+               
+                
+	</ul>
+</div>
+</div>
+  
+
+<div>
+	<a href="#"><div class="cloud1" id="cloud1" ><img src="patron.png" style="position:relative;top:50px;left:35%;"></div></a>
+	<a href="#"><div class="cloud2" id="cloud2" ><img src="faculty.png" style="position:relative;top:50px;left:20%;"></div></a>
+	<a href="#"><div class="cloud3" id="cloud3" ><img src="student.png" style="position:relative;top:50px;left:20%;"></div></a>
+</div>
+
+<div id="patrons" class="patrons">
+	
+</div>
+
+<div id="faculties" class="faculty">
+	
+
+</div>
+
+<div id="students" class="student">
+	
+
+	<a href="" class="button float-shadow"><div class="design1">
+		<div style="background-image:url('abhi.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/abhi.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+ 
+	<a href="" class="button float-shadow"><div class="design2">
+		<div style="background-image:url('abhijeet.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/abhijeet.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design3">
+		<div style="background-image:url('aditya.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/aditya.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design4">
+		<div style="background-image:url('rcibbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Akshat Rajvanshi.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design5">
+		<div style="background-image:url('rcibbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Akshay Choudhary.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design6">
+		<div style="background-image:url('ricbbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Amrit Kumar Pandey.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design7">
+		<div style="background-image:url('ribcbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/arpit.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design8">
+		<div style="background-image:url('ribbcon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Febin G Kottukappalli.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design9">
+		<div style="background-image:url('ribbocn.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/hera.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design10">
+		<div style="background-image:url('ribbonc.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Ishan Dhar.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design11">
+		<div style="background-image:url('ribbon.cpng');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Ishwarya Rajasekaran.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design12">
+		<div style="background-image:url('ribbon.pcng');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Korra Jagadeeshwar.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+
+	<a href="" class="button float-shadow"><div class="design13">
+		<div style="background-image:url('ribbocn.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Mihir Mishra.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div></a>
+	
+	<div class="design14">
+		<div style="background-image:url('ribbocn.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Nupur Khera.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design15">
+		<div style="background-image:url('ribbocn.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Prateek Agrawal.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design16">
+		<div style="background-image:url('ribbocn.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/ribboArun u. Hirann.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design17">
+		<div style="background-image:url('ribbonc.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/ribbon.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design18">
+		<div style="background-image:url('ribbcon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/ribbonss.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design19">
+		<div style="background-image:url('ribbocn.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/shivam.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design20">
+		<div style="background-image:url('ribbonc.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Shrikant Agrawal.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design21">
+		<div style="background-image:url('ribbonc.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Sonia.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design22">
+		<div style="background-image:url('ribbonc.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Suzanti Manchandia.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design23">
+		<div style="background-image:url('ribbonc.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/Vignesh A.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	<div class="design24">
+		<div style="background-image:url('ribbonc.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="team/ribbons/nimish.png" style="position:relative;top:-60px;left:-20px;">
+		</div>
+	</div>
+
+	
+</div>
+
+<script>
+	$('#cloud3').click(function(){
+		$('#patrons').hide()
+		$('#faculties').hide();
+		$('#students').show();
+		$('#students').addClass('students');
+	});
+
+	$('#cloud1').click(function(){
+		$('#patrons').show();
+		$('#patrons').addClass('patrons');
+		$('#faculties').hide();
+		$('#students').hide();
+	});
+
+	$('#cloud2').click(function(){
+		$('#patrons').hide();
+		$('#faculties').show();
+		$('#faculties').addClass('faculties');
+		$('#students').hide();
+	});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Rock On</title>
+
+  <link rel="shortcut icon" href="images/rockon.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      background-color:#ff813c;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/music.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+       .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+ .reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r5}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r6}}</div>
+                <!--<h3 style="text-decoration:underline;">Prize Money</h3>
+                <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div>-->
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        { artist: 'Informals', album: 'Acoustic Vibez',covers:'images/vibez1.jpg', color: '#972ff8',cover: 'images/vibez.jpg',cost: 'Not Available',  describe: 'Acoustic Vibes is an event inspired by the soulful sounds of the acoustic guitar. It emphasizes on vocal melodies and harmony coupled with the natural sounds of the acoustic guitar and the piano. It is the ultimate unplugged event.A competition for bands from VIT as well as external COLLEGES ONLY- entries are to be sent in via mail (videos of recorded performances, or studio recordings) and the best of them go through to the competition. Send us your link (Youtube or any other video service) in a mail to vitmusicclub@gmail.com with subject \'Acoustic Vibes 2015\' and the band’ name.',name1: 'Alexei Antao', mob1: '9930301260', email1: 'alexeiantao@gmail.com', club: 'Music Club',r1:'Solo performances are NOT allowed. Bands must have a minimum of 3 members and a maximum of 7 members.No individual can be a member of more than one band. If any person is already part of a band',r2:'The event is for college students with valid college ID.',r3:'Bands cannot use electric guitars, distortion or double bass pedals for drums.',r4:'Bands must register the names of band members and the songs to be performed before they enter the competition.',r5:'A maximum of 20 minutes is given to each performance. (15 mins gig time+5 mins soundcheck)',r6:'Judges decision is final.'},
+       
+        { artist: 'Informals', album: 'Ragga Ragge',covers:'images/super1.jpg', color: '#972ff8',cover: 'images/super.jpg',cost: 'Not Available',  describe: 'The eternal mantra of Indian classical music dwells in every passionate musical heart. Be it Hindustani or Carnatic, the raagas of the ancients fill the earth with a calming bliss. Though in today\'s world, mastery over the primeval skills is not enough for some, who bring forth an unmatched amalgamation of the modern and ancient in an auditory kaleidoscope we call fusion. A competition for bands from VIT as well as external COLLEGES ONLY  entries are to be sent in via mail (videos of recorded performances, or studio recordings) and the best of them go through to the competition. Send us your link (Youtube or any other video service) in a mail to vitmusicclub@gmail.com with subject \'Raaga Reggae 2015\' and the band\'s name.',name1: 'Alexei Antao', mob1: '9930301260', email1: 'alexeiantao@gmail.com', club: 'Music Club',r1:'Minimum 2 members in a band. Solo performances are not allowed.Maximum of 11 members in a band.No individual can be a member of more than one band.',r2:'Participants may perform in any language of choice.Bands have a choice of playing original compositions or covers.',r4:'Excessive distortion on guitars may be avoided, though there\'s no prohibition as such.',r5:'A maximum of 20 minutes shall be given to each performance. (15 mins+5 mins for soundcheck)',r6:'Judges\' decision is final.'},
+       
+        { artist: 'Informals', album: 'Resonance',covers:'images/resonance1.jpg', color: '#972ff8',cover: 'images/resonance.jpg',cost: 'Not Available',  describe: 'Resonance is the flagship event hosted by VIT Music Club during every Riviera. Year after year we have serious music-battles between various college bands in the arena. The bands that participate are among the best in the South zone. Over the years we have witnessed various types of bands showcasing their prowess in various genres ranging from the breath of rock to the fiery energy and intensity of heavy metal.20 of the best bands are shortlisted to play at the venue, some of which have been Escher\'s Knot, The Bicycle days, Armor of God, Sceptre etc. It is a competition for bands from VIT as well as external COLLEGES ONLY. Entries are to be sent in via mail (videos of recorded performances, or studio recordings) and the best of them go through to the competition. Send us your link (Youtube or any other video service) in a mail to vitmusicclub@gmail.com with subject \'Resonance 2015\' and the band\'s name.',name1: 'Alexei Antao', mob1: '9930301260', email1: 'alexeiantao@gmail.com', club: 'Music Club',r1:'Bands must have a minimum of 3 members and a maximum of 7 members.No individual can be a member of more than one band.',r2:'Participants may perform in English only and must play at least one original composition.',r3:'Bands must register the names of band members and the songs to be performed beforethey enter the competition.',r4:'A maximum of 20 minutes is given to each performance. (15 mins gig time+5 minssoundcheck)',r5:'Use of profanity in lyrics and misbehaviour on stage is discouraged and can lead to disqualification. Judge\'s decision is final',r6:'The event is for college students with valid college ID.'},
+      
+        { artist: 'Informals', album: 'Riviera Super Singer', color: '#972ff8',covers:'images/ragga1.jpg',cover: 'images/ragga.jpg',
+cost: 'Not Available',  describe: 'Be the voice of Riviera. Be the Super Singer.The vocalist is the soul of any lyrical composition and Super Singer is an event which celebrates the spirit of vocal music. It is one of the highlights of Riviera. This solo singing competition entertains songs of all languages.Internal auditions are held for students of VIT University prior to the festival and approximately 30 competitors are shortlisted for the final round (for more information contact the music club). External participants do not have a selection round and they compete directly in the finals.',name1: 'Alexei Antao', mob1: '9930301260',name2: 'Sashi Mouli', mob2: '9597440954',  club: 'Music Club',
+r1:'It is NOT mandatory to have musical accompaniment in the competition.The participants may use a karaoke track. A maximum of 1 musical accompanist may be permitted.',
+r2:'The final round consists of two rounds.',
+r3:'Round 1 : The participants can sing any song of their choice for a duration of 3 minutes. The judges will shortlist 10 participants for the second round.',
+r4:'Round 2 :The participants will be asked by the judges to perform a song belonging to a genre of the judges\' choice in order to check their versatility.'},
+      
+        
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="green"><h1 class="category">Rock On</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.6;z-index:-20;width:100%;">
+<a href="http://www.ping.vitriviera.com/events/categories.html"><button class="amit"></button></a>
+</body>
+</html>

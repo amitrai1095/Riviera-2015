@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15| Words Worth - Tamil</title>
+
+  <link rel="shortcut icon" href="images/tamil.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:auto;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#fd955b;
+    }
+    .red {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/wordsworth.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:70px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+       .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+     .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+.reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Cost</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club/ Individual </h3>
+                <div class="card-album-club">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinator</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+                
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+       
+          { artist: 'Formal', album: 'Antyakshari', color: '#972ff8',cover: 'images/anta.jpg',covers:'images/anta1.jpg',cost: 'Rs. 150 Per Team', describe: ' \'\'Time to express your knowledge; Not from the book; But from the cinema Music\'\'.  Event for song lovers who memorize the songs rather than Thirukural. This event will test your depth knowledge of songs & cinema. Make it Scene maaa Song will never be a song unless it is sung! So tune up your voice! Still reading this??? OMG... It\'s time to be serious.. Watch all movies and songs.. Start that right now!',
+         name1: 'Vimal S ', mob1: '7373737196',name2: 'V Siva Ranjani', mob2: '9789721705', club: 'Tamil', rule1: '1. 5 to 6 rounds  ', rule2: '2. For Internal & External participants, preliminary rounds will be there to shortlist the teams. ',rule3:'3. Any hints from the audience will result in the loss of points to the team and that person from the audience will be sent out of the auditorium.',rule4:'4. Answers for cine quiz must be appropriate and should be answered within the time limit. Marks will be decided by judge based on the appropriation.',rule5:'5. If words are incorrect in a song lyrics, it will lead to point loss. Each round will have a time limit within which the song must be sung or it will beautomatic loss of points.', j1: '1. Based on Right Answers.', j2:'2. Based on the appropriate words used in songs.', j3:'3. Based on the number of songs sung given in a time.', j4:'4. Based on the voice clarity', j5:'5. Only Tamil songs and No English songs or remake Rap versions of old songs (unless appears in a movie) is not encouraged.', p1:'First Prize\-Rs 5000', p2:'Second Prize\-Rs 3000', p3:'Third Prize\-Rs 2000', type:'Team of 3'},
+
+          { artist: 'Formal', album: 'Creative Writing', color: '#972ff8',cover: 'images/creative.jpg',covers:'images/creative1.jpg',cost: 'Rs. 50 Per Person', describe: '\'\'Hi there Creators! Take your pen. Change the world\'s fate.\'\'  We provide you raw materials; blend them with your mind to make delicious recipe. Event to show your Tamil writing skill and creativity.',   name1: 'Ragavan', mob1: '9626377893',name2: 'Komaleshwari', mob2: '8056559928', club: 'Tamil', rule1: '1. An abstract topic will be given and the participants have to write and submit the copy within the fixed time.', rule2: '2.  Individual Event',rule3:'3. Judge\'s decision is final',rule4:'',rule5:'', j1: '1. Language & Grammar (10 marks)', j2:'2. Presentation (10 marks)', j3:'3. Theme Appropriateness (10 marks)', j4:'4. Evidence of Understanding (10 marks)', j5:'5.Overall Performance (10 marks)', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Individual'},
+
+          { artist: 'Formal', album: 'Debate', color: '#972ff8',cover: 'images/debate.jpg',covers:'images/debate1.jpg',cost: 'Rs. 50 Per Person', describe: ' \'\'Words have incredible power. They can make peoples heart soar Or they can make people’s heart sore.\'\' This is a stage for you. Be a rhetor, expound your thoughts and try to change the world by astonishing speech.',
+         name1: 'S.M.Valli', mob1: '9443270347',name2: ' Balaji', mob2: '7373737196', club: 'Tamil', rule1: ' 1. Participates will be given a topic and will be asked to discourse about it. ', rule2: '2. Shortlisted candidates will go for final round, where the debate takes place.',rule3:'3. Preliminary selection (Internal & External) will be there. ',rule4:'4. Individual participation.',rule5:'5. Judge\'s decision is final.', j1: 'Content and Delivery (10 marks each)', j2:'Points Offered and Points Taken (5 marks each)', j3:'Behaviour and Language (5 marks each)', j4:'Overall Impression (10 Marks)', j5:'Total (50 Marks)', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Individual'},
+
+          { artist: 'Formal', album: 'Kollywood Khiladi', color: '#972ff8',cover: 'images/weirdo.jpg',covers:'images/weirdo1.jpg',cost: 'Rs. 100 Per Team', describe: ' \'\'It\'s time to show your hidden cinematic talent to the world\'\' Event for Entertainers and thinkers. This event will be fully based on Entertainment & Tamil Cine Films. Explore your thoughts, recall your mind and win your prize.This will be the Event which is having connection pictures, acting,quiz,etc., This event will be based on Tamil Cine (kollywood) knowledge and its time or entertainment ',
+          name1: 'Thabares', mob1: '8608652607',name2: 'Saranya', mob2: '8870729684', club: 'Tamil', rule1: '1. This will be having 5 to 6 rounds.', rule2: '2. For Internal & External participants, preliminary rounds will be there to shortlist the teams. ',rule3:'3. Any hints from the audience will result in the loss of points if hinted by a member of your team.  If hinted by someone else, the judges will look at the intention and decide a \'\'replay\'\' or \'\'loss\'\', depending on the intention.',rule4:'4. Each round will have a time limit and the appropriate answers should be given by the participants or it is an automatic loss of points.',rule5:'5. Answers for quiz must be appropriate. Marks will be decided by judge based on the appropriation. If the answers are incorrect or inappropriate in connection round, the judges will likely decide to decline the points. In the dumb chardes your answer must be accurate or else judges wont give points and In acting round, your acting must be expected and good enough as expected.', j1: 'Acting Performance (10 Marks)', j2:'Presentation (10 Marks)', j3:'Show appropriateness (10 marks)', j4:'Correct Answers (10 Marks)', j5:'Creativity (10 Marks)', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team of 2'},
+
+         { artist: 'Formal', album: 'Poetry', color: '#972ff8',cover: 'images/poem.jpg',covers:'images/poem1.jpg',cost: 'Rs. 50 Per Person',  describe: '\'\'Sculpture your words and make a masterpiece\'\' This will exhibit the knowledge and the skill possessed by the students in the field of literature and poetry. Attract the crowd, not with face but with words.', name1: 'Dinesh T', mob1:'9043522142',name2: 'Sripathy', mob2: '9600804702', club: 'Tamil', rule1: '1. First round will be a general poetry round where the topics will be given and   they will be asked to write poem in a given time.', rule2: '2. Shortlisted candidates will go for final round be asked to write poems and recite on stage.',rule3:'3. Individual participation.',rule4:'4. Judge\'s decision is final',rule5:'', j1: 'Language and Grammar (10 Marks)', j2:'Presentation (10 Marks)', j3:'Voice and Articulation (5 Marks)', j4:'Topic appropriateness (5 Marks)', j5:'Evidence of Understanding and Overall Performance (10 Marks each)', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Individual'},
+
+         { artist: 'Formal', album: 'Short Film Making', color: '#972ff8',cover: 'images/film.jpg',covers:'images/film1.jpg',cost: 'Rs. 250 Per Team', describe: ' \'\'Cinema is a matter of what\'s in the frame and what\'s out\'\' Martin Scorsese. For all the aspiring actors, directors and crew members out there ... Do you live and dream about making movies? Then...here\'s your first step into the super Film career!! VIT TLA,  A grand successful short film festival is again coming up. It is being held as a part of our Rivera 2015. Cinema goers will become instant film highlighters for Best Film and Best Directors and Best Actors. What Else! Get ready Folks for an \'\' Mersaling Film Festival\'\'   ',
+           name1: 'L.Lokesh', mob1: '8122980646 ',name2: 'Nivetha.M', mob2: '9865310737', club: 'Tamil', rule1: '1.  1 Round for Internal and External Participants, No prelims. Team should have maximum 10 members. ', rule2: '2. The short film must have been completed before a week of program.  Total running time must be less than 20 minutes in length, including front and back credits. There is no minimum running time.  DVD needs to be submitted along with the entry in Mp4 Format (HD or Non HD). Each Preview DVD should be labelled with the title, running-time and contact email and phone number.',rule3:'3. Films once selected & submitted for final screening will not be allowed to be withdrawn under any circumstances until festival is over.',rule4:'4. DVDs submitted for selection will be considered as final and no changes will be entertained after submission. It is the sole responsibility of the applicant to submit DVDs without any physical / quality defects.',rule5:'5. The competition is only for College students. No separate section for filmmakers. Winners are selected by a judging panel of industry professionals.', j1: 'Tamil Short Film Story (40 points) Clarity , Script- Creativity', j2:'Acting (15 points)  Timing,  Expression, Elocution- Personality', j3:'Cinematography (15 points)  Creativity, Composition Skill', j4:'Soundtrack (15 points) Creativity, Quality of Audio Recording- Composition Skill', j5:'Editing (15 points) Creativity, Composition Skill', p1:'First Prize\-Rs 5000', p2:'Second Prize\-Rs 3000', p3:'Third Prize\-Rs 2000', type:'Team of 5'},
+
+         { artist: 'Formal', album: 'Wanna Be RJ/VJ', color: '#972ff8',cover: 'images/rj.jpg',covers:'images/rj1.jpg',cost: 'Rs. 50 Per Person', describe: '\'\'Being too talkative is not a crime\'\' This event is to unleash the talent of participants as Radio Jockey and Video Jockey. You can rock over the stage by your script delivery, stage performance and anchoring skills',
+         name1: 'Divakar.T', mob1: '8122561752',name2: 'Nivedhitha.M', mob2: '7708320269', club: 'Tamil', rule1: '1. This will be having Five to six rounds. ', rule2: '2.  For Internal & External preliminary rounds will be there to shortlist.',rule3:' Individual participation.',rule4:'4. Judge\'s decision is final.',rule5:'', j1: 'Language and Grammar (10 Marks)', j2:'Presentation (10 Marks)', j3:'Show appropriateness and Professionalism (5 Marks each)', j4:'Creativity and Uniqueness (10 Marks)', j5:'Overall Performance (10 Marks)', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Individual'},
+         
+ ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="red"><h1 class="category">Words Worth - Tamil</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.ping.vitriviera.com/events/categories.html"><button class="amit"></button></a>
+</body>
+</html>

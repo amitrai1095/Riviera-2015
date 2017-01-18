@@ -1,0 +1,112 @@
+[05-Jan-2015 17:53:50 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/riviera/public_html/mailer/mail.php on line 22
+[06-Jan-2015 12:50:06 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/riviera/public_html/mailer/mail.php on line 59
+[06-Jan-2015 13:06:43 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/riviera/public_html/mailer/mail.php on line 11
+[06-Jan-2015 18:46:20 Asia/Calcutta] PHP Fatal error:  Call to undefined method PHPMailer::get_mail_string() in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 18:47:21 Asia/Calcutta] PHP Fatal error:  Using $this when not in object context in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 18:49:30 Asia/Calcutta] PHP Fatal error:  Cannot access protected property PHPMailer::$MIMEHeader in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 18:52:53 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com}INBOX.Sent in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 18:52:53 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 18:52:53 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 18:52:53 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 18:52:53 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 18:54:07 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com}INBOX.Sent in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 18:54:07 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 18:54:07 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 18:54:07 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 18:54:07 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 18:54:17 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com}INBOX.Sent in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 18:54:17 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 18:54:17 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 18:54:17 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 18:54:17 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 18:54:35 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 18:54:35 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 18:54:35 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 18:54:35 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 18:54:35 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 18:56:58 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 18:56:58 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 18:56:58 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 18:56:58 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 18:56:58 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 18:57:44 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 18:57:44 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 18:57:44 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 18:57:44 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 18:57:44 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:00:28 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 20:00:28 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 20:00:28 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 20:00:28 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 20:00:28 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:03:42 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 20:03:42 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 20:03:42 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 20:03:42 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 20:03:42 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:11:56 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 20:11:56 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 20:11:56 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 20:11:56 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 20:11:56 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:26:56 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 20:26:56 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 20:26:56 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 20:26:56 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 20:26:56 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:28:12 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com}INBOX.Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 20:28:12 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 20:28:12 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 20:28:12 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 20:28:12 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:49:45 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com}[Gmail]/Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 20:49:45 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 20:49:45 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 20:49:45 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 20:49:45 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:50:38 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com:993/imap/ssl}[Gmail]/Drafts in /home/riviera/public_html/mailer/mail.php on line 72
+[06-Jan-2015 20:50:38 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 74
+[06-Jan-2015 20:50:38 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 83
+[06-Jan-2015 20:50:38 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 85
+[06-Jan-2015 20:50:38 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 88
+[06-Jan-2015 20:55:12 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com:993/imap/ssl}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 20:55:12 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 75
+[06-Jan-2015 20:55:12 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 84
+[06-Jan-2015 20:55:12 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 86
+[06-Jan-2015 20:55:12 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 89
+[06-Jan-2015 20:55:44 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com:993/imap/ssl}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 20:55:44 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 75
+[06-Jan-2015 20:55:44 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 84
+[06-Jan-2015 20:55:44 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 86
+[06-Jan-2015 20:55:44 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 89
+[06-Jan-2015 21:50:01 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.gmail.com:993/imap/ssl}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 21:50:01 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 75
+[06-Jan-2015 21:50:01 Asia/Calcutta] PHP Warning:  imap_append() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 84
+[06-Jan-2015 21:50:01 Asia/Calcutta] PHP Warning:  imap_check() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 86
+[06-Jan-2015 21:50:01 Asia/Calcutta] PHP Warning:  imap_close() expects parameter 1 to be resource, boolean given in /home/riviera/public_html/mailer/mail.php on line 89
+[06-Jan-2015 21:50:53 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:993/imap/ssl}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 21:51:44 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:993/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 21:53:02 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {server.vitriviera.com:993/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 21:54:58 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 21:58:09 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 21:59:05 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 21:59:51 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:143/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:01:28 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:03:55 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:05:29 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:143/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:07:56 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:143/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:08:24 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:11:50 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/notls}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:14:45 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {46.22.210.6:993/imap/notls}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:17:19 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {localhost:993/imap/notls}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:20:17 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {localhost:993/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:20:27 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {www.vitriviera.com/imap/notls}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:23:35 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {localhost:993/ssl/novalidate-cert/service=imap}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:24:42 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:993/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:26:03 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:143/ssl/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:26:57 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:143/notls/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:29:10 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:143/notls/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:35:51 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:143/notls/novalidate-cert}INBOX in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:53:40 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:143/notls/novalidate-cert}[Gmail]/All Mail in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:55:50 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:993/notls/novalidate-cert}[Gmail]/All Mail in /home/riviera/public_html/mailer/mail.php on line 73
+[06-Jan-2015 22:58:15 Asia/Calcutta] PHP Warning:  imap_open(): Couldn't open stream {imap.vitriviera.com:993/notls/novalidate-cert}[Gmail]/All Mail in /home/riviera/public_html/mailer/mail.php on line 75
