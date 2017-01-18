@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | World Is a Stage</title>
+
+  <link rel="shortcut icon" href="images/drama.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      background-color:#a4a51a;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/world is a stage.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+  .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 220px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+
+ .reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r5}}</div>
+                <!--<h3 style="text-decoration:underline;">Prize Money</h3>
+                <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p5}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p6}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p7}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p8}}</div>-->
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        { artist: 'Formals', album: 'Dream World Film Festival', color: '#972ff8',cover: 'images/festival.jpg',covers:'images/festival1.jpg',cost: 'Not Available',  describe: '\"The freedom of the short film relative to the long film lies in the possibilities of using metaphor and other literary devices to tell the story, a luxury not available in the commercially driven, realism-oriented long film.\"~ Ken Dancyger (author) There is no higher form of artistic expression than a film. This year, The VIT FILM SOCIETY once again invites one and all the ultimate competition of short films, where a dazzling array of films and their makers will come together to screen their short films and enjoy an unforgettable experience. Open to all!VIT Film Society successfully conducted this event during Riviera\'13 and Riviera\'14.',name1: 'Souradeep Chakroborty', mob1: '9787113452', name2: 'Rahul Mandal',mob2:'9629343137', club: 'VIT Film Society',r1:'A student\'s short-film competition. It\'s a team event. (Team of maximum 20 can make a short film).Internal participants have to submit the movie at our registration desk for preliminary round. External participants have to submit their movies on Day 1 of the Riviera.Maximum length of the movie should be 15 mins (900 seconds); not a single more second is allowed',r2:'All the members in a group should be student of VIT University and no professional or freelancer should be involved.Cross teams would be allowed but the members of the team must be a college/school student.Registration fees must be paid at the Riviera Registration desk and have to produce the receipt at the event venue. Shortlisted movies who fail to submit this receipt will be rejected before screening',r3:'For external participants who want to participate in the event without being physically present during the event would have to pay Rs 400/-(via DD). [P.S- If they win, they would get merit certificates but if they don\'t they wont be provided with participation certificate].You have to keep registration receipt with you and get it verified and signed at the registration desk. You have to keep this with you throughout the final event.For all shortlisted movies for final Riviera event, all of the movie team members (including acting as well as Non acting / technical members) should attach Id card Xerox with the entry form at final event and produce their ID cards for the verification on the day of the event.',r4:'Movie can be made in any language but subtitles are compulsory if movie is not in English.Participants can make movie on ANY subject. Movie should not contain any abusive content or dialogues in any manner towards any cast, religion, gender or region that sounds offensive. If found it will be directly disqualified.The movie should be sent in along with a short synopsis of the movie or the original script',r5:'There are absolutely no limitations on the type of camera being used, even a movie shot with a mobile camera would be accepted.Violation of any rule will lead to direct disqualification of the movie and no any further negotiation will be made by the organizers.Judges will determine the final winners and they will be awarded with cash prizes and certificates',p1:'Winning team= Rs 5000',p2:'First Runner-up=  Rs 3000',p3:'Second Runner-up= Rs 1000',p4:'Best Direction= Rs 1000',p5:'Best Acting= Rs 1000',p6:'Best cinematography= Rs 1000',p7:'Best Editing= Rs 1000',p8:'Best Sound Designing= Rs 1000'},
+
+        { artist: 'Formals', album: 'Khalbali (Street Play) ', color: '#972ff8',cover: 'images/street.jpg',covers:'images/street1.jpg',cost: 'Rs. 1500 per Team',  describe: 'Khalbali is a street play competition that will be hosted by the VIT Dramatics Club for the second time. It will be held as a premium event. After the raging success of the Street Play competition at Riviera’14, we hope to make this year’s event even better. The name Khalbali is apt as it describes the kind of power packed and socially charged performances that will enrapture any audience. The event will consist of 8 -10 teams putting up street plays on various social issues for 20 minutes each',name1: 'Krishna Pandey', mob1: '9677345332', name2: 'Kshitij Bahl ', mob2:'8508203932',club: 'Dramatics Club',r1:'  Teams can consist of a maximum of 20 members. All members of a team should belong to the same college',r2:' Shortlisted teams will be given 15 minutes to perform including any time required to set up',r3:' The Street Play can be performed in Tamil, Hindi or English',r4:'  No props will be provided by the hosts. Teams are requested to bring their own props and costumes',r5:'  Any musical instruments will also have to be brought by the teams. We will not be providing any sound setup including microphones.',p1:' First Place: Rs. 9,000',p2:' Second Place: Rs. 6,000',c1:'Not exceeding the time limit',c2:'Script chosen',c3:' How well the ‘message’ of the play was put across',c4:' How well a crowd was attracted',c5:' Direction'},
+        
+        { artist: 'Informals', album: 'Movie Con', color: '#972ff8',cover: 'images/moviecon.jpg',covers:'images/moviecon1.jpg',cost: 'Not Available',  describe: 'Have you ever wished you could go to an awesome comic con? Well here\'s your chance! VIT Film society presents "MOVIECON"!! Moviecon is like comic con but better! It is a fun event where participants enter the competition dressed up as their favourite movie characters.Each participant is made to cosplay on stage. A booth will be set up with photoshoot sessions. Videos of the cosplays would be shot. There will be on the spot face painting for anyone interested.It is a convention for movie buffs to share their passion for this art.It is a one day event in TT gallery',name1: 'Shipra Dasari', mob1: '9940963310', name2: 'Anshul Ahluwalia',mob2:'8110020602',r1:'Dress modestly',r2:'Purchased or self-made costumes are allowed.',r3:'. The participant is allowed maximum 2 minutes to introduce and win the judges over on stage.',c1:'Costume',c2:'Character Imitation (cosplay)',c3:'Originality ',p1:'First Prize: Rs 3000',p2:'Second Prize: Rs 2000', p3:'Third Prize: Rs 1000', club: 'VIT Film Society'},
+        
+        { artist: 'Informals', album: 'Spoof Review', color: '#972ff8',cover: 'images/spoof.jpg',covers:'images/spoof1.jpg',cost: 'Not Available',  describe: 'Which is the worst film you have ever seen? How bad was it? How much money did you waste on watching it? Don\'t regret it now, just make us laugh our heads off by giving the most comical review about the film that gave you a headache and you might end up receiving more than 10 times the tickets price.Inspired by hit YouTube series like Pretentious Movie Reviews, HollyShit, Rotten Tamatar etc., this Riviera VIT Film Society and Creativity Club present Spoof Review. Just record a video of yourself reviewing the masterpiece that made your head spin and send it to us. We will upload the best on our YouTube Page and the winning 3 will end up receiving much more than what they had paid.',name1: 'Abhishek Banerjee', mob1: '9629769233', name2: 'Aman Agarwal',mob2:'9406586538', club: 'VIT Film Society',r1:'Team of max.7 members including all hosts and technical crew.',r2:'A team can choose to review either a single film or a host of films which belong to a common    theme/genre in the video.The team needs to mention the film/theme in the beginning of the video itself to make judging easier.',r3:'Running time for the review video should not be for more than 7 minutes.',r4:'Reviews in any languages are accepted, however, subtitles are a must if the review is not in English.',c1:'Movie/Theme Selection - Extra points if no other team has selected the same film or concept.',c2:'Content- Points for spotting major bloopers and goof-ups in the original feature film and also for good usage of  puns, phrases and punchlines while reviewing the film.',c3:'Presentation- Points will also be given for clarity of content,proper editing of the video,use of visual effects and structure of review.Use proper subtitles, name tags and title card wherever required',p1:'First Prize: Rs 3000',p2:'Second Prize: Rs 2000', p3:'Third Prize: Rs 1000'},
+       
+        { artist: 'Formals', album: 'Thalia and Melpomene', color: '#972ff8',cover: 'images/stage.jpg',covers:'images/stage1.jpg',cost: 'Rs. 2000 per Team',  describe: 'Thalia and Melpomene is a stage play competition that is spread over an entire day and sees 10 performances from some of the best college teams in South India. It is held as a premium event. Thalia and Melpomene are the two masks of Theatre and represent two of the strongest genres – comedy and tragedy. Similarly, the event captures a variety of emotions through the various performances by contestants.Each team is required to submit their script prior to the event. Approximately ten teams are shortlisted on this basis. The time limit for each performance is 35 minutes with a 10 minute technical rehearsal before the performance. (Total time of 45 minutes). This event looks to promote Theatre as an art form amongst amateur college theatre groups and the student population while providing entertainment.',name1: 'Susan Sneha Alexander', mob1: '8754587894', name2: 'Akhil Mathur ',mob2:'8056905285/ 8056905285 ', club: 'Dramatics Club',p1:'First Prize: Rs 12000',p2:'Second Prize: Rs 9000', p3:'Best Actor: Rs 2000',p4:'Best Director: Rs 2000',r1:'Teams can consist of a maximum of 12 members. All members of a team should belong to the same college',r2:' Teams must email a copy of their script to vitdramatics@gmail.com by 15th Jan 2014 with the subject – “Riviera Stage Play Script Submission”.',r3:' Scripts can be in English, Hindi or Tamil.',r4:' Shortlisted teams will be given 40 minutes on stage, including time for stage set up.',r5:' Use of fire or water on stage is not allowed. Smoking on the stage is prohibited. No use of profanity is allowed.',r6:'  Chairs and tables will be provided by the hosts. Any and all other props must be brought by the visiting teams.',c1:'  Not exceeding the time limit',c2:' Stage presence',c3:' Quality of script',c4:' Acting',c5:' Direction'}
+        
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="green"><h1 class="category">World Is A Stage</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.ping.vitriviera.com/events/categories.html"><button class="amit"></button></a>
+</body>
+</html>

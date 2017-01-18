@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | The Mixed Bag</title>
+
+  <link rel="shortcut icon" href="images/mixed.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:auto;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#2eb05e;
+    }
+    .red {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/mixed bag.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:70px;font-family:'Calibri Light';}
+  .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+       .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;
+z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+       .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+.reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+<div class="card-album-artist">{{selectedAlbum.r1}}</div>
+<div class="card-album-artist">{{selectedAlbum.r2}}</div>
+<div class="card-album-artist">{{selectedAlbum.r3}}</div>
+                <h3 style="text-decoration:underline;">Cost</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                 <h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.rule1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule5}}</div>                
+                 <h3 style="text-decoration:underline;">Organizing Club/ Individual </h3>
+                <div class="card-album-club">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Type of Event </h3>
+                <div class="card-album-club">{{selectedAlbum.type}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinator</h3>
+              
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+
+      
+{ artist: 'Informals', album: 'Body Art 2.0', color: '#972ff8',cover: 'images/cycle.jpg',covers:'images/cycle1.jpg',cost: 'Rs. 100  per Team',photo:'lcj.jpg',  describe: 'In this event the participants will be given a platform to display their creativity skills at body art. They will be allowed to use either paints or mehndi, both of which will be provided. Themes will be given to them at the venue. Participants are allowed to paint any visible part of the body which may include face, hands neck, and leg. Both participants can paint each other’s face or other body parts. ',name1: 'Mekhla Singhania',  mob1: '9629771736',name2: 'Utkarsh Bhargava ', mob2: '9943118128', club: 'TFAC', rule1: '1.  Participants may carry extra paint material apart from the one allowed.',rule2: '2. Themes will not be informed earlier. It will be given on the spot. ',rule3:'3.  Any visible part of the body can be painted.',rule4:'4. Both participants of the team can paint each other, or only one may paint the other.',rule5:'5. The body art must be completed within the given time. No extra time will be given ', j1: 'Participants will be judged based on their originality, craftsmanship, medium and texture, composition and presentation. ',  p1:'First Prize\-Rs 1500',p2:'Second Prize\-Rs 1000',p3:'Third Prize\-Rs 500',
+           type:'Team of 2'},
+
+
+{ artist: 'Informal', album: '221-B Baker Street', color: '#972ff8',cover: 'images/221b.jpg',covers:'images/221b1.jpg',cost: 'Rs. 100 per Team',  describe: 'A well known renowned magician\'s wife is murdered under mysterious conditions. You are convinced that the murder is the magician. Unfortunately, the magician has a perfect alibi and is considered innocent. Mrs. Mary Sullivan was found mysteriously murdered in her apartment at 10:30 pm on a Saturday night. The apartment number is 221B. Mr Sullivan was 10 minutes away from the apartment attending a party which was being held in his honour. Mr Sullivan has a perfect alibi: Everybody in the room could swear that Mr. S was in the party till 10: 30 as he was still performing his act and was on the stage. He was seen again at 10:45pm, at exactly 10:45 pm, Mr. S entered the front doors exclaiming that somebody had punctured the tyres of his car and strangely, he entered the room with burning fingers, and long parchments of paper which were rolled into hollow cylinders. The participants will be provided with the case and a number of other scientific facts and reasons behind magic tricks which may or may not be related to the case ranging from Doppler Effect to Fraunhofer Diffraction. Enough material comprising of scientific facts and details would be provided to put forward a strong case in front of the judge. The main objective is to dissect the magician\'s tricks into minor technical facts and logic. We can project pictures and scenes from the video surveillance (like the magician walking out of the hall) in the party or probably a sequence of numbers which are actually a part of the series which will eventually lead us to the room where she was murdered.',r1:'A rival magician is cryptically helping you by leaving hints and clues. If you are clever enough to crack the hints, you can prove that the murderer is the magician. The task is to a)  Crack the clues and hints b)  Solve along the correct line of theory.',r2:'Courtroom trial:The participants have to convince the judge that the murder is the magician giving evidence that he was present in the scene of crime at the time of the murder', name1: 'Akhil Ranjan', mob1: '9840689908',     name2: 'Shivangee Sabharwal ', 
+    mob2: '9629784795', club: 'IETE', rule1: '1.  A team can only have 2 members.', rule2: '2.  Once a team is disqualified , another chance cannot be given.',rule3:' 3.  The decision of the judge will be final.', rule4:'4.  Participants are  not allowed to use any external source as an aid to help them crack the clues.',rule5:'5. In case two teams have a tie, the team giving more valid and appropriate reasons in the second round win.', j1: '1. The teams solving the maximum number of clues in the first round qualify to the next round.' ,j2: '2.  20 teams will qualify for the second round.' ,j3: ' 3.  The team will be given hints through a treasure hunt.', j4:' 4.  Each hint will be a fact as well as a clue for the next hint.',
+    j5:'5.  The teams will be given time to analyse the data given to them. The team who presents the facts in an ideal manner and convinces the judge about their suspect being guilty wins the event. ', name1: 'Akhil Ranjan',  p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team of 2.'},
+
+
+{ artist: 'Informal', album: 'Ad Effect', color: '#972ff8',cover: 'images/show.jpg',covers:'images/show1.jpg',cost: 'Rs. 100 per Team',  describe: 'This is an event that would test the participants knowledge of the world of advertisements. The competition would consist of various rounds which would primarily test the teams on ad-related trivia, such as, various brands, their history, logos, taglines, brand ambassadors, advertisements in different media etc. After a written elimination round, where the participants will be tested on their knowledge about advertisements in general, the finals will consist of various rounds which along with testing the teams ad-related trivia , will also look up to their creativity and innovation. The event will not only focus on the commercial ads but they could also be asked to come up with an idea to frame an ad with a particular theme. ',r1:'In this round teams will be asked questions related to logos, taglines, brand ambassadors, etc. This round is a written pen and paper round',r2:'The second round is an Audio-Visual round here participants will randomly get a choice of either a video based question or an audio based question. ', r3:'In the third round the participants will be asked to design an ad or sell a product to the judge. They will be judged on their creativity, choosing a brand ambassador who will be able to sell their product easily, etc ',
+         name1: 'Kajal Kumari ', mob1: '09629768224',name2: 'Ravi Abhichandra ', mob2: '09629343400', club: 'IEEE', p1:'First Prize\-Rs 3000',                   p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team of 2' },
+
+
+{ artist: 'Formal', album: 'Adzap', color: '#972ff8',cover: 'images/weirdo.jpg',covers:'images/weirdo1.jpg',cost: 'Rs. 300 Per Team',  describe: 'Welcome to the crazy marketing and advertising world where products are identified by their punch lines! Just do it to Finger Licking Good. Think you got what it takes to become the Ad Guru with some crazy and innovative catchphrases of your own? Then here is a chance to whet your appetite. Calling all enthusiasts to enthrall us with your advertising skills, slogans and jingles. Hit us with your wackiest idea with the props provided on the spot',
+          club: 'English Literary Association',   name1: 'Akash G.S ', mob1: '08939029033', type:'Team of 6'},
+
+{ artist: 'Informals', album: 'Agent X', color: '#972ff8',cover: 'images/mauj.jpg',covers:'images/mauj1.jpg',cost: 'Rs. 100  per Team',  describe: 'The event is basically based upon cryptography but at the same time there is no prerequisite such as the participant should be well versed with the concepts of cryptography. It involves the solving of ciphers and navigation through maps. It is a team event with each team having two members. The participants who are given the role of the Agent-X have to solve the mystery and find the villain(or any other character specified ) in the story to win the event. ',name1: 'Jyothi Sivadas ',  mob1: '8682062620',name2: 'Swaraj Verma ', mob2: '9629775205', club: 'ISTE', rule1: '1.  Participants are to use the given cipher manual to solve the quests.',rule2: '2.  They are to solve the quests in the given order. ',rule3:'3.  If solved in the wrong order, those answers will not be taken into consideration till the required cipher is solved.',rule4:'4. The team that solves the case first or solves the maximum number of quests in the given amount of time will win the event.',rule5:'5. In times of ambiguity, the coordinators\' word will be final.', j1: '1.  Judgment will be on first come first served basis.',j2: ' 2. The one who solves the case first will be the winner.', j3: '3. If no team is able to solve the case in the given amount of time, the team that solves the maximum number of quests will be declared the winner.', j4: ' 4.  The coordinators\' word will be final.', 
+j5: ' 5. Faculty judge will distribute the cash prizes. ',  p1:'First Prize\-Rs 3000',p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000',
+           type:'Team of 2'},
+
+
+{ artist: 'Informal', album: 'Bazinga Reloaded', color: '#972ff8',cover: 'images/trivia.jpg',covers:'images/trivia.jpg',cost: 'Rs. 100 per Team',describe:'', r1:'The first round has a blank phrase puzzle, with each blank representing a letter in the answer. There is a Wheel of Fortune which is a roulette-style wheel mechanism with 24 spaces, most of which are labeled with points plus a jackpot point value. The Wheel also features two Bankrupt wedges and one Lose a Turn, both of which forfeit the contestant\'s turn, with the former also eliminating any point the contestant has accumulated in the previous round. Each game features three contestants of the same team. A contestant spins the wheel to determine a point value and guesses a consonant. Calling a correct letter earns the value before his or her corresponding flipper, multiplied by how many times the guessed letter appears in the puzzle. At any time during a turn, a contestant with sufficient money may buy a vowel for some point value until all the vowels in the puzzle have been revealed. Calling a correct letter keeps the wheel in the contestant\'s control; hitting Lose a Turn or Bankrupt, calling a letter that is not in the puzzle, calling a letter that has already been called in that round, or giving an incorrect answer; all pass the control to the next player. The only exception is the Free Play wedge being marked in the wheel corresponding to which, there will be no penalty for an incorrect letter or answer.The wheel contains another special tag: the Wild Card, which can be used to call an additional consonant by the contestant after any turn.At any point in the game, a contestant can guess the entire phrase. A correct guess wins him the entire points, a wrong guess eliminates any point the contestant had accumulated.The contestants of a team have to complete the given phrase accumulating the maximum points. Top 15 teams will qualify for round 2. The top 15 teams will be decided on the basis of the points accumulated by the team in round 1. In case of a tie, the team which completed the phrase in minimum turns wins.',r2:'The top 15 teams basically have to present a skit of 4-5 minutes in round 2. The topic of their skit will be the same phrase which they had completed in round 1.The twist is that the judges can and shall interfere, making a mess of it all, asking the performers to play, pause, rewind or fast forward the stories at the whims and fancies of the judges! ', name1: 'M.Sri Harsha', mob1: '9629779736', name2: 'Saurabh Bhagat',  mob2: '9629783122', club: 'IEEE PCS' , rule1: '1 .Team size : 3.', rule2: '2. Time-limit for round 2 : 4-5 mins after which judges will ask the performers to stop.', rule3:'3.The use of abusive language and racist remarks is not permitted and would result in termination of participation.', rule4:'4.The final decision will be that of the Judges, which will not be challenged.', j1: '1.From round 1, top 15 teams will qualify for round  2. The top 15 teams will be decided on the basis of the points accumulated by the team in round 1. The team that accumulates the maximum points by completing the given phrase qualifies. ', j2:' 2.In case of a tie in round 1, the team which completed the phrase in minimum turns wins.', j3:' 3.For round 2, marks shall be awarded on the basis of : # Creativity, # Acting, # Script, # Relevance to the topic, # Fluidity of Rewind, Fast Forward and Pause, # Overall Impact. ', name1: 'Akhil Ranjan',  p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', 
+ p3:'Third Prize\-Rs 1000', type:'Team of 3.'},
+
+{ artist: 'Formal', album: 'Box Office', color: '#972ff8',cover: 'images/box.jpg',covers:'images/box1.jpg',cost: 'Rs. 200 Per Person',  describe: 'While movie-making is all about one\'s passion and intricate understanding, it also involves having an audience to watch. With the acute increase in competition and film industry being a major hub of business, it is also important to sell/market one\'s films well. So, the VIT FILM SOCIETY, this year is presenting you with an unique competition, all set to test our participant\'s marketing abilities as far as films are concerned and as incentives there are handsome cash prizes to be won.',r1:'Preliminary round consists of a simple written round which would be online in form of a questionnaire which would formulate into a marketing plan alongside a short synopsis of any one of the movies that would be given in the list. ',r2:'Participants moving on to the next round will be given a sample movie (Dream World Film Festival winner, 2015)/any other short-film. This film will aid the judges to find the participants putting their honed marketing skills to effect during a marketing session and a final interview ',r3:'Interview ', name1: 'Rahul Mandal ', mob1: '9629343137',name2: 'Souryadeep Chakroborty  ', mob2: '9787113452', club: 'VIT Film Society', rule1: ' 1.  Individual type event.', rule2: '2. An event that puts your film marketing abilities to test. An individual event. ',
+ rule3:' 3. Participants are expected to turn up in the second round in western formal attires.',rule4:'4 Violation of rules would lead to direct disqualification without an argument.',rule5:'5 Judges\' panel (or equivalent) will determine the final winners and they will be awarded with cash prizes and certificates.', j1: 'The initial written round would be online where the participants would have to fill in a questionnaire set by us.', j2:' We would pick the top 10 entries for the next round.', j3:' The Next would be a marketing session where the participants would have to market a movie given to them. ', j4:'The most innovative and convincing team wins. ', 
+  p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Individual'},
+
+
+
+{ artist: 'Informal', album: 'Break The Ice 3.0', color: '#972ff8',cover: 'images/ice.jpg',covers:'images/ice1.jpg',cost: 'Rs.100 per Person',  describe: '3 Rounds:',
+             r1:'Round 1: Each participant has to perform one minute tasks ranging from solving tricky problems to basic fun events like numerology, sack race, making necklace from vegetables etc .The following tasks will be given to the participants (according to the chits they pick):1. Lock and key 2. Needle and thread 3. Match the earrings 4. Balloon Pyramid ',r2:'Round 2: Participants will be randomly grouped up with a partner. The main idea is to boost up their team spirit.The following tasks will be performed by the teams(according to the chits they choose):1. Hum Tum 2. Blind fold and Balloons 3. Draw my thing ',r3:'Round 3: 10 teams will qualify for the final round. The Items will be kept in front of the participants. They are supposed to grab maximum no. of items needed. They need to decorate their partners using those items. Top three teams will be awarded the prize money.', name1: 'Sukriti Prakash', mob1: '8110019343',name2: 'Antara Sharma', mob2: '9677417513', club: 'IEEE WIE STUDENT CHAPTER', rule1: ' 1. The instructions given by the volunteers and coordinators will be final and abiding.', rule2: '2. It is an individual event. However, participants will be randomly teamed up with other participants after the first round by the volunteers. They cannot team up with their own choices.',rule3:'3. Only one chance to pick up a chit and perform the given task as per the chit will be given. Participants can’t do more than one task in the first round.',rule4:'4. Participants will be judged within the group in the second task.Participants cannot opt for more than one task in the second round.',rule5:'5. Participants will be judged strictly according to the time recorded in the stopwatch. No one is permitted to continue the task after the time is up.', j1: '1.  In the first round, the participants who would be able to the given task in the chit maximum number of times, or who will take the least time to complete the given task, will qualify for the next round.', j2:' 2.  The participants will be checked for co-ordination and team work for the second and third round. ', j3:'3. In the last round participants will be judged on the basis of  maximum number of items acquired and innovative decorative ways which they used to decorate their partners.', j4:' 4.  Prizes will be awarded on the basis of least time taken to complete the task. ', j5:'5.  No two chances will be given to pick up the chits. ', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Individual'},
+
+
+{ artist: 'Informal', album: 'Build To Destroy', color: '#972ff8',cover: 'images/build.jpg',covers:'images/build1.jpg',cost: 'NA',  describe: 'This event is about making the tallest building and strongest building within the  given time limit with given materials ,such  that it should not fall down on hitting it  with a  ball through catapult.',r1:' ',r2:' ',r3:'', name1: 'Shubham Sarawagi ', mob1: '9865294828',
+name2: 'Raj Saran ', mob2: '8110020440', club: 'ASCE', rule1: '1. Only three chance will be given for knocking to each team. ', rule2: '2. The team with maximum points after both rounds wins ',rule3:'  ',rule4:'',rule5:'', j1: '', j2:' ', j3:'  ',p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team Event'},
+
+
+{ artist: 'Informal', album: 'Dominos', color: '#972ff8',cover: 'images/domino.jpg',covers:'images/domino1.jpg',cost: 'Rs. 100 per Team',  describe: 'Based on the famous domino effect. In this the participants will be provided with 100-150 domino chips/CD cases.They have to make a queue of domino chips in such a way that when a single chip is made to fall , due to domino effect , the rest of the chips fall in such a way to hit a bell/a point .They can divide the chips in such a way that the bell may be hit maximum no of times.To make the set-up innovative and attractive, following the theme of RIVIERA 15 COLORS OF INDIA , chips of different colors will be provided together materials such spliters and ballons. ',r2:' ',r1:' ',r3:'', name1: 'SHUBHAM AGRAWAL  ', mob1: ' 9629769045 ',
+name2: 'POOJARY AKSHAY LAKSHMANA  ', mob2: '9629417548', club: 'ASME', rule1: '1. Only the materials provided can be used for the setup.',rule2:'2. Disturbing the setup of other team will result in disqualification.',rule3:'3. Time limit to make and test the setup will be 30-45 mins per team.  ',rule4:'',rule5:'', j1: '', j2:' ', j3:'  ',p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team of 2'},
+
+
+{ artist: 'Informal', album: 'Doodle It', color: '#972ff8',cover: 'images/doodle.jpg',covers:'images/doodle1.jpg',cost: 'Rs. 75 per Team',  describe: 'This event is about doodling like the infamous Google Doodle Competition where one can show how good you are at having fun with drawing abstract shapes and figures or depicting a concrete meaning with them.',
+           r1:'',r2:'',r3:'', name1: 'Shaheen Ahmed    ', mob1: '9894541076',name2: 'Aiswarya Mohanty', mob2: '9629764482', club: 'TFAC', rule1: ' 1. Each participant will be given a time of 2 hours to complete the event.', rule2: '2.Theme will be revealed on the spot',rule3:'3. Theme could be a brand name, any known logo or a giant MNC. Prepare yourself for such. ',rule4:'4.  Once required materials given request for any extra material will not be entertained.',rule5:'5.  Participants must maintain the decorum of event.', j1: ' 1. Creativity', j2:' 2.  Presentation and Framing ', j3:'3.  Promptness', j4:' 4.  Relation with Theme', j5:'5.  Skill and technique ', p1:'First Prize\-Rs 2000', p2:'Second Prize\-Rs 1000', p3:'Third Prize\-Rs 500', type:'Individual'},
+
+
+
+{ artist: 'Informal', album: 'Facebook DP Portfolio', color: '#972ff8',cover: 'images/fb.jpg',covers:'images/fb1.jpg',cost: 'Rs. 20  Per Person',  describe: 'Facebook is the buzz of the hour! And who wouldn\'t want to have a DP that leads to a flow of likes!!! Come visit us, try out something candid, something crazy, something new, something different and we\'ll give you a picture that\'ll make you feel like a Superstar. The portfolio shoot venue will have various set-ups. You will be given a catalogue of pictures from which you can choose or go with your own pose. What\'s more? During the shoot we will provide you with a huge number of accessories starting from the dressing accessories like rings, earrings, hats, scarves, specks, to props like teddies, guitars to cars and bikes, the list is never-ending! So come on people, get ready to pose.',club: 'Individual',   name1: 'Akshay Trivedi ', mob1: '07502507586', rule1: '', rule2: '',rule3:' ',rule4:'',rule5:'',type:'Individual'},
+
+
+{ artist: 'Informal', album: 'Forensics', color: '#972ff8',cover: 'images/forensic.jpg',covers:'images/forensic1.jpg',cost: 'Rs. 50 per Person', describe: 'The teams now will be given forensic clues having live forensic scenario which when solved will be leading to some spots in the campus where the clue continues, the team to crack the mystery case first wins. It involves finding out the suspects and moving around the town(campus) in order to solve the case.It will be a real hunt for the criminal making it feel as lively as possible.',  
+r1:'Round 1: In this round participants will be tested of their logical and analytical skills in general scenario. Accordingly the participants proceed to next round.',
+r2:'Round 2: 30 participants will be divided into 10 teams with 3 per team.This round will have a virtual crime scenario given and they will have to solve the case based on the clues and the situation given from time to time. They can also avail various paths to solve the case of which the options will be given on spot.There will also be real characters whom they will also be interrogating to solve the case. Timely updates of the case will be given from time to time by the police detective team. ',
+r3:'Round 3: The teams now will be given forensic clues having live forensic scenario which when solved will be leading to some spots in the campus where the clue continues, the team to crack the mystery case first wins. It involves finding out the suspects and moving around the town(campus) in order to solve the case.It will be a real hunt for the criminal making it feel as lively as possible.', 
+name1: 'M Harshavardhan Reddy', mob1: '9629765799',name2: 'Shivam Datta', mob2: '9159870071', club: 'IET', rule1: '1. Not allowed to use mobile phones ', rule2: '2.Time will be noted during each round.',rule3:'3. No help should be availed from anyone.',rule4:'',rule5:'', j1: ' ', j2:' ', j3:'.', j4:'', j5:'', p1:'', p2:'', p3:'', type:'Individual'},
+
+
+{ artist: 'Informal', album: 'Idiot Box', color: '#972ff8',cover: 'images/idiot.jpg',covers:'images/idiot1.jpg',cost: 'Rs. 100 Per Team',  describe: 'For all those TV-SERIES addicts out there who enjoy the ADRENALINE RUSH of \'\'The Vampire Diaries\'\', the THRILL of \'\'Supernaturals\'\', the HUMOUR in \'\'FRIENDS\'\' , the Dark Passenger \'\'DEXTER\'\', \'\'GAME OF THRONES\'\', \'\'SUITS\'\', etc, this is an event that you don\'t want to miss.  The event consists of 3 rounds. ',  r1:' The First round will have 70 teams. We will be playing around 20 audio clippings from famous \'\'TV-series\'\' and the participants will have to identify the personality and the series .The team with the maximum score will go to the next round.   ',r2:'We will be short-listing 20 teams for the second round. In this round we will have an A2 size poster related to a TV series (it might be a single person\'s poster or the complete cast).This poster will be covered completely by stick notes with numbers on one side and questions on the other side.We will have ten such posters and two teams will be competing against each other for the same poster. We will be having one volunteer per poster so that this process takes place simultaneously.  Out of the two teams the team with the higher score in round-1 will have an advantage of selecting the stick note first. Once they select a particular number they need to answer the question corresponding to it. If they answer it, the stick note will be removed and they get a chance to guess the personality. In case they answer it wrong the stick note will be blocked (cannot be used by other team).The team that guesses the poster right will be qualified for the next round. This way 5 teams will be moving to the next round.   ',r3:'This will be a buzzer round. We will be showing a total of 10 video clippings to the teams. Five of the video clipping will be such that they will be stopped at one point and the teams are supposed to guess the next coming famous dialogue.The next five videos, we will be showing two different clippings of the same episode and the teams have to tell what happened in between. The team with the maximum score wins.', name1: 'Syed Mohammed ', mob1: '8220165098',name2: 'Divya Ramesh', mob2: '9566667509', club: 'IEEE', rule1: '1. If teams engage in malpractice, the team will be disqualified. ', rule2: '2.  Participants should not obtain help from other people while taking the quiz.',rule3:'3.  No electronic devices should be used while the quiz is being conducted.',rule4:'4. The video clips will only be shown once.',rule5:'5. In the case of any arguments, final call will be made by the judges.', j1: '1. Two points for every right answer. ', j2:' 2. No points will be awarded for any wrong answer. ', j3:'3.  No negative marking for wrong answers.', j4:'4. For the buzzer round, if teams press the buzzer at the same time and both teams give the right answer, each team will be awarded one point each.', j5:'5.  The winning teams will be chosen by the top three highest points scored by the teams', p1:'First Prize\-Rs 2000', p2:'Second Prize\-Rs 1000', p3:'Third Prize\-Rs 500', type:'Team of 2.'},
+
+       
+
+
+{ artist: 'Informal', album: 'It\'s a Dare', color: '#972ff8',cover: 'images/cycle.jpg',covers:'images/cycle1.jpg',cost: 'Rs. 100  Per Team',  describe: 'Ever wondered what the likes of Jim Carrey, Adam Sandler, Ben Stiller, etc have in common...It\'s the guts to do craziest possible acts in front of a crowd, being a part of it and not making them realise that they are there on a task....If you think you are wacky enough to do the same then \'\'IT\'S A DARE FOR YA!!!\'\'....', r1:'',r2:'',r3:'', name1: 'Meghana Pydi', mob1: '9629903766',name2: 'Nicola Thounoujam', mob2: '8939629377', club: 'Creativity Club', rule1: '1. The participants will perform in team and compete with others in situations where they\'ll be pulled out of their comfort zones and perform some really daring yet embarrassing tasks.', rule2: '2. The event will consist of three rounds. ',rule3:'3. Each round involves the participants to interact with the public around them.  ',rule4:'4.  There will be elimination after every round',rule5:'5. Hence the key to winning this event is to get as much public support as possible-\'\'If they refuse, you lose\'\'', j1: '', j2:'', j3:'', j4:'', j5:'', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team of 2.'},
+
+
+{ artist: 'Informal', album: 'Junkyard Challenge', color: '#972ff8',cover: 'images/trivia.jpg',covers:'images/trivia1.jpg',cost: 'Rs. 100  Per Person',  describe: 'All the materials mentioned above are provided to the participants in equal quantity and 30 minutes time will be allotted. In the specified time, they are supposed to do come up with a useful and creative product. They are free to make anything. For example, a chandelier/ wall hangings, boats, any stands/ holder, or any other show piece.  Materials provided to the participants 1.  Straws 2.  Cards (cartons) 3.  Paper 4.  Pencils 5.  Cello tapes/ fevicol 6.  Rubber bands 7.  CDs 8.  Ice cream sticks 9.  Ropes 10. Steel 11. Plastic covers/polythene 12. Balloons 13. Plastic bottles 14. Clays 15. Paper cups 16. Color paints',r1:'',r2:'',r3:'', name1: 'Monika Sharma ', mob1: '9597457072',name2: 'Ira Shukla ', mob2: '', club: 'Individual', rule1: '1. Participants must maintain the decorum of event.', rule2: '',rule3:'',rule4:'',rule5:'', j1: 'The product will be evaluated on the basis on the usefulness (out of 10, marks will be given) and creativity (out of 10), Quantity of materials used (out of 10). The team getting highest marks will be declared as the winner.', j2:'', j3:'', j4:'', j5:'', p1:'First Prize\-Rs 1000', p2:'Second Prize\-Rs 500', p3:'', type:'Teams of 2.'},
+
+
+{ artist: 'Informal', album: 'Lights Camera Jutsu', color: '#972ff8',cover: 'images/lcjs1.jpg',covers:'images/lcjs.jpg',cost: 'Rs. 100 Per Team', photo:'lcj.jpg', describe: 'Lights Camera Jutsu puts your creativity to test in a 3-minute video given that your videos are taken from anime and animation movies. This event celebrates love for anime and comic books\' characters around the world and in VIT. All the participants need to come up with a 3 minute movie made by mashing up. Sit on the director\'s chair, think of every anime and DC/Marvel animated movies and series from our database, and mash them up to create the magic with your Jutsu. And remember Rock Lee\'s words, \'\'A genius, huh? What does that mean? \'\'Genius\'\'? So I was not born with a whole lot of natural talent, not gifted like Neji… but I work hard and I never give up! That is my gift; that is my ninja way!\'\'',
+          r1:'',r2:'',r3:'', name1: 'Kunwar Shivam Srivastav ', mob1: '+91-9944882302',name2: 'Aayush Gupta', mob2: '+91-8110020415', club: 'Individual', rule1: '1.  No video should already be present on internet.', rule2: '2.  A video must not contain anime only. At least one part should have United States\' animated movies and series\' excerpts.',rule3:'3.  A video should have excerpts from more than one anime.',rule4:'4.  Participants should mention names anime and movies/series they have decided to mash up after 1 hour of planning session. Hence they are not allowed to change the list later.',rule5:'5.  No two videos should be similar and  a poster for the movie is compulsory.', j1: '1.  Creative, sophisticated use of existing materials.', j2:'2. Quality of technical aspects, design and structures', j3:'3.  Ability to engage variety of audience.', j4:'4. None of the rules and regulations are broken.', j5:'5.  The poster made should be relevant to the video.', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 1500', p3:'', type:'Team of 2.'},
+
+
+{ artist: 'Informal', album: 'Live Monopoly', color: '#972ff8',cover: 'images/monopoly.jpg',covers:'images/monopoly.jpg',cost: 'Rs.100  Per Person', describe: 'We have all played the famous board game monopoly. It has attracted millions of people all over the world. Hence here we are proposing a real life version of the game. Instead of the board, we will have an arena built. It will consist of places to be bought, sold and held mortgage.  The player will buy and sell properties in order to build hotels. By the end of 30 minutes, the one with maximum amount will win the game.On each day, there will be 8 sessions and each session will last for 30 minutes. Each player will start off with a certain amount of cash which is given to him/her by the bank (fake currency). The game will be played as per the usual rules with a slight change.', r1:'',r2:'',r3:'', name1: ' Sukriti ', mob1: '+91 8220577240',name2: ' Udisha Madnani', mob2: '+91 9787121575', club: 'IEEE Computer Society', rule1: '1. All the cities in the arena will be distributed as per draw of lots. This will speed up the game a little and will make sure each session is over on time. Each player has to pay the price of the city he/she gets.', rule2: '2.  The cities in the arena will be from India itself and will be grouped on the basis of state. ',rule3:'3. The game will start off with the usual rules and will give each player the flexibility to exchange or auction their property for the price they like.',rule4:'4.  Each Player can also build his/her hotels in the cities owned.',rule5:'5. Each time a player passes start (or go), he/she will be given a certain amount of cash as per the usual rules.',j1: '1.  Number of dares successfully performed. If a player lands on the chance square, he/she will be given a random dare which needs to be performed within a given time period. Each dare will add on a particular amount to the player’s account. Failure of the same will result in the reduction of the amount.', j2:'2.  Total liquid assets possessed by the player at the end of 30 minutes.', j3:'3.  The cost of properties possessed will also be taken into account.', j4:'4.  In case of bankruptcy, the player will be eligible to take a loan from the bank. However, that amount will be subtracted with a pre decided interest rate while calculating the final amount.', j5:'5.  In case of a tie, there will be a tie-breaker round, consisting of dares. ', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Individual'},
+
+
+{ artist: 'Informal', album: 'Masterchef', color: '#972ff8',cover: 'images/masterchef.jpg',covers:'images/masterchef1.jpg',cost: 'Rs. 150 Per Team', describe: 'For all those who love bringing smiles on the faces by their cooking skills, who find cooking an art, a way to release stress, a meditation, this is an event that you don\'t want to miss.  The event consists of 3 rounds. We are expecting total 50 teams.  ',
+          r1:'The First round will have 50 teams (2 per team). They will be given flour, water and a container. Teams will prepare dough for the provided material in a specified time duration.',r2:'We will be short-listing 20 teams for the second round. In this round we will be giving a curry (small amount) containing a large number of ingredients. Teams will have to identify the ingredients present in the curry.    They will write the ingredients down in an A4 size sheet provided to them. The team that guesses the ingredients right will be qualified for the next round. This way 5 teams will be moving to the next round.   ',r3:' This will be a proper cooking competition. Teams will be asked to make an Indian dish with their own innovation. They will be provided with the ingredients they require and will cook the dish in the specified amount of time', name1: 'Nischaya Dawar ', mob1: '8110019701',name2: 'Divyaprakash Jain ', mob2: '9787116070', club: '', rule1: '', rule2: '',rule3:'',rule4:'',rule5:'', j1: '1. The team which makes the dough in specified time will be selected for the second round.', j2:'2. The quality of the dough prepared will be taken into consideration.', j3:'3. From  the second round the top five teams with maximum correct ingredients will be selected for the third round', j4:'', j5:'', p1:'First Prize\-Rs 2000', p2:'Second Prize\-Rs 1000', p3:'Third Prize\-Rs 500', type:'Team of 2.'},
+
+
+{ artist: 'Informals', album: 'Planet Bollywood', color: '#972ff8',cover: 'images/planet.jpg',covers:'images/planet1.jpg',cost: 'Rs. 100 Per Person',  describe: '',  r1:'   ',r2:'   ',r3:'', name1: 'Ashwati Menon', mob1: '9092096523',name2: '', mob2: '', club: 'IEEE', rule1: ' ', rule2: '',rule3:'',rule4:'',rule5:'', j1: ' ', j2:' ', j3:'.', j4:'', j5:'', p1:'', p2:'', p3:'', type:'Team of 2.'},
+
+
+{ artist: 'Informal', album: 'Rangoli: Colors Of INDIA', color: '#972ff8',cover: 'images/rangoli.jpg',covers:'images/rangoli1.jpg',cost: 'Rs. 100 Per Team',  describe: ' A TRADITIONAL COMPETITION TO KEEP UP WITH THE THEME OF THIS RIVIERA : COLORS OF INDIA.',name1: 'Aayush Jain', mob1: '09865312015', name2: 'Saksham Minocha', mob2: '9425530075', club: 'Individual', rule1: '1. Each team will be provided with color sand of 8 colors (200gm)and white color (400gm). ', rule2: '2. Each team will be provided an area of 3x3\'\' wherein they have to make their rangoli.',rule3:'3. Stensils or Other Decoratives will not be provided but participants can bring up their own Decoratives and Paper Stensils.',rule4:'4. Each team will be given a maximum time of 3 and a half hours.',rule5:'5. Judgement of Judges will be final.', j1: ' ', j2:' ', j3:'.', j4:'', j5:'', p1:'First Prize\-Rs 2000', p2:'Second Prize\-Rs 1000', p3:'', type:'Team of 2'},
+
+
+{ artist: 'Informal', album: 'Save The Town', color: '#972ff8',cover: 'images/cycle.jpg',covers:'images/cycle1.jpg',cost: 'Rs. 100 Per Person',  describe: '',  r1:'   ',r2:'   ',r3:'', name1: 'Aditi Ranade', mob1: '9943127794',name2: 'Roosha Roy', mob2: '9677334064', club: 'IEEE', rule1: ' ', rule2: '',rule3:'',rule4:'',rule5:'', j1: ' ', j2:' ', j3:'.', j4:'', j5:'', p1:'', p2:'', p3:'', type:'Individual'},
+
+
+{ artist: 'Informal', album: 'Spacequal', 
+color: '#972ff8',
+cover: 'images/weirdo.jpg',covers:'images/weirdo1.jpg',
+cost: 'Rs. 200 per Team',
+ describe: 'Spacequal is a team event where each team will consist of 5 members each.The team needs to make an sequel of any space related movies . The sequel should be scientifically as accurate as possible. The event will consist of two rounds.',
+ r1:'In the  1st round the team have to write a script of the movie they have choosen. The team will be judged on the basis of idea and creativity . After the first round , 10-15 teams will be selected for the next round.',
+ r2:'The selected teams have a make a short video clip on the script that was presented in the 1st round.The team will be judged on the video clip made , their execution , editing & creativity. The best team fulfilling all these criteria will be the winner.',
+ r3:'No third Round', name1: ' Himanshu Gupta ', mob1: '8680950524',name2: ' Karthik Nair', mob2: '9597436897', club: 'Astronomy Club', rule1: '', rule2: '',rule3:'',rule4:'',rule5:'', j1: '', j2:'', j3:'', j4:'', j5:'', p1:'First Prize\-Rs 1500', p2:'Second Prize\-Rs 750', p3:'Third Prize\-Rs 500', type:'Team of 5'},
+
+
+{ artist: 'Informal', album: 'The 90\'s Show', color: '#972ff8',cover: 'images/show.jpg',covers:'images/show1.jpg',cost: 'Rs.100  Per Person', describe: 'Music, movies, cartoons and comic books, TV shows, world events, and sports, keep all trivia from the 1990\'s at your fingertips, as we relive the best decade. This event is basically a quest for the ultimate \'90s kid.',
+          r1:'Open Quiz (pen and paper round). Participants have to answer a set of simple and interesting questions related to music, movies, cartoons etc. with the help of their team members. All questions are based on the exciting topics related to the 90’s! These will include audio visual questions, MCQs and one or two word answers. Questions will be displayed on a screen using a projector. Eg: The Adams Family, Flintstones!Each type of questions have different mark allotment. On the basis of marks scored, 6 teams make it to the final round i.e. the buzzer round.',r2:'Buzzer Round. In this round all the teams sit together and are asked questions or given tasks to complete turn by turn. Tasks may include drawing their favourite cartoon character or singing their favourite song from the 90s. If one team passes a question or a task, the other teams can make use of the buzzers given to them to answer the question as soon as possible. They therefore get bonus points. In the end, points of all the teams are added up and the team with the maximum score wins.',r3:'No third Round', name1: 'SHIVANGEE SABHARWAL', mob1: '9629784795',name2: 'PRANAV OHRI', mob2: '9629778087', club: 'IETE', rule1: '1. Point system will be disclosed at the time of the event.', rule2: '2. Bonus points will be given for answering a passed question.',rule3:'3. Team with maximum points wins.',rule4:'4. No use of internet for answering questions.',rule5:'5. Judges Decision during buzzer round is final.', j1: '1. Questionwise marking scheme would be disclosed on the day of the event.', j2:'', j3:'', j4:'', j5:'', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team of 2'},
+
+{ artist: 'Informal', album: 'Triviador', color: '#972ff8',cover: 'images/trivia.jpg',covers:'images/trivia1.jpg',cost: 'Rs. 150 per Team',  describe: 'It\'s a fun-filled general knowledge\-based gaming event which tests your knowledge, guessing power, luck, strategic power, etc. But this time asking you questions based on your favourite TV series. Work Smart...LUCK do matter! The event had been a great success in previous Gravitas and the one before with over 50 internal participant teams and 20 external participant teams. In Triviador, 5 teams compete to take over the world, one set of 5 teams at a time. It begins with a conquest phase, for which the game asks all teams series of four trivia questions. Here the soldiers are divided on the basis of the correct answers given and the position specified by the participants. Then, the battlephase begins where the teams target other teams and ultimately winner is decided.',r1:' ',r2:' ',r3:'', name1: 'Shivam Nishith  ', mob1: '9159875970',
+name2: 'Yasaswy Wupardrashtra  ', mob2: '9092331744', club: 'IICE(Indian Institute of Chemical Engineers)', rule1: '1.  In Triviador, 5 teams compete with each given a country(castles). It begins with a conquest phase, for which the game asks all teams series of four trivia questions. These are used to divide up the soldiers available for that round.  ',rule2:'2. The question is shown on the screen and the teams are allowed to write down their answers on a sheet of paper. Then they are supposed to press the buzzer as soon as they have written the answer.',rule3:'3. The team with the CLOSEST answer is given maximum no. of soldiers. Followed by the team with the next closest answer receiving one soldier less than the team with closest answer and so on. In case of tie the team pressing the buzzer first is given priority.  ',rule4:'4.  At this point, battlephase begins. In this mode, players are asked to choose the soldier or castle belonging to an opponent in a space adjacent to their own soldiers as targets. The fighting takes the form of a multiple choice trivia question. The player with the correct answer wins the opponent\'s soldier.',rule5:'5. If opponent\'s castle is attacked then they are given three questions to defend it by answering any one correctly and if they are unable to defend it then they lose the game and the castle and the opponent\'s army is given to the winning team. This continues till a final winning team is decided.', j1: '1. The team must first finish writing the answer then press the buzzer. Failing to do so will result in elimination.', j2:'2. As, each soldier and castle have points the team with most no. of points will be the winner in case a clear winner is not decided. With castle having much more points. ', j3:'3. With each team a judge will be present who will ensure that rules are followed and no malpractice is used.The winner of each round of five teams will be sent to the next round. Here, again they will be divided into five teams where they will compete will the other teams so that finally two teams are decided which will be considered as first and second.  ',p1:'First Prize\-Rs 2000', p2:'Second Prize\-Rs 1000', p3:'', type:'Team of 3'},
+
+
+
+ ],
+
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="red"><h1 class="category">Mixed Bag</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:0px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.events.vitriviera.com/events/"><button class="amit"></button></a>
+</body>
+</html>

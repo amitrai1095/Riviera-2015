@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://fiddle.jshell.net/PvVdq/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title> - jsFiddle demo</title>
+  
+  <script type="text/javascript" src="jquery-1.8.3.js"></script>
+  
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="result-light.css">
+  
+  <style type="text/css">
+    #horizontal {
+    position: fixed;
+    width: 50px;
+    background: red;
+    left: 0;
+    top: 50px;
+}
+  </style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+$(document).ready(function () {
+    var $horizontal = $('#horizontal');
+
+    $(window).scroll(function () {
+        var s = $(this).scrollTop(),
+            d = $(document).height(),
+            c = $(this).height();
+
+        scrollPercent = (s / (d - c));
+
+        var position = (scrollPercent * ($(document).width() - $horizontal.width()));
+        
+        $horizontal.css({
+            'left': position
+        });
+    });
+});
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+Lorem<br>
+Ipsum<br>
+Dolor<br>
+
+<div id="horizontal" style="left: 0px;">test</div>
+  
+
+
+
+
+
+</body></html>

@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Words Worth - Hindi</title>
+
+  <link rel="shortcut icon" href="images/hindi.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#fd955b;
+    }
+    .red {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/wordsworth.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+       .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:120%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      .eve1{width:200px;height:200px;  font-size: 15px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+ .reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+
+     
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details" style="padding:{{selectedAlbum.pad}}">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r5}}</div>
+                <!--<h3 style="text-decoration:underline;">Prize Money</h3>
+                <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div>-->
+                <h3 style="text-decoration:underline;">Type of Event:</h3>
+                <div class="card-album-artist">{{selectedAlbum.type}}</div>
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+       
+          { artist: 'Informal',pad:'50px 10% 0', album: 'Barfi', color: '#972ff8',cover: 'images/barfi.jpg',covers:'images/barfi1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Do your talking on pitch! Take your squad and compete in the popular Seasons mode, weekly tournaments and challenges, and more. Prove to the world that YOU have the Ultimate Team', club: 'Hindi Literary Association',   name1: 'Aastha Rana', mob1: '09092911231',name2:'Jyoti Chaudhary',mob2:'9677466953',r1:' Cheating among the teams should be checked.',r2:' Teams should not discuss answers loudly as it can disturb other teams.',r3:'Union of two or more teams against other team/teams should be checked and stopped.',r4:' Any misbehaviour by teams should not be tolerated.',r5:'Usage of internet is strictly prohibited ',p1:'First Prize: Rs.3000',p2:'Second Prize: Rs 2000',p3:'Third Prize:Rs 1000',c1:'Firstly, the participants are shown a video clip which demonstrates various codes of acting for particular actor/actress, place, monument or a well-known personality. Then they are shown a second video comprising of movie names, places and personalities acted by HLA members and the participants had to quickly decode the action and write the name of the movie/personality/place on a piece of paper.',c2:'The selected teamsarre then called one by one on stage.',c3:' One of the three members has to pick up a chit from one of the four boxes kept on stage which comprised of idioms, movie names, places or personalities, and try to explain it to his team mates. If they fail to guess it, the participant could move to the next chit',c4:'  Teams are then called up on stage and were made to stand in such a way that two members faced in opposite directions and the third one in center.',c5:' The first member and the third member are told different movies, first person has to act his movie to the middle person within 30 seconds while the third member keeps looking in opposite direction.',c5:'•  Then this middle member has to explain this movie to the third member. The third member then tries to act his movie which the second member has to explain to the first member.',c6:'  After this all the three members are asked all the three movies and marked accordingly.',c7:'•  Winners are chosen from the cumulative score of the second and third round.',club: 'Hindi Literary Association',type:'Team of 3'},
+
+         
+
+          { artist: 'Informal',pad:'50px 10% 0', album: 'Bolvachan', color: '#972ff8',cover: 'images/bolvachan.jpg',covers:'images/bolvachan1.jpg',cost: 'Rs. 50 Per Person',  describe: 'If you tend to be more outgoing and loud than being shy and quiet; if you are thought more of as a squawking parrot instead of a think quiet bunny; if you have trouble keeping your mouth shut; if you can go on and on even on the most mundane topics; then you are qualified to read the text ahead.The event ‘Bolvachan’ brings out the spontaneity and fun quotient of the participants. Here you are expected to speak out on funny topics and situations within a stipulated time limit. The more you tickle our funny bone, the greater are your chances of winning. This event is an interesting mix of shipwreck, turncoat, block and tackle, etc. So, if you are a wordsmith, and have a tongue that flutters fast, you can steal the show, and grab a decent sum of money and certificate, as your reward.',   name1: 'Anubhav Agarwal', mob1: '08344715437',name2:'Tanu Gupta',mob2:'9597395028',r1:'  No vulgarity',r2:'There thoughts should not hurt the feeling of others.',r3:'It should not exceed the given time limit. ',r4:'  Any misbehaviour by individuals should not be tolerated',r5:' Language no barrier . It can be either in english or Hindi.',c1:'1. Content :  relation of ideas given by the participant  with the topic, variety of ideas, newness  in ideas',c2:'2.  Time:  participant should finish his speech within the specified time. if he exceeds the time, marks will be deducted.',c3:'3.  Humour:  participant with more humorous and interesting points will be allotted more marks.',c4:'4. Presentation:  flow and connectivity between subsequent ideas.',c5:'5.  Confidence:  fluency in speech.',p1:'First Prize: Rs.3000',p2:'Second Prize: Rs 2000',p3:'Third Prize:Rs 1000',type:'Individual'},
+
+          { artist: 'Informal',pad:'50px 10% 0', album: 'Drishtikon', color: '#972ff8',cover: 'images/drishti.jpg',covers:'images/drishti1.jpg',cost: 'Rs. 50 Per Person',  describe: 'This event basically focuses on checking the creativity, proficiency and command in the Hindi language of the participant. In the first round participants will be given a question paper consisting of Hindi crosswords and word building. This round checks the vocabulary and basic Hindi knowledge of the participant. In the second round some audio/video , picture will be provided to the participants and they are expected to write a prose/poetry on it. ', club: 'Hindi Literary Association',   name1: 'Baibhav Bishal', mob1: '09543082680',name2:'Palak Tiwari',mob2:'95970209793',c1:'Creativity-The questions asked are such that they do not occur in your general everyday life but are with a twist.Questions which giggle you and also challenges you.In such cases the creativity of the participant to produce the most unique yet apt answer will be tested.The creativity can not be measured and is a individuals perspective matters so no by the book criteria.',c2:'  Proficiency-The proficiency of vocabulary of the individual will be judged.Whether the objective has been met without compromise to content will also be checked.',c3:'Command in the Hindi language-the Participants ability to comprehend the question and answer will be judged.It is basically judging the command one has over the language. ',r1:' Cheating among the individuals should be checked.',r2:' Cheating among the individuals should be checked.',r3:' Union of two or more individuals should be checked and stopped.',r4:'  Any misbehaviour by individuals should not be tolerated',r5:' Usage of internet is strictly prohibited .',p1:'First Prize: Rs.3000',p2:'Second Prize: Rs 2000',p3:'Third Prize:Rs 1000',type:'Individual'},
+
+          { artist: 'Informal',pad:'50px 10% 0', album: 'Sabse Bada Khiladi', color: '#972ff8',cover: 'images/mauj.jpg',covers:'images/mauj1.jpg',cost: 'Rs. 50 Per Person',  describe: 'This event tests the overall personality and smartness of the contestants. They are judged based on their physical fitness, mental abilities, comprehension, marketing and social skills, and much more. It is a dare event, and can be called as the VIT version of the popular TV show \'Roadies\'.', club: 'Hindi Literary Association',   name1: 'Somendra Tyagi', mob1: '08508208606',name2:'Talha Alvi',mob2:'8056903653',p1:'First Prize:Rs 3000',p2:'Rs 2000',p3:'Rs 1000',r1:' Cheating among the teams should be checked.',r2:' Teams should not discuss answers loudly as it can disturb other teams.',r3:'Union of two or more teams against other team/teams should be checked and stopped',r4:' Any misbehaviour by teams should not be tolerated.',r5:' Usage of internet is strictly prohibited .',c1:' There are tasks that will test your nerves, challenge your potential, bring out the competitive side of you and lead you to have an altogether amazing experience. This event is designed in such a way that the participants will have to find their way out of tricky situations. There are riddles and mysteries, struggles and challenges, drudgery and elbow-greasing, along with fun and entertainment. It has a treasure hunt element to it too. We are on a quest to find someone who will emerge as the strongest of the lot, the most capable, the conqueror of all these adversities, the ultimate winner, and we shall award him/ her with the honorary title of ‘SabseBadaKhiladi’, along with a handsome amount of money, and needless to say, the certificate. ',type:'Individual'},
+
+          { artist: 'Informal',pad:'50px 10% 0', album: 'Sur Sangam (Antakshari)', color: '#972ff8',cover: 'images/anta.jpg',covers:'images/anta1.jpg',cost: 'Rs. 50 Per Person',  describe: 'Sur- Sangam is the modern version of the good old Antakshari. It can be rightfully called as hi-tech Antakshari. There are a no. of interesting audio-visual rounds, along with rapid fire and general trivia questions that will test your knowledge of the Bollywood songs to the core. Music is gonna be in the air! We provide you the stage, we lend you the microphones, we give you the audience; all you are supposed to do is to unleash the music freak within you! Pull your socks up, and get all set to meet us in the mother of all musical battles, Hindi Literary Association-VITU\'s very own \'Sur-Sangam\'!', club: 'Hindi Literary Association',   name1: 'Shivam Duseja', mob1: '09597380638',name2:'Ayushi Singla',mob2:'7845758478',p1:'First Prize:Rs 5000',p2:'Rs 3000',p3:'Rs 1500',c1:'The prelims consists of a written questionnaire consisting of Bollywood trivia questions. A total of 6 teams are finalized for the Mains.Mains starts off with the first round: Rapid Fire.  Every question has a picture of some actor/actress in the centre. There are also some secondary pictures of other actors/ actresses.  Each team has to make a combination of the primary and secondary pictures and sing songs with this combination. The second round is called the \'Grid round\'. The third round is the \'Wheel of Fortune\'. The last round is  ‘UbharteSitare’.',r1:'Cheating among the teams should be checked.',r2:'Teams should not discuss answers loudly as it can disturb other teams',r3:'  Union of two or more teams against other team\teams should be checked and stopped.',r4:'Any misbehaviour by teams should not be tolerated.',r5:'Usage of internet is strictly prohibited .',type:'Team of 3'},
+
+
+          { artist: 'Informal',pad:'200px 10% 0', album: 'Vaak Yudhh (Debate)', color: '#972ff8',cover: 'images/debate.jpg',covers:'images/debate1.jpg',cost: 'Rs. 50 Per Person',  describe: '\'Vaak\' means \'The act of speaking\' and \'Yuddh\' means \'A battle\', correctly defines the essence of this oratory event. It will test the strength of your resolve, the belief you have in your opinions and your ability to think on your feet. The topics will require you to speak on social issues, contest with other talented participants to defend the veracity of your solutions and answer the rally of questions from the audience as well as our esteemed judges.', club: 'Hindi Literary Association', c1:'The event will witness two extremely intense rounds of debating in the HINDI language. ',c2:'The First Round will have individual participation, requiring the participants to select a topic from the given list which will be revealed a week before the commencement of the event. The participant will be judged on their creativity, diction, content and refutation.',c3:'The selected participant will proceed to the Final Round which will witness them engrossing themselves in a rigorous discussion on select topics in an all new format , i.e. A parliamentary discussion. The specification of the Finals will be notified to the participants on the day of the Prelims. The speaker who stands out among the congregation of orators will be crowned the Hindi Debating Champion of Riviera ’15.',r1:'  The basis of judgement in the first round would be simply based on the debating skills of the participant.',r2:' The amount of research done on the topic given, firmness on the topic and rebutting skills would be analysed.Also skills like oratory skills and spontaneity of the participant would be taken into account.',r3:' As the second round is completely based on the loksabha format firstly the discipline and the adherence to the format chosen by the participant representing a particular position in the Indian parliament would be noted.',r4:' Clarity in the stance chosen of the agenda given according to the portfolio of the participant would be analysed.Adherence to the party norms the participant is representing would be analysed.',r5:'Various other factors such as spontaneity, oratory skills, Leadership quality and confidence would also be judged.' ,name1: 'Devang Shah', mob1: '9629898388',name2:'Harshita Rastogi',mob2:'9092888068',p1:'First Prize: Rs.3000',p2:'Second Prize: Rs 2000',p3:'Third Prize:Rs 1000',type:'Team of 2'},
+          
+
+
+         ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="red"><h1 class="category">Words Worth - Hindi</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.events.vitriviera.com/events/"><button class="amit"></button></a>
+</body>
+</html>

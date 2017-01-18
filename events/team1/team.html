@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script typr="text/javscript" src="jquery-2.1.1.min.js"></script>
+
+<style type="text/css">
+body{padding:0px;margin:0px;background-image:url('background.png');overflow-x:hidden;}
+.navbar{position:absolute;top:5%;left:6%;}
+.cloud1{background-image:url('cloud.png');width:280px;height:16%;position:absolute;top:200px;left:120px;background-repeat:no-repeat;}
+.cloud2{background-image:url('cloud.png');width:280px;height:16%;position:absolute;top:200px;left:550px;background-repeat:no-repeat;}
+.cloud3{background-image:url('cloud.png');width:280px;height:16%;position:absolute;top:200px;left:980px;background-repeat:no-repeat;}
+
+.patron{position:absolute;left:-3000px;}
+.patrons{position:absolute;top:350px;left:30px;width:1300px;height:1300px;-webkit-animation: moveinpat 1s;border:solid black 5px;}
+.patron1{position:absolute;top:100px;left:43%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron2{position:absolute;top:500px;left:15%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron3{position:absolute;top:500px;left:42%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron4{position:absolute;top:500px;left:68%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron5{position:absolute;top:900px;left:3%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron6{position:absolute;top:900px;left:28%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron7{position:absolute;top:900px;left:53%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.patron8{position:absolute;top:900px;left:78%;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+
+
+.faculty{position:absolute;left:-3000px;}
+.faculties{position:absolute;top:350px;left:278px;width:800px;height:1800px;-webkit-animation: movein 1s;border:solid black 5px;}
+.design1{position:absolute;top:250px;left:100px;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.design2{position:absolute;top:250px;left:500px;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+
+.reg1{position:absolute;top:850px;left:100px;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+.reg2{position:absolute;top:850px;left:500px;width:250px;height:250px;border-radius:150px;background-image:url('photopratik.png');border:solid white 10px;}
+
+
+
+.student{position:absolute;left:-3000px;}
+.students{position:absolute;top:350px;left:278px;width:800px;height:1800px;-webkit-animation: movein 1s;border:solid black 5px;}
+
+
+@-webkit-keyframes movein{
+	from{left:0px;}
+	to{left:280px;}
+}
+@-webkit-keyframes moveinpat{
+	from{left:-500px;}
+	to{left:30px;}
+}
+
+</style>
+
+</head>
+
+<body>
+<img src="navbar.png" class="navbar">
+<div>
+	<a href="#"><div class="cloud1" id="cloud1" ><img src="patron.png" style="position:relative;top:50px;left:35%;"></div></a>
+	<a href="#"><div class="cloud2" id="cloud2" ><img src="faculty.png" style="position:relative;top:50px;left:20%;"></div></a>
+	<a href="#"><div class="cloud3" id="cloud3" ><img src="student.png" style="position:relative;top:50px;left:20%;"></div></a>
+</div>
+
+<div id="patrons" class="patrons">
+	<div class="patron1">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+
+	<div class="patron2">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+	<div class="patron3">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+	<div class="patron4">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+
+	<div class="patron5">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+	<div class="patron6">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+	<div class="patron7">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+	<div class="patron8">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-15%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+</div>
+
+<div id="faculties" class="faculty">
+	<img src="star.png" style="position:absolute;top:5%;left:30%;"><img src="star2.png" style="position:absolute;top:5%;left:70%;">
+	<img src="registration.png" style="width:25%;position:absolute;top:3%;left:40%"><img src="design.png" style="position:absolute;top:10%;left:34%;">
+
+	<div class="design1">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+ 
+	<div class="design2">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+	
+
+	<img src="star.png" style="position:absolute;top:40%;left:30%;"><img src="star2.png" style="position:absolute;top:40%;left:70%;">
+	<img src="registration.png" style="width:25%;position:absolute;top:39%;left:40%"><img src="design.png" style="position:absolute;top:42%;left:34%;">
+
+	<div class="reg1">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+ 
+	<div class="reg2">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+
+</div>
+
+<div id="students" class="student">
+	<img src="star.png" style="position:absolute;top:5%;left:30%;"><img src="star2.png" style="position:absolute;top:5%;left:70%;">
+	<img src="registration.png" style="width:25%;position:absolute;top:3%;left:40%"><img src="design.png" style="position:absolute;top:10%;left:34%;">
+
+	<div class="design1">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+ 
+	<div class="design2">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+	
+
+	<img src="star.png" style="position:absolute;top:40%;left:30%;"><img src="star2.png" style="position:absolute;top:40%;left:70%;">
+	<img src="registration.png" style="width:25%;position:absolute;top:39%;left:40%"><img src="design.png" style="position:absolute;top:42%;left:34%;">
+
+	<div class="reg1">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+ 
+	<div class="reg2">
+		<div style="background-image:url('ribbon.png');background-repeat:no-repeat;height:80px;position:relative;left:-20%;top:90%;width:330px;">
+			<img src="prateek.png" style="position:relative;top:20%;left:25%;width:170px;">
+		</div>
+	</div>
+</div>
+
+<script>
+	$('#cloud3').click(function(){
+		$('#patrons').hide()
+		$('#faculties').hide();
+		$('#students').show();
+		$('#students').addClass('students');
+	});
+
+	$('#cloud1').click(function(){
+		$('#patrons').show();
+		$('#patrons').addClass('patrons');
+		$('#faculties').hide();
+		$('#students').hide();
+	});
+
+	$('#cloud2').click(function(){
+		$('#patrons').hide();
+		$('#faculties').show();
+		$('#faculties').addClass('faculties');
+		$('#students').hide();
+	});
+</script>
+
+</body>
+
+</html>

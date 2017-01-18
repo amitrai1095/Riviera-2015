@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Inquizitive</title>
+
+  <link rel="shortcut icon" href="images/quizicon.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:auto;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#fd955b;
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/inquizitive.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+       .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+       .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+.reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Type Of Event: </h3>
+                <div class="card-album-club">{{selectedAlbum.type}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                 <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        { artist: 'Formals', album: 'B-Quizzed', color: '#972ff8',cover: 'images/bquizzed.jpg',covers:'images/bquizzed1.jpg',cost: 'Rs. 100 Per Team',  describe: 'It is a quiz-based event that will test the knowledge and awareness of the participants in the world of Business and will pit them against each other in this battle of grey cells.',r1:'Prelims \:\- The first round will consist of a series of audio-visual questions from the field of business and will involve interesting questions related to recalling of brand names, identifying the company logos, famous business personalities and milestone financial developments. It will be a written round with questions of varying difficulty levels, with most of them having answers that can be worked-out with sufficient background information',r2:'How much will you stake?  The second round will have a set of questions, each directed individually at the teams. The teams will have the choice to place a wager of 10, 20 or 30 points on their direct question, the difficulty of which, will be based on the points the teams put at stake. Incorrect answers will lead to passing of the question to the next team, at half the value placed for the question.',r3:'Rapid Fire\:\- Teams will now face a set of 10 rapid-fire direct questions, which they need to answer in a maximum time of 60 seconds. Each correct answer gets them 8 points while a wrong answer will lead to a deduction of 4 points.', name1: '  Shrey S. Ostwal  ', mob1: '9629773157',name2: ' Ayush  Jain', mob2: '9629786838', club: 'IEEE \- VIT', rule1: '1. The entries must reach the organizers before the given deadline. ', rule2: '2.  Teams must be available for the entire duration of the event. ',rule3:'3. Any external material/help being availed shall be considered a form of malpractice and teams found doing so will be disqualified.',rule4:'4.  All requisite materials for the participants will be provided.',rule5:'5. Decision of the quizmaster shall be final and binding.', j1: 'Based on the scores in the first round, the top 10 teams will qualify for next round .', j2:' The top 6 teams from the second round will make it to the third and final round.', j3:'Decision of the judges shall be final and binding.', j4:'', j5:'', p1:'First Prize\-Rs 3000', p2:'Second Prize\-Rs 2000', p3:'Third Prize\-Rs 1000', type:'Team of 2.'},
+        
+        { artist: 'Formals', album: 'General Quiz', color: '#972ff8',cover: 'images/gk.jpg',covers:'images/gk1.jpg',cost: 'Not Available',  describe: 'A quiz on everything under the sun. It will test your knowledge on sports, entertainment, current affairs, politics, literature, science and technology. Teams of upto three people can participate. 8 teams will qualify for the finals. A regular quiz every Riviera and is widely attended. The event will have a preliminary qualification round and final oral round.',
+          r1:'Round 1 will be a written preliminary round. ',r2:' Top 8 teams will qualify for the next Oral Round',r3:'Multiple rounds', name1: 'Adithya S. Narayan', mob1: '9790910940',name2: '', mob2: '', club: 'Quiz Club', rule1: '1. A team can consist of maximum 3 members. You can however still take part in teams of two or lonewolf the quiz.', rule2: '2. All participants must be college students. Cross-college teams are allowed.',rule3:'3.  If you do not have a teammate and want one we might be able to team you up with others in a similar situation at the venue.',rule4:'4. Strictly no googling or malpracting of any sort. If found, you will be disqualified immediately.',rule5:'5. Quizmasters\' decisions are final.', j1: '', j2:'', j3:'', j4:'', j5:'', p1:'First Prize\-Rs 6000', p2:'Second Prize\-Rs 4500', p3:'Third Prize\-Rs 3000', type:'Team of 3'},
+
+        
+        { artist: 'Formals', album: 'Holly & Bolly Quiz', color: '#972ff8',cover: 'images/bolly.jpg',covers:'images/bolly1.jpg',cost: 'Not Available',  describe: 'The event is an easy to play quiz wherein participants would be asked to answer the artists related to a particular Hollywood movie both in front and behind the screen. The pattern of asking the question  in the final round would be kept a surprise till the date on which the event takes place.The teams don\'t need all the knowledge of this world or a thick encyclopedia to participate in this quiz.This quiz is uniquely designed, whereby contestants only need the knowledge they acquired when they saw a movie. That is why watching and participating makes it so much fun! ', name1: 'Apoorv Gupta ', mob1: '9159078690',name2: 'Akchhat Agrawal', mob2: '7708543898', club: 'Quiz Club', rule1: '1. A team can consist of maximum 2 members.', rule2: '2. 	Only team entries are eligible.',rule3:'3. The participants will not be allowed to use mobiles or other electronic gadgets.',rule4:'4.If a team violates rule 3 will be disqualified.',rule5:'5.	 The decision of the quiz-masters will be final and will not be subjected to any change', j1: '', j2:'', j3:'', j4:'', j5:'', p1:'First Prize\-Rs 5000', p2:'Second Prize\-Rs 3000', p3:'Third Prize\-Rs 2000', type:'Team of 2'},
+
+
+        { artist: 'Formals', album: 'India Quiz', color: '#972ff8',cover: 'images/india.jpg',covers:'images/india1.jpg',cost: 'Not Available', describe: 'Quizzing is to the mind, what gymming is to the body. We at the VIT Quiz Club believe the mind must always be exercised. With the theme of this Riviera being "Colours of India", we felt, what better way to represent the colours of India than an India Quiz.  Questions varying from Indian culture, to art and literature and even bollywood will tease you grey cells in this battle royale amongst the countries best quizzers. The event tests the knowledge of the participants on current and contemporary issues with relation to India.',
+          r1:'Round 1 will be a written preliminary round. ',r2:' Top 8 teams will qualify for the next Oral Round',r3:'Multiple rounds', name1: 'Aniket Chakrapani', mob1: '96229775190',name2: 'Gautam Sridhar', mob2: '9787084625', club: 'Quiz Club', rule1: '1. A team can consist of maximum 3 members. You can however still take part in teams of two or lonewolf the quiz.', rule2: '2. All participants must be college students. Cross-college teams are allowed.',rule3:'3.  If you do not have a teammate and want one we might be able to team you up with others in a similar situation at the venue.',rule4:'4. Strictly no googling or malpracting of any sort. If found, you will be disqualified immediately.',rule5:'5. Quizmasters\' decisions are final.', j1: '1. There will be a Preliminary round of 30 questions. ', j2:'2.  The preliminary round will be a written round.', j3:'3. Top 8 teams from the preliminary round will be selected for the finals.', j4:'4. The finals will consist of multiple rounds.', j5:'5. Winners will be chosen at the end of all the rounds depending on total score in the finals.', p1:'First Prize\-Rs 6000', p2:'Second Prize\-Rs 4500', p3:'Third Prize\-Rs 3000', type:'Team of 3'},
+
+
+        { artist: 'Formals', album: 'Movie Quiz', color: '#972ff8',cover: 'images/movie.jpg',covers:'images/movie1.jpg',cost: 'Not Available', describe: 'After its enormous success last year, DBQC ,The VIT Quiz Club is teaming up with VIT Film Society to hold the second edition of the Movie Quiz. Ranging from Tarkovsky to Scorcese to Kanti Shah, the quiz will test how well you know your movies. Questions will test your knowledge of International and regional movies as well, so get your popcorn out and watch everything under the sky and head down to Riviera \'15 with two other friends, if you think you\'ve got what it takes.',
+          r1:'Round 1 will be a written preliminary round. ',r2:' Top 8 teams will qualify for the next Oral Round',r3:'Multiple final rounds', name1: 'Monishita Dey', mob1: '9159869144',name2: 'Hadi Nishad', mob2: ' 8124494431', club: 'Quiz Club', rule1: '1. A team can consist of maximum 3 members. You can however still take part in teams of two or lonewolf the quiz.', rule2: '2. All participants must be college students. Cross-college teams are allowed.',rule3:'3.  If you do not have a teammate and want one we might be able to team you up with others in a similar situation at the venue.',rule4:'4. Strictly no googling or malpracting of any sort. If found, you will be disqualified immediately.',rule5:'5. Quizmasters\' decisions are final.', j1: '1. There will be a Preliminary round of 30 questions. ', j2:'2.  The preliminary round will be a written round.', j3:'3. Top 8 teams from the preliminary round will be selected for the finals.', j4:'4. The finals will consist of multiple rounds.', j5:'5. Winners will be chosen at the end of all the rounds depending on total score in the finals.', p1:'First Prize\-Rs 6000', p2:'Second Prize\-Rs 4500', p3:'Third Prize\-Rs 3000', type:'Team of 3'},
+        
+        { artist: 'Formals', album: 'Spent Quiz', color: '#972ff8',cover: 'images/spent.jpg',covers:'images/spent1.jpg',cost: 'Not Available', describe: 'Knowledge has to be improved, challenged, and increased constantly, or it vanishes, said Peter Drucker. The Sports and Entertainment quiz is one such event which will challenge a person\'s knowledge about these two fields. More fondly known as The Spent quiz in the quizzing circuit, this event brings together two intriguing and contrasting fields of sports and entertainment. Right from Sachin Tendulkar to Alfred Hitchcock, from Sarita Devi to Freddie Mercury, this event truly combines the essence of both fields. This would be a team event with three members per team. The first round would be the preliminary round where the questions displayed would essentially filter out the top eight teams for the final round. The final round will consist of multiple rounds on the basis of which the top three teams would be declared winners. ',r1:'Preliminary written round. ',r2:' Top 8 teams make it to finals.',r3:' Multiple final rounds.', name1: 'Raghavan Manisha', mob1: '9629785410',name2: 'Sayan Basu', mob2: '9787124827', club: 'Quiz Club', rule1: '1. It is a team event. Teams of three.(Inter college teams are allowed) ', rule2: '2. Topics covered will include the wide fields of Sports and entertainment.',rule3:'3. A preliminary round will be conducted which will be written.',rule4:'4. Top 8 teams make it to the final.',rule5:'5. The finals will have multiple challenging rounds. (Themes, audio. video etc.) ', j1: '1. For prelims each right answer will carry 1 mark.', j2:'2. Teams will be chosen on the basis of the number of correct     answers they give.', j3:'3. Will follow rules such as Infinite Bounce and Pounce (Explained at the event)', j4:'4. Both direct and passed questions correctly answered will fetch the team 10 points in the finals.', j5:'5. Quizmasters decision is final.', p1:'First Prize\-Rs 6500', p2:'Second Prize\-Rs 4000', p3:'Third Prize\-Rs 3000', type:'Team of 3'}
+        
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="green"><h1 class="category">Inquizitive</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.6;z-index:-20;width:100%;">
+<a href="http://www.events.vitriviera.com/events/"><button class="amit"></button></a>
+</body>
+</html>

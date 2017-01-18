@@ -1,0 +1,145 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans';
+  padding: 25px 25%;
+}
+form header {
+  margin: 0 0 26px 0; 
+}
+#footer {
+	width: 100%;
+	color: #ccc;
+	background: #a8be92;
+	color: #000;
+	font-size: 9pt;
+	padding: 10px;
+	margin-top: 30px;
+}
+form header div {
+  font-size: 90%;
+  color: #383955;
+    text-align: center;
+}
+form header h2 {
+  margin: 0 0 5px 0;
+    text-align: center;
+}
+	.astric {
+	color: #fd0516 !important;
+}
+form > div {
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 0 10px 0;
+}
+#Field106
+{height: 25px;
+    width: 100px;
+}
+
+#visit,#choice,#choice1
+{height: 25px;
+    width: 100px;
+}
+.error
+{
+   color: red;
+}
+#saveForm
+{height: 20px;
+    width: 100px;
+    font-family: 'Open Sans'
+}
+form > div > fieldset > div > div {
+  margin: 0 0 5px 0;
+}
+form > div > label,
+legend {
+	width: 25%;
+  float: left;
+  padding-right: 10px;
+}
+#img
+{
+  
+}
+form > div > div,
+form > div > fieldset > div {
+  width: 75%;
+  float: right;
+}
+form > div > fieldset label {
+	font-size: 90%;
+}
+fieldset {
+	border: 0;
+  padding: 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
+	width: 100%;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password] {
+  width: 50%;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus {
+  outline: 0;
+  border-color: #4697e4;
+}
+
+@media (max-width: 600px) {
+  form > div {
+    margin: 0 0 15px 0; 
+  }
+  form > div > label,
+  legend {
+	  width: 100%;
+    float: none;
+    margin: 0 0 5px 0;
+  }
+  form > div > div,
+  form > div > fieldset > div {
+    width: 100%;
+    float: none;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  textarea,
+  select {
+    width: 100%; 
+  }
+}
+
+#field1
+{
+ height: 25px;   
+}
+@media (min-width: 1200px) {
+  form > div > label,
+	legend {
+  	text-align: right;
+  }
+}

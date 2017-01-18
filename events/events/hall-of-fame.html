@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Hall of Fame</title>
+
+  <link rel="shortcut icon" href="images/star.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:auto;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#f2872f;
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/hall of fame.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+ 
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+       .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      
+      .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+.reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r5}}</div>
+                <!--<h3 style="text-decoration:underline;">Prize Money</h3>
+                <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div>-->
+                <h3 style="text-decoration:underline;">Type of Event:</h3>
+                <div class="card-album-artist">{{selectedAlbum.type}}</div>
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        { artist: 'Formals', album: 'Style Check', color: '#972ff8',cover: 'images/style.jpg',covers:'images/style1.jpg',cost: 'Rs. 200 per head',  describe: 'It\'s a showcase of designs\, colors\, glamour and style through our different themes. We have three themes.Host theme: Bollywood: How much ever we love Pulp Fiction and The Godfather but what will our life be without some desi abuses and gangs of wasseypur, a little around the tree romance and songs every two mintue into the movie. What if we never knew who Mogambo was or who Gabar was. So we bring to you in this theme DESI BOLLYWOOD MASALA from choli ke peeche kya hai to Rahul naam toh suna hoga to "Teri keh ke lunga.Designer theme: Swan Lake: Delve into a world of sublime and dreamy fashion. This theme ensures to take you to a new world, a world of angels. Sophistication and grace describe this theme in the best possible way.Completion theme: techo wolrd: With the outbreak of technology, one can easily see how it affects todays life in different ways. fashion being a major aspect of the futuristic era has brought out several new ideas in today\'s world. Modern yet trendy, these are the words which define this theme perfectly.',name1: 'Aastha Sharma', mob1: '8148352910', name2: 'Vasu Yadav',mob2:'9597364991', club: 'Dance Club',p1:'Rs 3000',p2:'Rs 2000',p3:'Rs 1000',r1:'Too make it to the main stage team has to clear the preliminary round.',r2:'Indecency in terms of costume and music is not allowed.  (very short clothes or vulgar music)',r3:'12 members per team is allowed. (excluding the designer and DJ) ',r4:'No kind of drama or dancing is allowed on the stage.',r5:'The duration of performance: Maximum 8 minutes, minimum 5 minutes',c1:'Teams are judged on the basis of their costumes and there relatedness to the theme',c2:'Teams will be judged on the basis of choreography',c3:'Music will also play a role in judging.',c4:'Presentation of your idea i.e how good you were able to convey your message across by your performance',c5:'Coordination of the team members on the stage.',type:'Team of 12'},
+        
+        { artist: 'Formals', album: 'VIT Roadies', color: '#972ff8',cover: 'images/roadies.jpg',covers:'images/roadies11.jpg',cost: 'Rs. 50 per head',  describe: 'Round 1: Group discussion and form filling consisting of the basics questions related to the applicant.Round 2: The shortlisted contestant for the 2nd round will go for the personnel interview.Round 3: 15 contestant are going to shortlist for this round. This round consists of the number of tasks or challenges which the contestant have to perform. Each task features the elimination of one or more contestant, thereby decreasing the number of contestant carrying on with the journey. Wild card entry will also be there for some of the deserving candidates. The above mentioned tasks are either team based or individual based. There are 2 types of tasks going to happen namely \'immunity task\' and \'performance task\'. The team who will win the immunity task will get the immunity and become safe from the next elimination. The walk the talk concept is also included during some of the elimination. At the end of the journey the last contestant who survive till the last is declared as winner and one as a runner up.',name1: 'Yashveer', mob1: '8608563652', name2: 'Deepika singh ',mob2:'9629782863', club: 'VIT Spartans',p1:'First Prize: Rs 4000',p2:'Runner\'s Up: Rs 2000',p3:'2.  2 Vit University Riviera Tshirts (for the best performance in some specific task)',r1:'No external harmful equipment\'s are allowed during the tasks',r2:' Judges decision will be final.',r3:'  Wearing the watch and other digital equipment\'s are not allowed',r4:'Preregistration is mandatory',r5:' The organizing team reserves the right to change or modify any of the rules.',r6:'Any kind of violence act is strictly prohibited. If anyone found out creating a violence then he/she will be disqualified.',r7:'7.  Don\'t go for approach to the crew members. If anyone found to do so he/she will leads to elimination.',r8:'8.  Always take track pants and other required stuffs with you. We are not going to provide you during the task.',c1:'Round 1 is going to judge on the basis of performance of all the contestant in the GD.',c2:'Round 2 will be a PI round and the contestant will be going to judge by passing under some small sizzling tasks and based on their mentality, personality, strength and efforts they can put during the tasks',c3:'Round 3 judgement will be based on the performance. Who will perform better will survive and win the title.',type:'Individual'},
+        
+        { artist: 'Informals', album: 'Frisk Factor', color: '#972ff8',cover: 'images/frisk.jpg',covers:'images/frisk1.jpg',cost: 'Rs. 300 per head',  describe: 'The biggest dance event of Riviera, held on the main stage. The event has a preliminary round where the participating teams have to showcase 4 minutes of their actual performance to get selected for the finals. The prelims will be held on the same day, in Anna auditorium. The actual performance will last for 7 minutes. A minimum of 8 and a maximum of 20 people are allowed on stage. It is one of the most looked forward to event .',name1: 'Jaswinder Singh', mob1: '7845778889', name2: 'Arun Kumar',mob2:'9952907295', club: 'Dance Club',p1:'Rs 3000',p2:'Rs 2000',p3:'Rs 1000',r1:'There are two categories, Thematic and non thematic. Thematic can be of both western and eastern form.There will be two rounds. The preliminary rounds will be conducted on the same day as the finals.',r2:' The time limit for the preliminary round is 4 minutes. The team has to perform with their full costumes along with props, if any. The time limit for the finals is 7 minutes.',r3:' The team size can vary between 15-20. No extra participants are allowed. No form of vulgarity is allowed onstage, be it costumes or gestures. If found guilty, the particular team shall be disqualified.',r4:'Thematic and non- thematic performances will be judged separately.Thematic performances can use lyrics in their audio tracks. Props such as fire, water or any other such items which can cause harm or provide a risk will not be entertained.',r5:' The thematic performances need to have a brief explanation and introduction to their performance. Visual aids in the performance and use of projectors and screens is not allowed.',type:'Team of 6-20'}
+        
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="green"><h1 class="category">Hall of Fame</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.events.vitriviera.com/events/"><button class="amit"></button></a>
+</body>
+</html>

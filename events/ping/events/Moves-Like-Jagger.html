@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Moves Like Jagger</title>
+
+  <link rel="shortcut icon" href="images/dance.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:hidden;
+      background-color:rgba(239,158,37,0.7);
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/dance1.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+       .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+ .reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.photo}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 >Round 1:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div>
+                <h3>Round 2:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div>
+                <h3 style="text-decoration:underline;">Rules and Regulations:</h3>
+                <div class="card-album-artist">{{selectedAlbum.rule1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.rule5}}</div>
+                <!--<h3 style="text-decoration:underline;">Prize Money</h3>
+                <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div>-->
+                <h3 style="text-decoration:underline;">Type of Event</h3>
+                <div class="card-album-artist">{{selectedAlbum.type}}</div>
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        { artist: 'Informals', album: 'Chance Pe Dance ', color: '#972ff8',cover: 'images/chancepedance.jpg', photo: 'images/chancepedance1.jpg',cost: 'Not Available',  describe: 'Yes its back ! Back with a Bang. VIT Dance Club presents Chance Pe Dance. A fun filled event where we present to you dancing at its best along with a pinch of creativity. The so called adapt tune round has been an attractive event among the VIT crowd and has been a success from its first edition. In this competiton each participant is given a random tune to which he/she has to dance along with a prop that will be chosen by him/her in the form of paper chits. Best choreography on the spot along with the use of prop will be chosen as winners by the judges. So put on your dancing shoes and bring out the Hrithika Roshan, Michael Jackson and the Govinda in you this Riviera. ',r1:'Prelims',r2:'Finals',
+          name1: 'Amal J P', mob1: '9159869439',name2: 'Harsh Shah', mob2: '9159869158', club: 'Dance Club', rule1: 'Each participant will be given a random tune to dance which cannot be objected by him\/her.',rule2: 'Props will be chosen at random in the form of paper chits by the participant.',rule3:'Each participant will get approx 1-1.5mins to perform',rule4:'Any form of vulgarity will not be entertained and the participant will be disqualified immediately',rule5:'Prop chosen cannot be objected by the participant ',p1:'First Prize\-Rs 3000',p2:'Second Prize\-Rs 2000',p3:'Third Prize\-Rs 1000',type:'Individual'},
+        
+        { artist: 'Informals', album: 'Dancing Duo', color: '#972ff8',cover: 'images/balroom-dancers-1024x768.jpg', photo: 'images/duocover.jpg',cost: 'Not Available',  describe: 'An event that tests the spontaneity and co-ordination of two partners with respect to their genres of dance. The event will have two rounds, testing participants on their pre-prepared sequence and then on their coordination when separated by a screen. Participants may register in teams of two.. ',r1:'Prelims',r2:'Finals',
+          name1: 'Vindhya Chaganty', mob1: '9597648539',name2: 'Priyamvadha P', mob2: '9003024326', club: 'Dance Club', rule1: '1.  Participants must register in teams of two prior to the event. Teams cannot be formed on the spot.',rule2: '2.  No form of obscenity or inappropriate gestures will be tolerated in terms of dressing, choice of songs, dance etc',rule3:'3.  The choreography for the first round must be prepared prior to the event.',rule4:'4.  Extra time for preparation will not be given.',rule5:'5.  Judges decision will be final.',p1:'First Prize\-Rs 3000',p2:'Second Prize\-Rs 2000',p3:'Third Prize\-Rs 1000',type:'Team of 2'},
+       
+        { artist: 'Informals', album: 'Baarati Dance ', color: '#972ff8',cover: 'images/baarati.jpg', photo: 'images/baarati1.jpg',cost: 'Not Available',  describe: 'Do you have what it takes to be the person who stands out in a crowd. Dance to your heart\'s content and be a part of the Indian baaraat. With the notion of \'have feet will dance\' this is a new event proposed this Riviera celebrating the theme of it and also using dance as an element of joy and fun.Songs will be played on the spot No prepared choreography just dance is the name of the game. So come, Be a part of the \"Madness\" ',name1: 'Noopur Gupta', mob1: '9597365020',name2: '', mob2: '', club: 'Dance Club', rule1: 'The performance should be 1 min 30 sec.',rule2: 'The performance can have 1-3 members in a group.',rule3:'No random selection of the track for a group( the group isn\'t allowed to choose a song).',rule4:'No personal props allowed. Only ones which are provided during the event can be used in the performance.',rule5:'The decision of the judges will be final and indisputable.',p1:'First Prize\-Rs 3000',p2:'Second Prize\-Rs 2000',p3:'Third Prize\-Rs 1000',type:'Individual',r1:'Not Mentioned',r2:'Not Mentioned'},
+        
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="green"><h1 class="category">Moves Like Jagger</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+  <img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+  <a href="http://www.ping.vitriviera.com/events/categories.html"><button class="amit"></button></a>
+</body>
+</html>

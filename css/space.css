@@ -1,0 +1,134 @@
+body{padding:0px;margin:0px;background-image:url('background.png');}
+	.crater{position:absolute;top:80px;left:1100px;width:150px;height:150px;}
+	.jupiter{position:absolute;top:550px;left:100px;}
+	.earth{position:absolute;top:250px;left:500px;}
+	.alien{position:absolute;top:450px;left:25px;width:70px;height:70px;}
+	.asteroid{position:absolute;top:350px;left:20px;width:90px;height:80px;}
+	.astronaut{position:absolute;top:60px;left:1000px;width:60px;height:80px;}
+	.ring{position:absolute;top:550px;left:1100px;width:100px;height:100px;}
+	.shuttle{position:absolute;top:500px;left:500px;width:100px;height:80px;}
+	.rock1{position:absolute;top:50px;left:100px;width:100px;height:100px;}
+	.rocket{position:absolute;top:450px;left:750px;width:60px;height:60px;}
+	.rock2{position:absolute;top:55px;left:250px;width:40px;height:40px;}
+	.rock3{position:absolute;top:55px;left:900px;width:40px;height:40px;}
+
+	.crater{-webkit-animation:rotate 60s infinite;-moz-animation:rotate 60s infinite;-ms-animation:rotate 60s infinite;}
+	.astronaut{-webkit-animation:oscillate 3s infinite alternate;-moz-animation:oscillate 3s infinite alternate;-ms-animation:oscillate 3s infinite alternate;}
+	.asteroid{-webkit-animation:meteor 5s infinite;-moz-animation:meteor 5s infinite;-ms-animation:meteor 5s infinite;}
+	.shuttle{-webkit-animation:revolve 60s infinite;-moz-animation:revolve 60s infinite;-ms-animation:revolve 60s infinite;}
+	.rock1{-webkit-animation:rotate 60s infinite;-moz-animation:rotate 60s infinite;-ms-animation:rotate 60s infinite;}
+	.rocket{-webkit-animation:flyrocket 60s infinite;-moz-animation:flyrocket 60s infinite;-ms-animation:flyrocket 60s infinite;}
+	.rock2{-webkit-animation:rockfloat 30s infinite;-moz-animation:rockfloat 30s infinite;-ms-animation:rockfloat 30s infinite;}
+	.rock3{-webkit-animation:rotate 30s infinite, rockmove 90s infinite;-moz-animation:rotate 30s infinite, rockmove 90s infinite;-ms-animation:rotate 30s infinite, rockmove 90s infinite;}
+	.alien{-webkit-animation:oscillates 15s infinite alternate;-moz-animation:oscillates 15s infinite alternate;-ms-animation:oscillates 15s infinite alternate;}
+	.ring{-webkit-animation:rotate 40s infinite;-moz-animation:rotate 40s infinite;-ms-animation:rotate 40s infinite;}
+	.jupiter{-webkit-animation:rotate 60s infinite;-moz-animation:rotate 60s infinite;-ms-animation:rotate 60s infinite;}
+
+	@-webkit-keyframes revolve{
+	from{-webkit-transform:rotate(0deg);transform-origin:100px -160px;}
+	to{-webkit-transform:rotate(360deg);transform-origin:100px -160px;}
+	}
+
+	@-webkit-keyframes rotate{
+	from{-webkit-transform:rotate(0deg);}
+	to{-webkit-transform:rotate(360deg);}
+	}
+
+	@-webkit-keyframes oscillate{
+	from{top:60px;left:1300px;}
+	to{top:100px;left:1300px;}
+	}
+
+	@-webkit-keyframes meteor{
+	from{top:350px;left:20px;}
+	to{top:-520px;left:1300px;}
+	}
+
+	@-webkit-keyframes flyrocket{
+	from{top:650px;left:250px;}
+	to{top:200px;left:1600px;}
+	}
+	@-webkit-keyframes rockfloat{
+	from{-webkit-transform:rotate(0deg);}
+	to{-webkit-transform:rotate(-360deg);}
+	}
+	@-webkit-keyframes rockmove{
+	from{top:0px;left:900px;}
+	to{top:900px;left:900px;}
+	}
+	@-webkit-keyframes oscillates{
+	from{top:450px;left:25px;}
+	to{top:450px;left:125px;}
+	}
+	@-moz-keyframes revolve{
+	from{-moz-transform:rotate(0deg);transform-origin:100px -160px;}
+	to{-moz-transform:rotate(360deg);transform-origin:100px -160px;}
+	}
+
+	@-moz-keyframes rotate{
+	from{-moz-transform:rotate(0deg);}
+	to{-moz-transform:rotate(360deg);}
+	}
+
+	@-moz-keyframes oscillate{
+	from{top:60px;left:1300px;}
+	to{top:100px;left:1300px;}
+	}
+
+	@-moz-keyframes meteor{
+	from{top:350px;left:20px;}
+	to{top:-520px;left:1200px;}
+	}
+
+	@-moz-keyframes flyrocket{
+	from{top:650px;left:250px;}
+	to{top:200px;left:1300px;}
+	}
+	@-moz-keyframes rockfloat{
+	from{-moz-transform:rotate(0deg);}
+	to{-moz-transform:rotate(-360deg);}
+	}
+	@-moz-keyframes rockmove{
+	from{top:0px;left:900px;}
+	to{top:900px;left:900px;}
+	}
+	@-moz-keyframes oscillates{
+	from{top:450px;left:25px;}
+	to{top:450px;left:125px;}
+	}
+	@-ms-keyframes revolve{
+	from{-ms-transform:rotate(0deg);transform-origin:100px -160px;}
+	to{-ms-transform:rotate(360deg);transform-origin:100px -160px;}
+	}
+
+	@-ms-keyframes rotate{
+	from{-ms-transform:rotate(0deg);}
+	to{-ms-transform:rotate(360deg);}
+	}
+
+	@-ms-keyframes oscillate{
+	from{top:60px;left:1300px;}
+	to{top:100px;left:1300px;}
+	}
+
+	@-ms-keyframes meteor{
+	from{top:350px;left:20px;}
+	to{top:-520px;left:1300px;}
+	}
+
+	@-ms-keyframes flyrocket{
+	from{top:650px;left:250px;}
+	to{top:200px;left:1600px;}
+	}
+	@-ms-keyframes rockfloat{
+	from{-ms-transform:rotate(0deg);}
+	to{-ms-transform:rotate(-360deg);}
+	}
+	@-ms-keyframes rockmove{
+	from{top:0px;left:900px;}
+	to{top:900px;left:900px;}
+	}
+	@-ms-keyframes oscillates{
+	from{top:450px;left:25px;}
+	to{top:450px;left:125px;}
+	}

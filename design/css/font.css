@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'nexa_boldregular';
+    src: url('../fonts/Nexa_Free_Bold-webfont.eot');
+    src: url('../fonts/Nexa_Free_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Nexa_Free_Bold-webfont.woff') format('woff'),
+         url('../fonts/Nexa_Free_Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Nexa_Free_Bold-webfont.svg#nexa_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+    font-family: 'nexa_boldregular';
+    src: url('../fonts/Nexa_Free_Bold-webfont.svg#nexa_boldregular') format('svg');
+         font-weight: normal;
+         font-style: normal;
+    }
+}
+
+@font-face {
+    font-family: 'sofia_pro_lightregular';
+    src: url('../fonts/SofiaProLight-webfont.eot');
+    src: url('../fonts/SofiaProLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SofiaProLight-webfont.woff') format('woff'),
+         url('../fonts/SofiaProLight-webfont.ttf') format('truetype'),
+         url('../fonts/SofiaProLight-webfont.svg#sofia_pro_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+    font-family: 'sofia_pro_lightregular';
+    src: url('../fonts/SofiaProLight-webfont.svg#sofia_pro_lightregular') format('svg');
+         font-weight: normal;
+         font-style: normal;
+    }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?5odpj7');
+    src:url('../fonts/icomoon.eot?#iefix5odpj7') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?5odpj7') format('woff'),
+        url('../fonts/icomoon.ttf?5odpj7') format('truetype'),
+        url('../fonts/icomoon.svg?5odpj7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-like:before {
+    content: "\e600";
+}
+.icon-t-shirt:before {
+    content: "\e601";
+}
+.icon-brush:before {
+    content: "\e602";
+}
+.icon-trophy:before {
+    content: "\e603";
+}
+.icon-bolt:before {
+    content: "\e604";
+}

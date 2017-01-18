@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+<head>
+  <title>RIVIERA'15 | Words Worth - English</title>
+
+  <link rel="shortcut icon" href="images/english.ico">
+
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link href="core-animated-pages.html" rel="import">
+
+  <style>
+   
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      overflow:auto;
+      background-attachment:fixed;
+      background-repeat:no-repeat;
+      background-color:#fd955b;
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 350px;
+      background-image:url('images/wordsworth.jpg');
+      background-attachment:fixed;
+      background-width:100%;
+    }
+  </style>
+  <style type="text/css">
+  .category{position:absolute;top:100px;left:120px;color:white;font-size:80px;font-family:'Calibri Light';font-weight:normal;}
+   .amit{position:fixed;top:50px;left:50px;;width:160px;height:31px;background-image:url('butt1.png');border:none;background-repeat:no-repeat;}
+  .amit:hover {background-image:url('butt.png');width:191px;height:36px;top:40px;left:50px;}
+
+  @-webkit-keyframes ini {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes outi {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <polymer-element name="music-demo">
+  <template>
+
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+ .chip {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.chip:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+  
+      #details {
+        padding: 50px 10% 0;
+      }
+
+      .card {
+        height: 600px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 30%;height:60%;position:relative;top:100px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      .close{position:absolute;top:130%;left:15%;width:50px;height:50px;background-image:url('back.jpg');border-radius:50px;border:none;z-index:10; -webkit-animation: in 0.5s;}
+      .close:hover {
+    -webkit-animation: out 0.5s;
+    }
+
+  @-webkit-keyframes in {
+      from   { -webkit-transform: rotate(360deg); }
+      to { -webkit-transform: rotate(0deg);}
+    }
+
+  @-webkit-keyframes out {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+      .eve1{width:200px;height:200px;}
+      .eve2{width:200px;height:200px;position:relative;top:-220px;left:300px;}
+
+ .reg{position:absolute;top:160%;left:70%;width:168px;height:34px;background-image:url('reg.png');border-radius:50px;border:none;
+}
+    .reg:hover {
+background-image:url('reg1.png');
+width:191px;height:39px;
+top:160%;left:69%;
+
+ }
+
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+              <div class="chip-top" style="background-image:url('{{item.cover}}');" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero style="overflow:auto;">
+          <paper-button on-click="{{transition}}" class="close"></paper-button>
+<a href="https://academics.vit.ac.in/online_application/riviera_app/apply.asp" target="_blank">
+              <paper-button  class="reg"></paper-button></a>
+          <br /><br />
+          <div class="card-left" style="background-image:url('{{selectedAlbum.covers}}');" hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+               <div >
+               
+              </div>
+
+              <div flex >
+              <br><br>
+                <div class="card-album-title">{{selectedAlbum.album}}</div><br>
+                <h3 style="text-decoration:underline;">Description:</h3>
+                <div class="card-album-artist">{{selectedAlbum.describe}}</div>
+                <h3 style="text-decoration:underline;">Rules:</h3>
+                <div class="card-album-artist">{{selectedAlbum.r1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r3}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r4}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.r5}}</div>
+                <!--<h3 style="text-decoration:underline;">Prize Money</h3>
+                <div class="card-album-artist">{{selectedAlbum.p1}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p2}}</div><br>
+                <div class="card-album-artist">{{selectedAlbum.p3}}</div>-->
+                <h3 style="text-decoration:underline;">Type of Event:</h3>
+                <div class="card-album-artist">{{selectedAlbum.type}}</div>
+                <h3 style="text-decoration:underline;">Cost:</h3>
+                <div class="card-album-artist">{{selectedAlbum.cost}}</div>
+                <h3 style="text-decoration:underline;">Organizing Club:</h3>
+                <div class="card-album-artist">{{selectedAlbum.club}}</div>
+                <h3 style="text-decoration:underline;">Event Co-Ordinators:</h3>
+                <div class="eve1"><h4>{{selectedAlbum.name1}}</h4>{{selectedAlbum.mob1}}</div>
+                <div class="eve2"><h4>{{selectedAlbum.name2}}</h4>{{selectedAlbum.mob2}}</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+
+      page: 0,
+
+      items: [
+        
+        { artist: 'Formals', album: 'Creative Writing', color: '#972ff8',cover: 'images/creative.jpg',covers:'images/creative1.jpg',cost: 'Rs. 50 per head',  describe: 'Creative writing, a form of artistic expression, draws on the imagination to convey meaning through the use of imagery, narrative, and drama. This is in contrast to analytic or pragmatic forms of writing. This genre includes poetry, fiction (novels, short stories), scripts, screenplays, and creative',r3:'Not Applicable',name1: 'Shreyans Nahar', mob1: '9790744876', name2: 'Varun Senthil',mob2:'888323000', club: 'ELA',type:'Individual'},
+        
+        { artist: 'Formals', album: 'DumbC', color: '#972ff8',cover: 'images/mauj.jpg',covers:'images/mauj1.jpg',cost: 'Rs. 100 per Team',  describe: 'It is an event that tests an individual\'s ability to mime the motif or words of a movie, object, place or person and his teammates\' capability of guessing it correctly. The event will have three rounds with the first round being the preliminary round. Each round has a time limit for the participants to guess the clues in.',name1: 'Shubhankar Menon', mob1: '9677351134', name2: 'Oishi Lahiri',mob2:'9629342409', 
+r1:'1. The teams can solve the riddles in any order. No points will be deducted for not following serial order', r2:'2. The teams can skip a riddle if they want, but at the cost of points.',r3:'3. There will be a prelims round in which we will shortlist the top few teams for the finals. This will be based on the average time and number of riddles guessed by teams.',r4:'4. Event coordinators\' decision is final and binding on the participants.',r5:'5. Participants should maintain the decorum of the event.',club: 'ELA',type:'Type of 3'},
+        
+   	{ artist: 'Formals', album: 'Extempore', color: '#972ff8',cover: 'images/extempore.jpg',covers:'images/extempore1.jpg',cost: 'Rs. 100 per team',  describe: 'An exciting event that tests one\'s fluency in English, creativity and spontaneity. Participants must register in teams of three. The participation of every team will be impromptu. This event will include rounds such as Channel Surfing, a television based event which will focus on the coordination of all the team members, their acting skills, knowledge of television shows and their fluency in English, and Tight Corners which is situational acting. This event will also include one surprise round which will be decided by the judges on the day of the event.',name1: 'Gaurav Mehta', mob1: '7845849537', name2: 'Aditi T',mob2:'8939028890', club: 'ELA',type:'Team of 3'},
+       
+        { artist: 'Formals', album: 'JAM', color: '#972ff8',cover: 'images/speech.jpg',covers:'images/speech1.jpg',cost: 'Rs. 50 per head',  describe: 'JAM or Just a Minute is a speaking event wherein the participants are given a topic to speak on. Each participant is provided with a mike and a buzzer to interject the other speaker based on their fluency of speech, pronunciation, use of proper grammar etc.If the interjection is valid and approved, the interjector gets additional points and commences to speak. JAM has several rounds to test the ability of the participant to speak fluently under tremendous pressure. At the beginning of each round, they are given a topic which they have to stick to since interjections may include the speaker going off topic. Least active participants in a single JAM session are then replaced by the next participant. Negative points are awarded to incorrect or irrelevant interjectiIons. By the final round, the person with the maximum points is declared the winner.',name1: 'Harshita Raj', mob1: '9629785302', name2: '  Yamini Gaur',mob2:'09629782495', club: 'ELA',r1:' +5 Points awarded to the speaker for correct interjection.',r2:' -2 Points awarded to the speaker for incorrect interjection',r3:'  Interjections may include use of hyphenated words, any form of the language that is unacceptable in Queen’s English, repetition of a word used indefinite times by other participants, incoherency, change of speed of speech, voice modulation etc.',r4:'  0 Points awarded for ringing the buzzer sans interjection.',r5:'No two participants are allowed to speak at the same time.',c1:' The marks will be provided as aforementioned',c2:' If the interjection is deemed relevant, the mike will be handed to the interjector to continue the session.',c3:' The JAM topics will be decided by the judges through a chit system.',c4:' The speech rules will be declared before the competition and adhered to throughout the competition. The judge will decide the validity of the interjection.',c5:' The participant with the maximum marks will be awarded first prize and so forth.',p1:'Prize: Rs 5000',type:'Individual'},
+
+        { artist: 'Formals', album: 'Pic\'Aboo', color: '#972ff8',cover: 'images/show.jpg',covers:'images/show1.jpg',cost: 'Rs. 150 per team',  describe: 'This event is a mixture of the two well known games Pictionary and Taboo. There will be 2-3 rounds. ',name1: 'Ishaan Chaturvedi', mob1: '9629343267', name2: 'Anirudh Dahiya',mob2:'9629342214', club: 'ELA',c1:' Least time taken',c2:'  Accuracy',c3:'  Humor (Bonus points)',p1:'First Prize: Rs 3000',p2:'Second Prize: Rs 2000',p3:'Third Prize: Rs 1000',r2:'Standard Pictionary and Taboo rules. ',type:'Team of 3'},
+
+        { artist: 'Formals', album: 'Potpourri', color: '#972ff8',cover: 'images/pot.jpg',covers:'images/pot1.jpg',cost: 'Rs. 100 per team',  describe: 'Not Available',name1: 'Riya Daniel', mob1: '9487488926', name2: '',mob2:'', club: 'ELA',type:'Team of 2'},
+
+        { artist: 'Informals', album: 'Shipwreck', color: '#972ff8',cover: 'images/shipwreck.jpg',covers:'images/shipwreck1.jpg',cost: 'Rs. 100 per Person',  describe: 'A cruise, sails half way in the pacific, when a tough storm hits. Every single person on the cruise is looking for an escape. Obviously, a life jacket is the only thing that is to be befriended, so the captain who owns them. Unfortunately, the captain has only one left. Consider yourself on the cruise. What would you think of, to impress the captain, to convince him to let you off the cruise with that life jacket. Don’t even think of using force on him, because he is an Ex-Marine.',name1: 'Akshita Jagadeesan', mob1: '9677873406',name2: 'Bharath T', mob2: '9043330353', club: 'Individual',r1:'This is an individual event and will be held in English',r2:'Unparliamentary language is not entertained.',r3:'Preparation time of 30 seconds  to 45 seconds will be given.',r4:'Three minutes will be given to enact',r5:'Participant will have to walk, talk and behave in a very creative way as a celebrity/popular figures that they have chosen from the lot.',c1:'Humour sense',c2:'Their ability to convince',c3:'Imitation of the celebrity/popular figures',c4:'Creative idea',c5:'Usage of props',p1:'First Prize:Rs 4000',p2:'Rs 2000',p3:'Rs 1000',type:'Individual'},
+
+        { artist: 'Formals', album: 'Whats The Good Word', color: '#972ff8',cover: 'images/words.jpg',covers:'images/words1.jpg',cost: 'Rs. 100 per team',  describe: 'What\'s the good Word is a popular event among literary geeks as it favours those that believe the pen is mightier than the sword. For all you that are proud of your sublime vocabulary and grasp on the English language, this event is for you. Brush up on your homophones, revise your synonyms and expect the unexpected for our event will take you through a memorable time of hair pulling, brain racking and ingenious team work. It is basically a vocabulary based game that tests one\'s knowledge on well known English phrases, idioms and literary conundrums. Also, expect unique events that involve famous movies, catch-phrases, iconic dialogue and literature. In brief, there will be rebuses, ditloids, etymologies and much more.',name1: 'Vishal Ramesh', mob1: '9884083400', name2: 'Sanjai Pramod',mob2:'9500136696',
+club: 'ELA',r1:'Two rounds. Prelims followed by Finals.Prelims will be a written round.',r2:'Top 8 teams will be selected for Finals.',r3:'Any tie will be sorted through judge\'s jurisdiction',r4:' Finals will be a combination of multiple rounds. Top 3 of final round will place.',
+r5:'No mobile phones allowed. Malpractices will lead to instant disqualification.',type:'Team of 2'}
+        
+      ],
+
+      selectedAlbum: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+  <div class="green"><h1 class="category">Words Worth-English</h1></div>
+
+  <music-demo></music-demo>
+  <script type="text/javscript">
+  function alert(){
+    alert('jr,vnrl');
+  }
+  </script>
+<img src="1280x800.net_468.jpg" style="position:fixed;top:200px;left:0px;opacity:0.4;z-index:-20;width:100%;">
+<a href="http://www.events.vitriviera.com/events/"><button class="amit"></button></a>
+</body>
+</html>
